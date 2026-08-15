@@ -128,6 +128,23 @@ def _describe(listing: Listing) -> str:
     )
 
 
+def _term_hint(config: dict[str, Any]) -> str:
+    """Surface the configured vocabulary as investigative hints.
+
+    Deliberately framed as signals rather than rules — a hard keyword match
+    would both miss unlabelled floor-plan rooms and fire on "cozy office nook",
+    which is exactly the thing that fails the requirement.
+    """
+    terms = config.get("den", {}).get("positive_terms") or []
+    if not terms:
+        return ""
+    return (
+        "Phrases that often indicate a qualifying space — treat them as prompts "
+        "to look closer, not as proof, and note that some (an open 'nook' or "
+        "'alcove') frequently fail the door requirement: " + ", ".join(terms) + "."
+    )
+
+
 def _call(client, model: str, content: Any) -> DenVerdict | None:
     try:
         resp = client.messages.create(
@@ -182,7 +199,7 @@ def analyze(listing: Listing, config: dict[str, Any], client) -> DenVerdict:
     text_verdict = _call(
         client,
         models["text"],
-        f"Assess this rental listing:\n\n{_describe(listing)}",
+        f"Assess this rental listing:\n\n{_describe(listing)}\n\n{_term_hint(config)}",
     )
     if text_verdict is None:
         text_verdict = DenVerdict.unknown("model returned no structured output")
@@ -218,6 +235,7 @@ def analyze(listing: Listing, config: dict[str, Any], client) -> DenVerdict:
                 f"Assess this rental listing. The images above are its floor plans "
                 f"and interior photos ({len(listing.floorplans)} floor plan(s) first).\n\n"
                 f"{_describe(listing)}\n\n"
+                f"{_term_hint(config)}\n\n"
                 f"A text-only read scored {text_verdict.den_conf:.2f} and was "
                 f"inconclusive. Use the images to settle it."
             ),

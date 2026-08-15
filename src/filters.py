@@ -120,14 +120,3 @@ def evaluate(
             f"clears no ladder rung"
         ),
     )
-
-
-def needs_den_analysis(listing: Listing, config: dict[str, Any]) -> bool:
-    """Whether it is worth spending a Claude call on this listing.
-
-    A 2BR that already clears the two_bedroom rung on size alone does not need
-    den detection to be notified — but we still run it, cheaply, because a
-    second bedroom that is a walk-through fails the actual privacy requirement
-    and the message should say so.
-    """
-    return True
