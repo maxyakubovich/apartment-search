@@ -1,0 +1,76 @@
+name: watch
+
+# GitHub's `schedule:` trigger is best-effort — a */5 cron commonly delivers
+# 2-4 runs an hour with delays of 20-60 minutes, which is nowhere near the
+# responsiveness this needs. So instead of relying on cron, one job polls in an
+# internal loop for just under the 6h job ceiling and then re-dispatches itself.
+# watchdog.yml restarts the chain if a link ever breaks.
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  # Never two loops at once — they would double-notify and fight over the
+  # state commit. Queue rather than cancel so a redispatch is never dropped.
+  group: watcher
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    # Just under the 6h hard ceiling, leaving room for the redispatch step.
+    timeout-minutes: 355
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Configure git for state commits
+        run: |
+          git config user.name "apartment-watcher"
+          git config user.email "actions@github.com"
+
+      - name: Record start time
+        id: start
+        run: echo "epoch=$(date +%s)" >> "$GITHUB_OUTPUT"
+
+      - name: Run watch loop
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m src.main --loop
+
+      - name: Re-dispatch the next loop
+        # Runs even when the loop failed, so a transient error does not end the
+        # chain permanently. GITHUB_TOKEN deliberately cannot trigger another
+        # workflow, so this needs a PAT with `actions: write`.
+        if: always()
+        env:
+          DISPATCH_PAT: ${{ secrets.DISPATCH_PAT }}
+        run: |
+          elapsed=$(( $(date +%s) - ${{ steps.start.outputs.epoch }} ))
+          # A run that dies in seconds means broken secrets or a bad deploy.
+          # Back off so a crash-loop cannot burn through the runner fleet.
+          if [ "$elapsed" -lt 300 ]; then
+            echo "Loop exited after ${elapsed}s — backing off 5 minutes."
+            sleep 300
+          fi
+          curl -fsS -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $DISPATCH_PAT" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/watch.yml/dispatches" \
+            -d '{"ref":"${{ github.ref_name }}"}'

@@ -1,0 +1,70 @@
+# SF Apartment Watcher — tuning knobs.
+# Everything the matching logic depends on lives here. Expect to adjust the
+# ladder after a few days of real traffic.
+
+search:
+  # Hard gates. A listing failing any of these is dropped before it costs
+  # anything — no Apify fetch, no Claude call.
+  max_rent: 6500
+  allowed_beds: [1, 2]
+  min_sqft_floor: 850 # absolute floor; below this nothing is ever notified
+
+  # Optional geo filter. Paste the `searchQueryState` polygon from your saved
+  # search URL here, or leave null to skip the geo check entirely.
+  # Format: list of [lng, lat] pairs.
+  polygon: null
+
+# Den confidence sets the square-footage bar rather than acting as a hard gate:
+# a confirmed den earns a lower bar, an unclear listing has to be big enough to
+# carve out a private corner. Evaluated top to bottom; first match wins.
+ladder:
+  - name: two_bedroom
+    # A second bedroom is the office. Still gets a layout sanity check.
+    when: { beds: 2, min_sqft: 900 }
+  - name: confident_den
+    when: { min_den_conf: 0.6, min_sqft: 850 }
+  - name: plausible_den
+    when: { min_den_conf: 0.3, min_sqft: 900 }
+  - name: room_to_sequester
+    # No den signal, but large enough to wall off a desk.
+    when: { min_den_conf: 0.0, min_sqft: 1000 }
+
+# Square footage is frequently absent on SF landlord-posted rentals. Treat it as
+# unknown rather than zero: only notify on a confident den, and tag the message.
+missing_sqft:
+  min_den_conf: 0.6
+
+den:
+  # Stage 1 is text-only and free of image cost. These terms push confidence up;
+  # the model still makes the call, they are not a hard keyword match.
+  positive_terms:
+    - den
+    - office
+    - flex
+    - flex space
+    - bonus room
+    - study
+    - nook
+    - alcove
+    - junior 2 bedroom
+    - jr 2 bedroom
+    - 1br+
+    - "1 bed + "
+    - sunroom
+    - bonus space
+    - extra room
+  # If stage 1 lands inside this band the answer is ambiguous and we escalate to
+  # the vision pass. Outside the band we trust the text and skip image cost.
+  escalate_band: [0.15, 0.85]
+  max_photos: 6
+
+models:
+  text: claude-sonnet-5
+  vision: claude-sonnet-5
+
+runtime:
+  poll_seconds: 120
+  # Stop the self-looping job short of the 6h Actions ceiling so it has time to
+  # re-dispatch itself cleanly.
+  max_loop_seconds: 21000 # 5h50m
+  imap_lookback_hours: 48
