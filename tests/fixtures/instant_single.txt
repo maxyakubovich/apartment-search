@@ -1,0 +1,34 @@
+Captured from a real Zillow instant alert:
+  From: Zillow <rental-instant-updates@mail.zillow.com>
+  Subject: 81 Lansing St APT 302 just listed in 'SF 750-1k sqft'
+
+Trimmed to the links that matter and kept in the Proofpoint-rewritten form the
+forwarded copy arrived in (% encoded as *), which the parser must also handle.
+The point of this fixture is the mix: one genuine result, five "Other rentals
+you might like" recommendations, and one paid Alameda placement.
+
+--- header chrome ---
+<https://urldefense.com/v3/__https://click.mail.zillow.com/f/a/lAifAkTaP47wJfqwC9WUgQ**A/AAAAARA*/tVoHsRkdUMLCrbMQuILfzyfY?target=https*3A*2F*2Fwww.zillow.com*2F*3Frtoken*3D5ef2ccf4*26utm_campaign*3Demo-instantsavedsearch-rental*26utm_medium*3Demail*26utm_content*3Dheaderzillowlogo__;fn5-fn4lJSUlJSUlJSUl!!G92We9drHetJ8EofZw!fpUdskV$ >
+
+--- the actual result: $5,000/mo, 1 bd | 1 ba | 900 sqft, 81 Lansing St APT 302 ---
+<https://urldefense.com/v3/__https://click.mail.zillow.com/f/a/roJ0pKBwM7nfV3NH2nQJDw**A/AAAAARA*/V79KJkUAtbxYkrAxfGfBBW8P?target=https*3A*2F*2Fwww.zillow.com*2Frouting*2Femail*2Fproperty-notifications*2Fzpid_target*2F15147609_zpid*2FX1-SS5o5te731uya10000000000_5f90w_sse*2F*3Fz*26rtoken*3D5ef2ccf4*26utm_medium*3Demail*26utm_content*3Dforrentimage__;fn5-fn4lJSUlJSUlJSUlJSUlJSUl!!G92We9drHetJ8EofZw!fpUdskV$ >
+<https://urldefense.com/v3/__https://click.mail.zillow.com/f/a/lo-DCdnASb6jNqz1sxVicg**A/AAAAARA*/srGizVjLL63wwRvlNCourDQY?target=https*3A*2F*2Fwww.zillow.com*2Frouting*2Femail*2Fproperty-notifications*2Fzpid_target*2F15147609_zpid*2FX1-SS5o5te731uya10000000000_5f90w_sse*2F*3Fz*26rtoken*3D5ef2ccf4*26utm_medium*3Demail*26utm_content*3Dforrentaddress__;fn5-fn4lJSUlJSUlJSUlJSUlJSUl!!G92We9drHetJ8EofZw!fpUdskV$ >
+
+--- "Other rentals you might like" — recommendations, not search results ---
+1300 Lawton St APT 301, $4,495/mo, 2 bd | 2 ba | 1,034 sqft
+<https://urldefense.com/v3/__https://click.mail.zillow.com/f/a/lFstNzYRJqpK51_ioRFezQ**A/AAAAARA*/V79KJkUAtbxYkrAxfGfBBW8P?target=https*3A*2F*2Fwww.zillow.com*2Frouting*2Femail*2Fproperty-notifications*2Fzpid_target*2F2096009960_zpid*2FX1-SS5o5te731uya10000000000_5f90w_sse*2F*3Fz*26utm_content*3Dforrentimage-_rid-QaYAp59mmc5arSJC9QN97b___;fn5-fn4lJSUlJSUlJSUlJSUlJSUl!!G92We9drHetJ8EofZw!fpUdskV$ >
+35A Capp St Unit A, $4,700/mo, 2 bd | 1 ba | 1,000 sqft
+<https://urldefense.com/v3/__https://click.mail.zillow.com/f/a/AQc9rS7da8Od862sLCRhzQ**A/AAAAARA*/V79KJkUAtbxYkrAxfGfBBW8P?target=https*3A*2F*2Fwww.zillow.com*2Frouting*2Femail*2Fproperty-notifications*2Fzpid_target*2F464514441_zpid*2FX1-SS5o5te731uya10000000000_5f90w_sse*2F*3Fz*26utm_content*3Dforrentimage-_rid-QaYAp59mmc5arSJC9QN97b___;fn5-fn4lJSUlJSUlJSUlJSUlJSUl!!G92We9drHetJ8EofZw!fpUdskV$ >
+2001 Lawton St #4, $4,000/mo, 2 bd | 1 ba | -- sqft
+<https://urldefense.com/v3/__https://click.mail.zillow.com/f/a/3abGpJjay0Ich5IK7mN3Rg**A/AAAAARA*/V79KJkUAtbxYkrAxfGfBBW8P?target=https*3A*2F*2Fwww.zillow.com*2Frouting*2Femail*2Fproperty-notifications*2Fzpid_target*2F2077848643_zpid*2FX1-SS5o5te731uya10000000000_5f90w_sse*2F*3Fz*26utm_content*3Dforrentimage-_rid-QaYAp59mmc5arSJC9QN97b___;fn5-fn4lJSUlJSUlJSUlJSUlJSUl!!G92We9drHetJ8EofZw!fpUdskV$ >
+(undisclosed Address), $5,800/mo, 2 bd | 2 ba | 1,013 sqft
+<https://urldefense.com/v3/__https://click.mail.zillow.com/f/a/NmDgVkc0ijZ2k1ZX-dIqFw**A/AAAAARA*/V79KJkUAtbxYkrAxfGfBBW8P?target=https*3A*2F*2Fwww.zillow.com*2Frouting*2Femail*2Fproperty-notifications*2Fzpid_target*2F63107160_zpid*2FX1-SS5o5te731uya10000000000_5f90w_sse*2F*3Fz*26utm_content*3Dforrentimage-_rid-QaYAp59mmc5arSJC9QN97b___;fn5-fn4lJSUlJSUlJSUlJSUlJSUl!!G92We9drHetJ8EofZw!fpUdskV$ >
+65 Scott St #6, $4,495/mo, 1 bd | 1 ba | -- sqft
+<https://urldefense.com/v3/__https://click.mail.zillow.com/f/a/gsny9uKBZQZC_YUB3vGfOg**A/AAAAARA*/V79KJkUAtbxYkrAxfGfBBW8P?target=https*3A*2F*2Fwww.zillow.com*2Frouting*2Femail*2Fproperty-notifications*2Fzpid_target*2F2078156647_zpid*2FX1-SS5o5te731uya10000000000_5f90w_sse*2F*3Fz*26utm_content*3Dforrentimage-_rid-QaYAp59mmc5arSJC9QN97b___;fn5-fn4lJSUlJSUlJSUlJSUlJSUl!!G92We9drHetJ8EofZw!fpUdskV$ >
+
+--- paid placement: 250 Mosley Ave, Alameda CA, 4 bd | 3 ba | 1,565 sqft ---
+<https://urldefense.com/v3/__https://click.mail.zillow.com/f/a/TDZalroTWFW-H68blQnuKQ**A/AAAAARA*/V79KJkUAtbxYkrAxfGfBBW8P?target=https*3A*2F*2Fwww.zillow.com*2Fapartments*2Falameda-ca*2Fadmirals-cove*2FCkBZvL*2F*3Frtoken*3D5ef2ccf4*26utm_content*3Dforrentimage-_rid-premium-property___;fn5-fn4lJSUlJSUlJSUlJSUlJSUl!!G92We9drHetJ8EofZw!fpUdskV$ >
+
+--- footer: view-all and unsubscribe (the enrollment id lives here) ---
+<https://urldefense.com/v3/__https://click.mail.zillow.com/f/a/hyL4gv96UvVrsBKwaxMqQA**A/AAAAARA*/h6TE74kJDnR_40RGpFRBmpuC?target=https*3A*2F*2Fwww.zillow.com*2Fhomes*2Ffor_rent*2F*3FsearchQueryState*3D*257B*2522mapBounds*2522*253A*257B*2522west*2522*253A-122.48060671670099*257D*257D*26utm_content*3DviewAll__;fn5-fn4lJSUlJSUlJSUlJSUlJSUl!!G92We9drHetJ8EofZw!fpUdskV$ >
+<https://urldefense.com/v3/__https://click.mail.zillow.com/f/a/LoWUYTJc8hkLJ5g-mRdD2g**A/AAAAARA*/tjQHvPyHUpM665Rr81ZOD_5Z?target=https*3A*2F*2Fwww.zillow.com*2Femail*2Funsubscribe*3FencodedZuid*3DX1-ZUwurdrmyphekp_3mmvm*26encodedEnrollmentId*3DX1-SS5o5te731uya10000000000_5f90w*26subscriptionType*3Dsaved_search*26utm_content*3Dfooterunsub__;fn5-fn4lJSUlJSUlJSUlJSUlJSUl!!G92We9drHetJ8EofZw!fpUdskV$ >

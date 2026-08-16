@@ -66,10 +66,25 @@ days of real traffic.
 
 ## Setup
 
-### 1. Zillow — turn on Instant alerts
+### 1. Zillow — Instant alerts, and widen the saved search
 
 My Zillow → Saved Searches → Edit → frequency **Instant**. Without this there's no
 trigger and nothing else matters.
+
+**Then remove the square-footage cap.** The saved search `SF 750-1k sqft` is set to
+`sqft: 750–1,000`, which silently excludes the best candidates — a 1,100 sqft 2BR at
+$6,000 is exactly what you want and Zillow will never email it. Set the max to **No Max**.
+The pipeline does the sqft filtering itself, and does it better: it treats an unpublished
+square footage as unknown rather than excluding it, which matters because a good share of
+SF landlord listings publish no sqft at all.
+
+Same logic for the `$3,600` minimum rent — there's no reason to exclude a cheap large
+unit. Let Zillow be broad and let the ladder be strict.
+
+Only alerts belonging to this one saved search are processed, matched on the enrollment
+id in `search.saved_search_enrollment_id`. That id comes from `savedSearchEnrollmentId`
+in the search URL and is cross-checked against each email's unsubscribe link, so renaming
+the search in Zillow won't break anything.
 
 ### 2. Gmail app password
 

@@ -3,15 +3,24 @@
 # ladder after a few days of real traffic.
 
 search:
+  # Only process alerts belonging to this saved search. Taken from the
+  # `savedSearchEnrollmentId` in the search URL, and cross-checked against the
+  # `encodedEnrollmentId` in each alert's unsubscribe link. Matching on the id
+  # rather than the search's display name ("SF 750-1k sqft") means renaming the
+  # search in Zillow will not silently break the watcher.
+  saved_search_enrollment_id: X1-SS5o5te731uya10000000000_5f90w
+
   # Hard gates. A listing failing any of these is dropped before it costs
   # anything — no Apify fetch, no Claude call.
   max_rent: 6500
   allowed_beds: [1, 2]
   min_sqft_floor: 850 # absolute floor; below this nothing is ever notified
 
-  # Optional geo filter. Paste the `searchQueryState` polygon from your saved
-  # search URL here, or leave null to skip the geo check entirely.
-  # Format: list of [lng, lat] pairs.
+  # Optional geo filter, as [lng, lat] pairs. Left null deliberately: the saved
+  # search uses a drawn custom region (customRegionId), whose shape is not
+  # recoverable from the URL — only its bounding box is. Zillow already applies
+  # the real boundary before sending the email, so a second check here would
+  # add nothing but a chance to wrongly exclude something.
   polygon: null
 
 # Den confidence sets the square-footage bar rather than acting as a hard gate:

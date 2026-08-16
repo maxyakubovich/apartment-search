@@ -180,17 +180,21 @@ def _run_actor(
     return data if isinstance(data, list) else []
 
 
-def fetch_details(zpids: list[str], token: str) -> list[Listing]:
-    """Enrich a batch of zpids. Falls back to a second actor before giving up.
+def fetch_details(urls: list[str], token: str) -> list[Listing]:
+    """Enrich a batch of listing URLs. Falls back to a second actor before
+    giving up.
 
-    Failures are raised rather than swallowed so the caller can leave the zpids
-    unrecorded and retry them on the next cycle — dropping a listing silently
-    is the one outcome worth avoiding.
+    Takes URLs rather than zpids because saved-search alerts frequently link to
+    whole-building pages that have no zpid at all. `extractBuildingUnits` fans
+    those out into one item per unit, each with its own real zpid, which is the
+    granularity notifications and dedup should work at.
+
+    Failures are raised rather than swallowed so the caller can leave these
+    unrecorded and retry on the next cycle — dropping a listing silently is the
+    one outcome worth avoiding.
     """
-    if not zpids:
+    if not urls:
         return []
-
-    urls = [f"https://www.zillow.com/homedetails/{z}_zpid/" for z in zpids]
 
     try:
         items = _run_actor(PRIMARY_ACTOR, urls, token)

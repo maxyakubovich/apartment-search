@@ -1,43 +1,47 @@
 """Zillow saved-search alerts, read over IMAP.
 
-This is the trigger for the whole pipeline. Zillow's "Instant" alerts land in
-Max's personal Gmail; we poll for them and pull the listing links out.
+Written against real alert emails rather than assumptions, which corrected two
+things worth recording:
 
-The awkward part is that Zillow wraps every link in click-tracking redirects,
-so the zpid is not in the href. We resolve those by walking the redirect chain
-one hop at a time and stopping the moment a `_zpid` appears — which means we
-learn the listing identity without ever fetching the listing page itself, and
-so never touch Zillow's bot protection here.
+1. The zpid is already present in the click-tracking href, inside its
+   URL-encoded `target=` parameter. No redirect following is needed at all, so
+   discovery makes zero network requests and never touches bot protection.
+
+2. Genuine saved-search results are not always `_zpid` links. Digest emails
+   ("2 Rental Results for ...") frequently link to whole-building pages
+   (`/apartments/san-francisco-ca/argenta/5Xj7m7/`) which carry no zpid — while
+   the `_zpid` links further down sit under "Other rentals you might like" and
+   are paid or recommended placements, often in Oakland or Alameda.
+
+So the discriminator is not the URL shape. It is `utm_content`: real results
+are tagged exactly `forrentimage` / `forrentaddress`, and recommendations carry
+a `-_rid-...` suffix. Emails are additionally scoped to one saved search by the
+enrollment id in their unsubscribe link.
 """
 
 from __future__ import annotations
 
 import email
+import email.utils
 import imaplib
 import re
+import urllib.parse
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from email.message import Message
 
-import requests
-
 IMAP_HOST = "imap.gmail.com"
-# All Mail rather than INBOX so the watcher keeps working if you later add a
-# filter that archives or labels the Zillow alerts.
+# All Mail rather than INBOX so the watcher keeps working if the alerts are
+# filtered, archived, or land under a Gmail category tab.
 MAILBOX = '"[Gmail]/All Mail"'
 
-# Matches the canonical detail URL and the bare id form Zillow uses in some
-# alert templates. Deliberately permissive — a false positive costs one cheap
-# lookup, a false negative costs an apartment.
-ZPID_RE = re.compile(r"(\d{6,12})_zpid", re.I)
-ZILLOW_LINK_RE = re.compile(
-    r"https?://[^\s\"'<>]*?(?:zillow\.com|zillowstatic\.com)[^\s\"'<>]*", re.I
-)
-# Building/complex pages have no zpid; they are identified by a /b/<slug>-<id> path.
-BUILDING_RE = re.compile(r"zillow\.com/b/([a-z0-9\-]+)/?", re.I)
+TARGET_RE = re.compile(r"target=([^\s\"'<>]+)")
+ENROLLMENT_RE = re.compile(r"encodedEnrollmentId=([A-Za-z0-9_\-]+)")
+ZPID_PATH_RE = re.compile(r"/(?:zpid_target/)?(\d{6,12})_zpid\b")
+BUILDING_PATH_RE = re.compile(r"/apartments/[^/]+/[^/]+/([A-Za-z0-9]+)/?")
 
-MAX_REDIRECT_HOPS = 8
-REQUEST_TIMEOUT = 15
+# Exactly these — anything with a `-_rid-` suffix is a recommendation or ad.
+RESULT_UTM_CONTENT = {"forrentimage", "forrentaddress"}
 
 
 @dataclass
@@ -45,11 +49,25 @@ class AlertEmail:
     message_id: str
     subject: str
     received: datetime
-    html: str
+    body: str
+
+
+@dataclass
+class SourceLink:
+    """A listing target pulled out of an alert email."""
+
+    url: str
+    # "home" for a single unit (has a zpid), "building" for a complex page that
+    # fans out into many units when enriched.
+    kind: str
+    ident: str
+
+    @property
+    def is_building(self) -> bool:
+        return self.kind == "building"
 
 
 def _decode_body(msg: Message) -> str:
-    """Prefer the HTML part; fall back to plain text."""
     html, text = "", ""
     if msg.is_multipart():
         for part in msg.walk():
@@ -67,17 +85,29 @@ def _decode_body(msg: Message) -> str:
     else:
         payload = msg.get_payload(decode=True)
         if payload:
-            charset = msg.get_content_charset() or "utf-8"
-            html = payload.decode(charset, errors="replace")
+            html = payload.decode(msg.get_content_charset() or "utf-8", errors="replace")
+    # Both forms carry the same tracking links; HTML is preferred only because
+    # plain-text alternatives are sometimes truncated.
     return html or text
+
+
+def _parse_date(raw: str | None) -> datetime | None:
+    if not raw:
+        return None
+    try:
+        dt = email.utils.parsedate_to_datetime(raw)
+    except (TypeError, ValueError):
+        return None
+    if dt is None:
+        return None
+    return dt.astimezone(timezone.utc) if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
 
 
 def fetch_alert_emails(
     address: str, app_password: str, lookback_hours: int = 48, limit: int = 50
 ) -> list[AlertEmail]:
-    """Pull recent Zillow alert emails, newest last."""
     since = datetime.now(timezone.utc) - timedelta(hours=lookback_hours)
-    # IMAP SINCE has day granularity only; we re-filter by real timestamp below.
+    # IMAP SINCE is day-granular; the real cutoff is applied below.
     since_token = (since - timedelta(days=1)).strftime("%d-%b-%Y")
 
     out: list[AlertEmail] = []
@@ -89,23 +119,20 @@ def fetch_alert_emails(
         if status != "OK" or not data or not data[0]:
             return []
 
-        ids = data[0].split()[-limit:]
-        for msg_id in ids:
+        for msg_id in data[0].split()[-limit:]:
             status, raw = conn.fetch(msg_id, "(RFC822)")
             if status != "OK" or not raw or not raw[0]:
                 continue
             msg = email.message_from_bytes(raw[0][1])
-
             received = _parse_date(msg.get("Date"))
             if received and received < since:
                 continue
-
             out.append(
                 AlertEmail(
                     message_id=msg.get("Message-ID", msg_id.decode()),
                     subject=msg.get("Subject", ""),
                     received=received or datetime.now(timezone.utc),
-                    html=_decode_body(msg),
+                    body=_decode_body(msg),
                 )
             )
     finally:
@@ -116,78 +143,77 @@ def fetch_alert_emails(
     return out
 
 
-def _parse_date(raw: str | None) -> datetime | None:
-    if not raw:
-        return None
-    try:
-        dt = email.utils.parsedate_to_datetime(raw)
-    except (TypeError, ValueError):
-        return None
-    return dt.astimezone(timezone.utc) if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+def _decode_target(raw: str) -> str:
+    """Unwrap a click-tracker `target=` value into the real Zillow URL.
 
-
-def extract_candidate_links(html: str) -> list[str]:
-    """Every Zillow-ish URL in the email, deduped, image assets removed."""
-    seen: set[str] = set()
-    out: list[str] = []
-    for url in ZILLOW_LINK_RE.findall(html):
-        url = url.rstrip(").,;'\"")
-        if "zillowstatic.com" in url.lower():
-            continue  # image CDN, never a listing
-        if url in seen:
-            continue
-        seen.add(url)
-        out.append(url)
-    return out
-
-
-def resolve_zpid(url: str, session: requests.Session | None = None) -> str | None:
-    """Walk the click-tracking chain until a zpid appears.
-
-    Redirects are followed manually so we can stop the instant the identity is
-    known. Following automatically would fetch the final Zillow page body and
-    run straight into bot protection for no benefit.
+    Handles Proofpoint/urldefense rewriting (which substitutes `*` for `%`)
+    so that forwarded copies parse identically to the originals.
     """
-    match = ZPID_RE.search(url)
-    if match:
-        return match.group(1)
+    value = raw.split("__;")[0]
+    if "*" in value:
+        value = value.replace("*", "%")
+    return urllib.parse.unquote(value)
 
-    session = session or requests.Session()
-    current = url
-    for _ in range(MAX_REDIRECT_HOPS):
-        try:
-            resp = session.get(
-                current,
-                allow_redirects=False,
-                timeout=REQUEST_TIMEOUT,
-                headers={"User-Agent": "Mozilla/5.0 (compatible; apartment-watcher/1.0)"},
-            )
-        except requests.RequestException:
-            return None
 
-        location = resp.headers.get("Location")
-        if not location:
-            return None
+def _utm_content(url: str) -> str:
+    query = urllib.parse.urlparse(url).query
+    values = urllib.parse.parse_qs(query).get("utm_content", [])
+    return values[0] if values else ""
 
-        match = ZPID_RE.search(location)
+
+def enrollment_id(body: str) -> str | None:
+    """The saved search this email belongs to, from its unsubscribe link.
+
+    Scoping by enrollment id rather than by the search's display name means
+    renaming the search in Zillow does not silently break the watcher.
+    """
+    for raw in TARGET_RE.findall(body):
+        match = ENROLLMENT_RE.search(_decode_target(raw))
         if match:
             return match.group(1)
-
-        current = requests.compat.urljoin(current, location)
-
     return None
 
 
-def canonical_url(zpid: str) -> str:
-    return f"https://www.zillow.com/homedetails/{zpid}_zpid/"
+def extract_source_links(body: str) -> list[SourceLink]:
+    """Genuine saved-search results only, in order, deduplicated."""
+    seen: set[str] = set()
+    out: list[SourceLink] = []
+
+    for raw in TARGET_RE.findall(body):
+        url = _decode_target(raw)
+        if "zillow.com" not in url:
+            continue
+        if _utm_content(url) not in RESULT_UTM_CONTENT:
+            continue  # recommendation, ad, or chrome (logo, footer, view-all)
+
+        zpid = ZPID_PATH_RE.search(url)
+        if zpid:
+            ident, kind = zpid.group(1), "home"
+            canonical = f"https://www.zillow.com/homedetails/{ident}_zpid/"
+        else:
+            building = BUILDING_PATH_RE.search(url)
+            if not building:
+                continue
+            ident, kind = building.group(1), "building"
+            # Strip tracking params; the bare path is the stable building page.
+            canonical = urllib.parse.urljoin(url, urllib.parse.urlparse(url).path)
+
+        if ident in seen:
+            continue
+        seen.add(ident)
+        out.append(SourceLink(url=canonical, kind=kind, ident=ident))
+
+    return out
 
 
-def listing_ids_from_email(alert: AlertEmail) -> list[str]:
-    """zpids referenced by a single alert email, in order of appearance."""
-    session = requests.Session()
-    found: list[str] = []
-    for link in extract_candidate_links(alert.html):
-        zpid = resolve_zpid(link, session)
-        if zpid and zpid not in found:
-            found.append(zpid)
-    return found
+def source_links_from_email(
+    alert: AlertEmail, expected_enrollment: str | None = None
+) -> list[SourceLink]:
+    """Results from one alert, dropped entirely if it is a different search."""
+    if expected_enrollment:
+        found = enrollment_id(alert.body)
+        # An email with no enrollment id at all is not a saved-search alert
+        # (price drops, marketing) and is skipped rather than guessed at.
+        if found != expected_enrollment:
+            return []
+    return extract_source_links(alert.body)

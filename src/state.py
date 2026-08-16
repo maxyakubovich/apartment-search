@@ -14,7 +14,7 @@ from __future__ import annotations
 
 import json
 import subprocess
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -22,6 +22,10 @@ STATE_PATH = Path(__file__).parent.parent / "state" / "seen.json"
 
 # Re-notify when a listing we already sent drops by at least this fraction.
 PRICE_DROP_THRESHOLD = 0.05
+
+# Buildings keep listing new units, so their pages are refetched periodically
+# rather than being marked done forever after the first scrape.
+BUILDING_RESCRAPE_INTERVAL = timedelta(hours=12)
 
 
 class State:
@@ -76,6 +80,32 @@ class State:
             "den_conf": den_conf,
             "seen_at": datetime.now(timezone.utc).isoformat(),
         }
+        self._dirty = True
+
+    @property
+    def sources(self) -> dict[str, Any]:
+        return self._data.setdefault("sources", {})
+
+    def should_scrape_source(self, ident: str, is_building: bool) -> bool:
+        """Whether a link from an alert email is worth an Apify call.
+
+        A single-unit page is immutable once scraped, so it is fetched once.
+        A building page is not: new units are listed in the same complex over
+        time, so it is refetched on a cooldown instead of being retired.
+        """
+        last = self.sources.get(ident)
+        if last is None:
+            return True
+        if not is_building:
+            return False
+        try:
+            when = datetime.fromisoformat(last)
+        except (TypeError, ValueError):
+            return True
+        return datetime.now(timezone.utc) - when >= BUILDING_RESCRAPE_INTERVAL
+
+    def note_source_scraped(self, ident: str) -> None:
+        self.sources[ident] = datetime.now(timezone.utc).isoformat()
         self._dirty = True
 
     def refresh_price(self, zpid: str, price: int | None) -> None:

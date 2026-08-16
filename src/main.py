@@ -24,7 +24,7 @@ from . import den as den_module
 from . import enrich, notify
 from .config import load_config, load_dotenv, optional, require
 from .filters import evaluate, hard_filter
-from .sources.email_imap import fetch_alert_emails, listing_ids_from_email
+from .sources.email_imap import SourceLink, fetch_alert_emails, source_links_from_email
 from .state import State
 
 PARSER_WARNING_KEY = "last_parser_warning"
@@ -80,48 +80,63 @@ def cycle(
     if backfill:
         lookback = max(lookback, 24 * 30)
 
+    saved_search = config["search"].get("saved_search_enrollment_id")
+
     alerts = fetch_alert_emails(gmail, gmail_pw, lookback_hours=lookback, limit=limit)
     if not alerts:
         _log("no Zillow alerts in window")
         return 0
 
-    zpids: list[str] = []
-    price_change_zpids: set[str] = set()
+    links: list[SourceLink] = []
+    price_change_idents: set[str] = set()
     for alert in alerts:
-        ids = listing_ids_from_email(alert)
-        for z in ids:
-            if z not in zpids:
-                zpids.append(z)
-        # Price-change alerts are the one case worth re-examining a listing we
-        # have already seen and dismissed or already sent.
+        found = source_links_from_email(alert, saved_search)
+        known = {link.ident for link in links}
+        links.extend(link for link in found if link.ident not in known)
+        # Price-change alerts are the one case worth re-examining something we
+        # have already scraped and either sent or dismissed.
         if "price" in alert.subject.lower():
-            price_change_zpids.update(ids)
+            price_change_idents.update(link.ident for link in found)
 
-    _log(f"{len(alerts)} alert email(s), {len(zpids)} distinct listing(s)")
+    _log(f"{len(alerts)} alert email(s), {len(links)} result link(s) for this search")
 
-    if not zpids:
+    if not links:
         _warn_parser_stalled(state, tg_token, tg_chat, dry_run)
         return 0
 
     state.note_alert_seen()
 
     if backfill:
-        targets = zpids
+        targets = links
     else:
-        targets = [z for z in zpids if state.is_new(z) or z in price_change_zpids]
+        targets = [
+            link
+            for link in links
+            if link.ident in price_change_idents
+            or state.should_scrape_source(link.ident, link.is_building)
+        ]
 
     if not targets:
         _log("nothing new")
         return 0
 
-    _log(f"enriching {len(targets)} listing(s)")
+    buildings = sum(1 for link in targets if link.is_building)
+    _log(f"enriching {len(targets)} link(s) ({buildings} building page(s))")
     try:
-        listings = enrich.fetch_details(targets, require("APIFY_TOKEN"))
+        listings = enrich.fetch_details(
+            [link.url for link in targets], require("APIFY_TOKEN")
+        )
     except enrich.EnrichmentError as exc:
-        # Leave these zpids unrecorded so the next cycle retries them rather
-        # than treating a transient scraper failure as "already handled".
+        # Leave these unrecorded so the next cycle retries, rather than
+        # treating a transient scraper failure as "already handled".
         _log(f"enrichment failed, will retry next cycle: {exc}")
         return 0
+
+    if not backfill:
+        for link in targets:
+            state.note_source_scraped(link.ident)
+
+    _log(f"  -> {len(listings)} unit(s) returned")
 
     client = _anthropic_client()
     notified = 0

@@ -8,7 +8,7 @@ verifiable without spending API calls.
 
 from __future__ import annotations
 
-import json
+import urllib.parse
 from pathlib import Path
 
 import pytest
@@ -18,7 +18,12 @@ from src import enrich, notify
 from src.config import load_config
 from src.filters import evaluate
 from src.models import DenVerdict, Listing
-from src.sources.email_imap import extract_candidate_links, resolve_zpid
+from src.sources.email_imap import (
+    AlertEmail,
+    enrollment_id,
+    extract_source_links,
+    source_links_from_email,
+)
 from src.state import State
 
 
@@ -111,58 +116,126 @@ def test_photo_split_pulls_out_floorplans():
 # --- email link extraction ------------------------------------------------
 
 
-def test_extract_links_skips_image_cdn():
-    html = """
-      <a href="https://click.e.zillow.com/f/a/abc123">See home</a>
-      <img src="https://photos.zillowstatic.com/fp/xyz.jpg">
-      <a href="https://www.zillow.com/homedetails/1-Main-St/2077304_zpid/">Direct</a>
-    """
-    links = extract_candidate_links(html)
-    assert any("click.e.zillow.com" in link for link in links)
-    assert any("2077304_zpid" in link for link in links)
-    assert not any("zillowstatic" in link for link in links)
+ENROLLMENT = "X1-SS5o5te731uya10000000000_5f90w"
+FIXTURES = Path(__file__).parent / "fixtures"
 
 
-def test_resolve_zpid_reads_direct_url_without_network():
-    url = "https://www.zillow.com/homedetails/123-Fell-St/2077304_zpid/"
-    assert resolve_zpid(url) == "2077304"
-
-
-class RecordingSession:
-    """Stands in for requests.Session, returning canned redirect hops."""
-
-    def __init__(self, *locations):
-        self.locations = list(locations)
-        self.requested = []
-
-    def get(self, url, **kwargs):
-        self.requested.append(url)
-        location = self.locations.pop(0) if self.locations else None
-        return type("R", (), {"headers": {"Location": location} if location else {}})()
-
-
-def test_resolve_zpid_ignores_short_numbers():
-    # A 3-digit id is not a zpid, so this must fall through to the redirect
-    # walk rather than matching. The fake session keeps the test offline.
-    session = RecordingSession()
-    assert resolve_zpid("https://www.zillow.com/x/123_zpid/", session) is None
-    assert session.requested == ["https://www.zillow.com/x/123_zpid/"]
-
-
-def test_resolve_zpid_walks_tracking_redirects():
-    session = RecordingSession(
-        "https://www.zillow.com/r/hop2",
-        "https://www.zillow.com/homedetails/123-Fell-St/2077304_zpid/",
+def _link(target: str) -> str:
+    """A click-tracker href wrapping an encoded target, as Zillow sends them."""
+    return (
+        '<a href="https://click.mail.zillow.com/f/a/abc**A/AAA*/xyz'
+        f'?target={urllib.parse.quote(target, safe="")}">x</a>'
     )
-    assert resolve_zpid("https://click.e.zillow.com/f/a/abc", session) == "2077304"
-    # Stops the moment the identity is known — never fetches the Zillow page
-    # body, so it never touches bot protection.
-    assert len(session.requested) == 2
 
 
-def test_resolve_zpid_gives_up_on_endless_redirects():
-    session = RecordingSession(*["https://example.com/loop"] * 50)
-    assert resolve_zpid("https://click.e.zillow.com/f/a/abc", session) is None
+def test_extracts_zpid_result_from_tracking_link():
+    # The zpid is already in the href — no redirect following, no network call.
+    target = (
+        "https://www.zillow.com/routing/email/property-notifications/zpid_target/"
+        f"15147609_zpid/{ENROLLMENT}_sse/?z&rtoken=abc&utm_content=forrentimage"
+    )
+    links = extract_source_links(_link(target))
+    assert len(links) == 1
+    assert links[0].ident == "15147609"
+    assert links[0].kind == "home"
+    assert links[0].url == "https://www.zillow.com/homedetails/15147609_zpid/"
+
+
+def test_extracts_building_page_result():
+    # Digest emails link genuine results to building pages that have no zpid.
+    target = (
+        "https://www.zillow.com/apartments/san-francisco-ca/argenta/5Xj7m7/"
+        "?rtoken=abc&utm_content=forrentaddress"
+    )
+    links = extract_source_links(_link(target))
+    assert len(links) == 1
+    assert links[0].ident == "5Xj7m7" and links[0].is_building
+    assert (
+        links[0].url
+        == "https://www.zillow.com/apartments/san-francisco-ca/argenta/5Xj7m7/"
+    )
+
+
+def test_rejects_recommendations_and_ads():
+    # These sit under "Other rentals you might like" and are often not even in
+    # San Francisco. utm_content is the only thing separating them from results.
+    recommendation = (
+        "https://www.zillow.com/routing/email/property-notifications/zpid_target/"
+        f"2097096984_zpid/{ENROLLMENT}_sse/?utm_content=forrentimage-_rid-QaYAp59_"
+    )
+    ad = (
+        "https://www.zillow.com/apartments/alameda-ca/admirals-cove/CkBZvL/"
+        "?utm_content=forrentimage-_rid-premium-property_"
+    )
+    assert extract_source_links(_link(recommendation) + _link(ad)) == []
+
+
+def test_ignores_chrome_links():
+    body = (
+        _link("https://www.zillow.com/?utm_content=headerzillowlogo")
+        + _link(
+            "https://www.zillow.com/routing/email/property-notifications/"
+            f"view-all_target/{ENROLLMENT}_sse/?utm_content=viewAll"
+        )
+        + _link("https://www.zillow.com/learn/rental-pricing-transparency?utm_content=x")
+    )
+    assert extract_source_links(body) == []
+
+
+def test_deduplicates_image_and_address_links():
+    # Every result appears twice: once on the photo, once on the address.
+    base = (
+        "https://www.zillow.com/routing/email/property-notifications/zpid_target/"
+        f"15147609_zpid/{ENROLLMENT}_sse/?utm_content="
+    )
+    body = _link(base + "forrentimage") + _link(base + "forrentaddress")
+    assert len(extract_source_links(body)) == 1
+
+
+def test_reads_enrollment_id_from_unsubscribe_link():
+    target = (
+        "https://www.zillow.com/email/unsubscribe?encodedZuid=X1-ZUwurd"
+        f"&encodedEnrollmentId={ENROLLMENT}&subscriptionType=saved_search"
+    )
+    assert enrollment_id(_link(target)) == ENROLLMENT
+
+
+def test_email_from_a_different_saved_search_is_skipped():
+    body = _link(
+        "https://www.zillow.com/email/unsubscribe?encodedEnrollmentId=X1-SS-OTHER"
+    ) + _link(
+        "https://www.zillow.com/routing/email/property-notifications/zpid_target/"
+        "15147609_zpid/X1-SS-OTHER_sse/?utm_content=forrentimage"
+    )
+    alert = AlertEmail("m", "2 Rental Results for 'Other Search'", None, body)
+    assert source_links_from_email(alert, ENROLLMENT) == []
+    # With no id configured, nothing is filtered out.
+    assert len(source_links_from_email(alert, None)) == 1
+
+
+def test_urldefense_rewritten_links_still_parse():
+    # Forwarded copies get rewritten by Proofpoint, which swaps % for *.
+    body = (
+        "<https://urldefense.com/v3/__https://click.mail.zillow.com/f/a/abc**A/AAA*/xyz"
+        "?target=https*3A*2F*2Fwww.zillow.com*2Frouting*2Femail"
+        f"*2Fproperty-notifications*2Fzpid_target*2F15147609_zpid*2F{ENROLLMENT}_sse"
+        "*2F*3Fz*26utm_content*3Dforrentimage__;fn5-fn4lJSUl!!G92We9d!abc$ >"
+    )
+    links = extract_source_links(body)
+    assert len(links) == 1 and links[0].ident == "15147609"
+
+
+@pytest.mark.skipif(
+    not (FIXTURES / "instant_single.txt").exists(), reason="fixture not captured"
+)
+def test_against_real_captured_alert():
+    """The regression guard: a real alert, with its real recommendation noise."""
+    body = (FIXTURES / "instant_single.txt").read_text()
+    alert = AlertEmail("m", "81 Lansing St just listed in 'SF 750-1k sqft'", None, body)
+    idents = {link.ident for link in source_links_from_email(alert, ENROLLMENT)}
+    assert idents == {"15147609"}  # only the real result
+    assert "2096009960" not in idents  # 1300 Lawton — a recommendation
+    assert "CkBZvL" not in idents  # Alameda — a paid placement
 
 
 # --- den escalation -------------------------------------------------------
