@@ -138,8 +138,12 @@ cp .env.example .env    # fill it in; .env is gitignored
 ```
 
 ```bash
-./.venv/bin/python -m src.main --test-telegram
+./.venv/bin/python scripts/preflight.py
 ```
+
+Checks Gmail, Apify, Anthropic and Telegram independently and reports which work. A
+failure in any one of them otherwise surfaces as the same unhelpful stack trace partway
+through a cycle.
 
 ```bash
 ./.venv/bin/python -m src.main --backfill 20
