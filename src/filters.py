@@ -106,6 +106,11 @@ def evaluate(
             continue
         if "min_sqft" in cond and sqft < cond["min_sqft"]:
             continue
+        # The weakest rung assumes floor area implies a corner that can be
+        # walled off. That assumption fails outright in a loft, so it is
+        # withdrawn when the layout is affirmatively open-plan.
+        if cond.get("not_open_plan") and verdict.is_open_plan is True:
+            continue
 
         return Decision(
             listing=listing, verdict=verdict, notify=True, reason=rung["name"]

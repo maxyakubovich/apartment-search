@@ -8,8 +8,13 @@ desk nook off the living room fails that test no matter what the listing calls
 it, and a windowless walk-through "office" fails it too.
 
 Two stages, to keep image cost off the common path. Stage 1 reads the listing
-text. If that lands confidently at either end we stop. Only genuinely ambiguous
-listings pay for the vision pass over floor plans and photos.
+text. Stage 2 looks at images.
+
+Whenever a floor plan exists, stage 2 always runs. A low text score nearly
+always means the description never mentioned the layout — absence of evidence,
+not evidence of absence — and the plan settles it outright. Real listings have
+gone from 0.10 on text to 0.75 once the plan was read. The confidence band only
+governs the weaker case where all we have is interior photos.
 """
 
 from __future__ import annotations
@@ -34,10 +39,10 @@ REPORT_TOOL = {
             "den_conf": {
                 "type": "number",
                 "description": (
-                    "0.0-1.0 confidence that this unit has a room, beyond the "
-                    "primary bedroom, that can be fully closed off with a door "
-                    "and used for private video therapy sessions. 0.0 means "
-                    "certainly not, 1.0 means clearly documented."
+                    "0.0-1.0 confidence that at least one room other than "
+                    "the primary bedroom closes with a real door and is not a "
+                    "pass-through. A second bedroom counts and should score "
+                    "high. 0.0 means certainly not, 1.0 means clearly shown."
                 ),
             },
             "has_door": {
@@ -58,6 +63,15 @@ REPORT_TOOL = {
                     "detail behind the score. Quote the listing where possible."
                 ),
             },
+            "is_open_plan": {
+                "type": ["boolean", "null"],
+                "description": (
+                    "True if the unit is affirmatively open-plan or loft-style "
+                    "with no separable space at all. Only set true when the "
+                    "listing or floor plan positively shows this, not merely "
+                    "when the layout is unstated."
+                ),
+            },
             "concerns": {
                 "type": "string",
                 "description": (
@@ -67,7 +81,14 @@ REPORT_TOOL = {
                 ),
             },
         },
-        "required": ["den_conf", "has_door", "is_passthrough", "evidence", "concerns"],
+        "required": [
+                "den_conf",
+                "has_door",
+                "is_passthrough",
+                "is_open_plan",
+                "evidence",
+                "concerns",
+            ],
     },
 }
 
@@ -76,22 +97,29 @@ You assess rental listings for one specific requirement.
 
 The tenant is a therapist who runs virtual sessions with children and \
 adolescents from home. She needs a workspace that is private in a clinical \
-sense, because client confidentiality depends on it:
+sense, because client confidentiality depends on it.
 
-- It closes with a real door. Curtains, open archways, half-walls, and \
-"nooks" do not count.
-- Nobody has to walk through it to reach a bedroom, bathroom, or kitchen \
-during a session.
-- It is a distinct space, not a corner of the living room or bedroom.
-- It is separate from the primary bedroom, which is used for sleeping.
+Score exactly one question: **is there at least one room, other than the \
+primary bedroom, that closes with a real door and is not a pass-through?**
 
-A second bedroom satisfies this, as long as it is not a walk-through.
+- A second bedroom counts. It does not matter that it is labelled "bedroom" \
+rather than "den" — a door and four walls is what the requirement is about. \
+A two-bedroom unit whose bedrooms both open off the living room should score \
+high, not low.
+- A den, office, study, or unlabelled room with a door counts.
+- Curtains, open archways, half-walls, "nooks", dressing areas and lofts \
+open to below do NOT count.
+- The room must not be the only route to a bedroom, bathroom, or kitchen.
+- The primary bedroom itself never counts; it is used for sleeping.
 
-Score conservatively but do not require the listing to use the word "den". \
-Infer from floor plans and photos when the text is silent: an unlabeled room \
-with a door on a floor plan is strong evidence. A large square-footage number \
-alone is weak evidence and should not push confidence above 0.4 on its own, \
-because open-plan lofts are large and have no private rooms at all.
+Do not deduct for the absence of the word "den". Do not look for a *third* \
+room in a two-bedroom unit — the second bedroom is the answer.
+
+Infer from floor plans and photos when the text is silent: an unlabelled \
+room with a door on a floor plan is strong evidence, and a listing that simply \
+never describes its layout is unknown rather than negative. A large square \
+footage alone is weak evidence and should not push confidence above 0.4 on its \
+own, because open-plan lofts are large and have no private rooms at all.
 
 Report through the report_den tool."""
 
@@ -165,6 +193,7 @@ def _call(client, model: str, content: Any) -> DenVerdict | None:
                 den_conf=max(0.0, min(1.0, float(data.get("den_conf", 0.0)))),
                 has_door=data.get("has_door"),
                 is_passthrough=data.get("is_passthrough"),
+                is_open_plan=data.get("is_open_plan"),
                 evidence=str(data.get("evidence", "")).strip(),
                 concerns=str(data.get("concerns", "")).strip(),
             )
@@ -211,7 +240,17 @@ def analyze(listing: Listing, config: dict[str, Any], client) -> DenVerdict:
     if text_verdict.stage == "skipped":
         return text_verdict
 
-    decisive = text_verdict.den_conf < band_low or text_verdict.den_conf > band_high
+    # A floor plan settles the question outright, and a low text score usually
+    # means the description simply never mentioned the layout — absence of
+    # evidence, not evidence of absence. Listings have been seen to go from
+    # 0.10 on text to 0.75 once the plan was read, so whenever a plan exists it
+    # is always worth looking at. The band only governs the weaker case where
+    # all we have is interior photos.
+    if listing.floorplans:
+        decisive = False
+    else:
+        decisive = text_verdict.den_conf < band_low or text_verdict.den_conf > band_high
+
     images_available = bool(listing.floorplans or listing.photos)
     if decisive or not images_available:
         return text_verdict

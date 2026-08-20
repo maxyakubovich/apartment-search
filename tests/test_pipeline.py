@@ -610,3 +610,58 @@ def test_building_without_floor_plans_yields_nothing():
     from src.enrich import expand_building
 
     assert expand_building({"lotId": "x", "floorPlans": []}) == []
+
+
+# --- escalation and open-plan gating --------------------------------------
+
+
+def test_floorplan_always_escalates_even_on_a_low_text_score(config, monkeypatch):
+    """Regression: real listings scored 0.10 on text and 0.75 once the floor
+    plan was read. A low text score usually means the description never
+    mentioned the layout, so a plan must never be left unexamined."""
+    monkeypatch.setattr(
+        den_module, "_fetch_image", lambda url: {"type": "image", "source": {}}
+    )
+    client = FakeClient(payload(0.05), payload(0.75))
+    verdict = den_module.analyze(listing_with_images(), config, client)
+    assert verdict.den_conf == 0.75 and verdict.stage == "vision"
+    assert len(client.calls) == 2
+
+
+def test_photos_only_still_respects_the_band(config, monkeypatch):
+    monkeypatch.setattr(den_module, "_fetch_image", lambda url: {"type": "image"})
+    listing = listing_with_images(floorplans=[], photos=["https://cdn/a.jpg"])
+    client = FakeClient(payload(0.05))
+    verdict = den_module.analyze(listing, config, client)
+    assert verdict.stage == "text" and len(client.calls) == 1
+
+
+def test_open_plan_loft_is_withheld_from_the_weakest_rung(config):
+    """A 1,021 sqft unit the model calls affirmatively open-plan buys no
+    privacy, so floor area alone must not push it through."""
+    big = Listing(zpid="1", url="u", price=5587, beds=1, sqft=1021)
+    open_plan = DenVerdict(0.05, False, None, "open layout", is_open_plan=True)
+    assert not evaluate(big, open_plan, config).notify
+
+    # Same size, layout merely unstated -> still notified.
+    unknown = DenVerdict(0.05, None, None, "no layout given", is_open_plan=None)
+    decision = evaluate(big, unknown, config)
+    assert decision.notify and decision.reason == "room_to_sequester"
+
+
+def test_open_plan_does_not_block_a_confirmed_den(config):
+    # Only the weakest rung is gated; a real door still wins.
+    verdict = DenVerdict(0.8, True, False, "separate den", is_open_plan=True)
+    listing = Listing(zpid="1", url="u", price=5000, beds=1, sqft=900)
+    assert evaluate(listing, verdict, config).notify
+
+
+def test_two_bedroom_message_hides_the_den_score(config):
+    """The second bedroom IS the private room, so a low den score measures
+    something irrelevant and would make a good flat look weak."""
+    listing = Listing(zpid="1", url="u", address="X", price=6000, beds=2, sqft=950)
+    verdict = DenVerdict(0.05, True, False, "two bedrooms off the living room")
+    msg = notify.format_message(evaluate(listing, verdict, config))
+    assert "second bedroom works as the office" in msg
+    assert "confidence" not in msg
+    assert "🟢" in msg

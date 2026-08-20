@@ -45,8 +45,9 @@ ladder:
   - name: plausible_den
     when: { min_den_conf: 0.3, min_sqft: 900 }
   - name: room_to_sequester
-    # No den signal, but large enough to wall off a desk.
-    when: { min_den_conf: 0.0, min_sqft: 1000 }
+    # No den signal, but large enough to wall off a desk. Withdrawn when the
+    # unit is affirmatively open-plan, where floor area buys no privacy.
+    when: { min_den_conf: 0.0, min_sqft: 1000, not_open_plan: true }
 
 # Square footage is frequently absent on SF landlord-posted rentals. Treat it as
 # unknown rather than zero: only notify on a confident den, and tag the message.
@@ -72,8 +73,9 @@ den:
     - sunroom
     - bonus space
     - extra room
-  # If stage 1 lands inside this band the answer is ambiguous and we escalate to
-  # the vision pass. Outside the band we trust the text and skip image cost.
+  # Only consulted when no floor plan is available. If a plan exists the vision
+  # pass always runs, because a low text score usually means the description
+  # never described the layout rather than that there is no room.
   escalate_band: [0.15, 0.85]
   max_photos: 6
 

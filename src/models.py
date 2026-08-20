@@ -44,6 +44,9 @@ class DenVerdict:
     has_door: bool | None
     is_passthrough: bool | None
     evidence: str
+    # True only when the unit is affirmatively open-plan with no
+    # separable space — gates the weakest ladder rung.
+    is_open_plan: bool | None = None
     concerns: str = ""
     # "text" when stage 1 was decisive, "vision" when we escalated to images.
     stage: str = "text"
@@ -60,6 +63,7 @@ class DenVerdict:
             has_door=None,
             is_passthrough=None,
             evidence="",
+            is_open_plan=None,
             concerns=reason,
             stage="skipped",
         )

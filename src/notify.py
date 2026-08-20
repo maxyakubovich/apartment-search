@@ -52,13 +52,25 @@ def format_message(decision: Decision) -> str:
     verdict = decision.verdict
 
     label = RUNG_LABELS.get(decision.reason, decision.reason)
-    icon = "🟢" if verdict.den_conf >= 0.6 else "🟡" if verdict.den_conf >= 0.3 else "⚪"
+
+    # On the 2BR rung the second bedroom is itself the private room, so the
+    # den score is measuring something you do not care about. Printing it
+    # would make a perfectly good flat look like a weak match.
+    show_conf = decision.reason != "two_bedroom"
+    if decision.reason == "two_bedroom":
+        icon = "🟢"
+    else:
+        icon = "🟢" if verdict.den_conf >= 0.6 else "🟡" if verdict.den_conf >= 0.3 else "⚪"
+
+    headline = f"{icon} <b>{_esc(label)}</b>"
+    if show_conf:
+        headline += f" (confidence {verdict.den_conf:.2f})"
 
     lines = [
         f"🏠 <b>{_esc(listing.address or 'Address not listed')}</b>",
         _esc(_headline(decision)),
         "",
-        f"{icon} <b>{_esc(label)}</b> (confidence {verdict.den_conf:.2f})",
+        headline,
     ]
 
     if verdict.evidence:
