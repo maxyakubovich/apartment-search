@@ -810,3 +810,17 @@ def test_legacy_bare_timestamp_sources_still_parse(tmp_path):
     path.write_text(json.dumps({"listings": {}, "sources": {"X": "2026-08-20T00:00:00+00:00"}}))
     state = State(path)
     assert state.should_scrape_source("X", is_building=False, ladder_version=2)
+
+
+def test_null_ladder_version_does_not_crash_the_loop(tmp_path):
+    """A record with an explicit null would raise TypeError on int(None) and
+    take down the whole watch loop. Null and absent must behave identically."""
+    import json
+    path = tmp_path / "seen.json"
+    path.write_text(json.dumps({"listings": {
+        "a": {"notified": False, "ladder_version": None},
+        "b": {"notified": False},
+    }}))
+    state = State(path)
+    assert state.is_new("a", ladder_version=2)
+    assert state.is_new("b", ladder_version=2)

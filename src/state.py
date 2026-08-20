@@ -72,7 +72,7 @@ class State:
             return True
         if prior.get("notified"):
             return False
-        return int(prior.get("ladder_version", 0)) < ladder_version
+        return int(prior.get("ladder_version") or 0) < ladder_version
 
     def should_renotify(self, zpid: str, price: int | None) -> bool:
         """True when a previously-notified listing has dropped materially."""
@@ -124,7 +124,7 @@ class State:
             return True
         # Stored as a bare timestamp before versioning existed.
         if isinstance(entry, dict):
-            last, version = entry.get("at"), int(entry.get("ladder_version", 0))
+            last, version = entry.get("at"), int(entry.get("ladder_version") or 0)
         else:
             last, version = entry, 0
         # A newer ladder needs the units re-derived, not just re-judged.
