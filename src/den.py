@@ -63,6 +63,16 @@ REPORT_TOOL = {
                     "detail behind the score. Quote the listing where possible."
                 ),
             },
+            "den_labeled": {
+                "type": ["boolean", "null"],
+                "description": (
+                    "True if a room is explicitly labelled den, office, study, "
+                    "flex, or bonus room on the floor plan or in the listing "
+                    "text — regardless of whether it passes the door and "
+                    "pass-through test. Report the label independently of your "
+                    "judgement about whether it qualifies."
+                ),
+            },
             "is_open_plan": {
                 "type": ["boolean", "null"],
                 "description": (
@@ -85,6 +95,7 @@ REPORT_TOOL = {
                 "den_conf",
                 "has_door",
                 "is_passthrough",
+                "den_labeled",
                 "is_open_plan",
                 "evidence",
                 "concerns",
@@ -114,6 +125,10 @@ open to below do NOT count.
 
 Do not deduct for the absence of the word "den". Do not look for a *third* \
 room in a two-bedroom unit — the second bedroom is the answer.
+
+Report den_labeled independently of den_conf. If a floor plan labels a room \
+"DEN" but it has no door, say den_labeled=true and den_conf low — both facts \
+matter and they are decided separately.
 
 Infer from floor plans and photos when the text is silent: an unlabelled \
 room with a door on a floor plan is strong evidence, and a listing that simply \
@@ -193,6 +208,7 @@ def _call(client, model: str, content: Any) -> DenVerdict | None:
                 den_conf=max(0.0, min(1.0, float(data.get("den_conf", 0.0)))),
                 has_door=data.get("has_door"),
                 is_passthrough=data.get("is_passthrough"),
+                den_labeled=data.get("den_labeled"),
                 is_open_plan=data.get("is_open_plan"),
                 evidence=str(data.get("evidence", "")).strip(),
                 concerns=str(data.get("concerns", "")).strip(),

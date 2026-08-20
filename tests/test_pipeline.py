@@ -16,7 +16,7 @@ import pytest
 from src import den as den_module
 from src import enrich, notify
 from src.config import load_config
-from src.filters import evaluate
+from src.filters import evaluate, hard_filter
 from src.models import DenVerdict, Listing
 from src.sources.email_imap import (
     AlertEmail,
@@ -687,3 +687,36 @@ def test_floor_plans_with_no_availability_are_skipped():
     listings = expand_building(item)
     assert [l.price for l in listings] == [5900, 6100]
     assert all("nothing-free" not in l.zpid for l in listings)
+
+
+def test_labeled_den_surfaces_even_when_it_fails_the_door_test(config):
+    """Real case: an 851 sqft unit at $4,973 whose floor plan showed
+    'DEN 10'6" x 6'6"' scored 0.15 because the front door opened into it, and
+    was dropped. A literally labelled den is worth seeing with the caveat
+    attached rather than suppressed."""
+    listing = Listing(zpid="349565562", url="u", address="X", price=4973,
+                      beds=1, sqft=851)
+    verdict = DenVerdict(
+        0.15, has_door=False, is_passthrough=True,
+        evidence='Floor plan shows "DEN 10\'6\\" x 6\'6\\"" at the entry',
+        den_labeled=True,
+    )
+    decision = evaluate(listing, verdict, config)
+    assert decision.notify and decision.reason == "labeled_den"
+
+    msg = notify.format_message(decision)
+    assert "labels a den" in msg
+    assert "walk-through" in msg  # the caveat is stated, not hidden
+    assert "no door" in msg
+
+
+def test_unlabeled_low_confidence_still_needs_the_space(config):
+    # Without a labelled den the rung must not fire.
+    listing = Listing(zpid="1", url="u", price=5000, beds=1, sqft=880)
+    verdict = DenVerdict(0.15, None, None, "nothing stated", den_labeled=False)
+    assert not evaluate(listing, verdict, config).notify
+
+
+def test_labeled_den_below_the_floor_is_still_dropped(config):
+    listing = Listing(zpid="1", url="u", price=5000, beds=1, sqft=800)
+    assert not hard_filter(listing, config)[0]

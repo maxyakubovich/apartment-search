@@ -44,6 +44,12 @@ ladder:
     when: { min_den_conf: 0.6, min_sqft: 850 }
   - name: plausible_den
     when: { min_den_conf: 0.3, min_sqft: 900 }
+  - name: labeled_den
+    # A floor plan that literally labels a room DEN is worth seeing even when
+    # it fails the door test — an entry den with no door may still be workable
+    # with a curtain or a screen, and that is a judgement call to make by eye
+    # rather than one to suppress. The message says plainly what fell short.
+    when: { den_labeled: true, min_sqft: 850 }
   - name: room_to_sequester
     # No den signal, but large enough to wall off a desk. Withdrawn when the
     # unit is affirmatively open-plan, where floor area buys no privacy.

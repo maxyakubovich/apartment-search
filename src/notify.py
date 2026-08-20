@@ -22,6 +22,7 @@ RUNG_LABELS = {
     "two_bedroom": "2BR — second bedroom works as the office",
     "confident_den": "Den confirmed",
     "plausible_den": "Den likely",
+    "labeled_den": "Listing labels a den — but check the caveat",
     "room_to_sequester": "No den found, but room to wall off a desk",
 }
 

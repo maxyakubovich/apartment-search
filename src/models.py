@@ -44,6 +44,10 @@ class DenVerdict:
     has_door: bool | None
     is_passthrough: bool | None
     evidence: str
+    # A room explicitly labelled den/office/study on the plan or in the
+    # text, whether or not it passes the door test. Tracked separately so
+    # a real den that falls short is surfaced rather than silently dropped.
+    den_labeled: bool | None = None
     # True only when the unit is affirmatively open-plan with no
     # separable space — gates the weakest ladder rung.
     is_open_plan: bool | None = None
@@ -63,6 +67,7 @@ class DenVerdict:
             has_door=None,
             is_passthrough=None,
             evidence="",
+            den_labeled=None,
             is_open_plan=None,
             concerns=reason,
             stage="skipped",
