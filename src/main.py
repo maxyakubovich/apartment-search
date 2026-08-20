@@ -258,9 +258,11 @@ def main(argv: list[str] | None = None) -> int:
 
     while time.monotonic() - started < budget:
         try:
-            cycle(config, state, dry_run=args.dry_run)
+            sent = cycle(config, state, dry_run=args.dry_run)
             if state.save() and not args.dry_run:
-                state.commit()
+                # Anything actually delivered is committed immediately; routine
+                # bookkeeping waits for the interval so pushes stay rare.
+                state.commit(force=sent > 0)
         except Exception as exc:  # noqa: BLE001 - a bad cycle must not end the loop
             _log(f"cycle error: {exc}")
         time.sleep(poll)

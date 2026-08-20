@@ -27,12 +27,19 @@ PRICE_DROP_THRESHOLD = 0.05
 # rather than being marked done forever after the first scrape.
 BUILDING_RESCRAPE_INTERVAL = timedelta(hours=12)
 
+# Committing on every two-minute cycle produced ~700 commits a day and made any
+# human push collide with the bot. State is pushed on this interval instead —
+# except after a notification, which is committed at once so a crashed job can
+# never resend it.
+MIN_COMMIT_INTERVAL = timedelta(minutes=15)
+
 
 class State:
     def __init__(self, path: Path | None = None):
         self.path = path or STATE_PATH
         self._data: dict[str, Any] = self._read()
         self._dirty = False
+        self._last_commit: datetime | None = None
 
     def _read(self) -> dict[str, Any]:
         if not self.path.exists():
@@ -145,8 +152,19 @@ class State:
         self._dirty = False
         return True
 
-    def commit(self) -> None:
-        """Persist state back to the repo. No-op outside a git checkout."""
+    def commit(self, force: bool = False) -> None:
+        """Persist state back to the repo. No-op outside a git checkout.
+
+        `force` bypasses the interval and should be set whenever something was
+        actually notified: losing that record would resend it, which is far
+        worse than an extra commit.
+        """
+        now = datetime.now(timezone.utc)
+        if not force and self._last_commit is not None:
+            if now - self._last_commit < MIN_COMMIT_INTERVAL:
+                return
+        self._last_commit = now
+
         try:
             subprocess.run(
                 ["git", "add", str(self.path)],

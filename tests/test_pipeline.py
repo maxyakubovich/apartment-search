@@ -749,3 +749,25 @@ def test_unknown_layout_still_respects_open_plan_and_floor(config):
     stated_open = DenVerdict(0.05, None, None, "open layout", is_open_plan=True)
     listing = Listing(zpid="1", url="u", price=5587, beds=1, sqft=1021, floorplans=[])
     assert not evaluate(listing, stated_open, config).notify
+
+
+def test_state_commits_are_throttled_except_after_a_send(tmp_path, monkeypatch):
+    """Committing every two-minute cycle produced ~700 commits a day and made
+    every human push collide with the bot. But a send must be committed at once:
+    losing that record would resend the listing."""
+    calls = []
+    monkeypatch.setattr(
+        "src.state.subprocess.run",
+        lambda *a, **k: calls.append(a[0][:2]) or type("R", (), {"returncode": 1})(),
+    )
+    state = State(tmp_path / "seen.json")
+
+    state.commit()
+    assert calls, "first commit should always run"
+
+    calls.clear()
+    state.commit()
+    assert calls == [], "second commit inside the interval must be skipped"
+
+    state.commit(force=True)
+    assert calls, "a send must commit immediately regardless of the interval"
