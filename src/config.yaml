@@ -9,12 +9,16 @@ search:
   # Matching on the id rather than the display name ("SF 750-1k sqft") means
   # renaming a search in Zillow will not silently break the watcher.
   #
-  # Zillow's sqft filter snaps to fixed anchors, so covering a real range means
-  # splitting it across two searches. Both must be listed here or the alerts
-  # from the missing one are dropped without a trace.
+  # Deliberately just the one search. The separate >1,000 sqft alerts are
+  # triaged by hand — those listings are big enough that the den question is
+  # easy to eyeball, whereas 750-1,000 sqft is exactly the band where it takes
+  # real scrutiny. Adding that search's id here would only add noise.
+  #
+  # Alerts from other searches still arrive in the mailbox and are read, then
+  # discarded at this check. That costs nothing: parsing happens before any
+  # Apify or Claude call.
   saved_search_enrollment_ids:
     - X1-SS5o5te731uya10000000000_5f90w # "SF 750-1k sqft"
-    # - X1-SS...                          # the >1,000 sqft search — TODO: add
 
   # Hard gates. A listing failing any of these is dropped before it costs
   # anything — no Apify fetch, no Claude call.

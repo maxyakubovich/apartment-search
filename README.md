@@ -71,16 +71,20 @@ days of real traffic.
 My Zillow → Saved Searches → Edit → frequency **Instant**. Without this there's no
 trigger and nothing else matters.
 
-**List every saved search that feeds this.** Zillow's sqft filter snaps to fixed
-anchors, so covering a real range takes two searches — `SF 750-1k sqft` plus a second one
-for everything above 1,000. Both enrollment ids must appear in
-`search.saved_search_enrollment_ids`, or the alerts from the missing one are dropped
-without a trace and the failure looks exactly like a quiet market.
+**Only `SF 750-1k sqft` is processed**, by design. The separate >1,000 sqft alerts go
+straight to you for manual triage — at that size the den question is easy to eyeball,
+while 750-1,000 sqft is the band that actually needs scrutiny.
 
-Get an id from the `savedSearchEnrollmentId` parameter in that search's URL. It's
-cross-checked against the `encodedEnrollmentId` in each alert's unsubscribe link, so
-matching is on the id rather than the display name — renaming a search won't break
-anything.
+The scope is set by `search.saved_search_enrollment_ids`. Get an id from the
+`savedSearchEnrollmentId` parameter in that search's URL; it's cross-checked against the
+`encodedEnrollmentId` in each alert's unsubscribe link, so matching is on the id rather
+than the display name and renaming a search won't break anything. Alerts from other
+searches are read and discarded before any Apify or Claude call, so they cost nothing.
+
+**Your Gmail habits don't affect it.** The mailbox is opened read-only and the watcher
+never marks, moves, or deletes anything. Deduplication comes from `state/seen.json`, not
+from read/unread flags — so you can read, archive, or delete Zillow mail freely without
+changing what gets pushed to Telegram.
 
 One thing worth knowing: listings with **no published square footage still arrive**
 through Zillow's sqft filter (confirmed in a real alert), so the missing-sqft path is
