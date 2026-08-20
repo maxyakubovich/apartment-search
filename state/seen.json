@@ -1,6 +1,69 @@
 {
-  "last_alert_seen": "2026-08-20T19:39:22.659385+00:00",
+  "last_alert_seen": "2026-08-20T19:41:30.916659+00:00",
   "listings": {
+    "2053889664": {
+      "den_conf": null,
+      "notified": false,
+      "price": 5631,
+      "reason": "790 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:22:40.169971+00:00"
+    },
+    "2055101382": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4716,
+      "reason": "789 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:24:30.207733+00:00"
+    },
+    "2057094827": {
+      "den_conf": null,
+      "notified": false,
+      "price": 5267,
+      "reason": "739 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:22:32.775849+00:00"
+    },
+    "2057579790": {
+      "den_conf": null,
+      "notified": false,
+      "price": 3759,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:24:30.207700+00:00"
+    },
+    "2059252535": {
+      "den_conf": null,
+      "notified": false,
+      "price": 3665,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:24:30.207680+00:00"
+    },
+    "2062149842": {
+      "den_conf": 0.05,
+      "notified": false,
+      "price": 5729,
+      "reason": "996 sqft with den confidence 0.05 clears no ladder rung",
+      "seen_at": "2026-08-20T19:22:40.169915+00:00"
+    },
+    "2063309085": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4701,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:26:17.145333+00:00"
+    },
+    "2063380790": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4479,
+      "reason": "650 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:24:09.142662+00:00"
+    },
+    "2064203180": {
+      "den_conf": null,
+      "notified": false,
+      "price": 6033,
+      "reason": "540 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:23:59.314209+00:00"
+    },
     "2065403033": {
       "den_conf": 0.85,
       "notified": true,
@@ -15,12 +78,47 @@
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:23:23.556613+00:00"
     },
+    "2066486652": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4320,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:22:40.170031+00:00"
+    },
     "2066662138": {
       "den_conf": 0.85,
       "notified": true,
       "price": 6009,
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:25:59.454056+00:00"
+    },
+    "2066681328": {
+      "den_conf": 0.1,
+      "notified": false,
+      "price": 5045,
+      "reason": "963 sqft with den confidence 0.10 clears no ladder rung",
+      "seen_at": "2026-08-20T19:22:53.937260+00:00"
+    },
+    "2066681334": {
+      "den_conf": 0.1,
+      "notified": false,
+      "price": 4870,
+      "reason": "854 sqft with den confidence 0.10 clears no ladder rung",
+      "seen_at": "2026-08-20T19:22:47.572042+00:00"
+    },
+    "2066681346": {
+      "den_conf": 0.05,
+      "notified": false,
+      "price": 4835,
+      "reason": "855 sqft with den confidence 0.05 clears no ladder rung",
+      "seen_at": "2026-08-20T19:22:43.573958+00:00"
+    },
+    "2066681353": {
+      "den_conf": null,
+      "notified": false,
+      "price": 6775,
+      "reason": "price $6,775 over $6,500 cap",
+      "seen_at": "2026-08-20T19:23:50.467158+00:00"
     },
     "2066714894": {
       "den_conf": 0.85,
@@ -29,12 +127,82 @@
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:25:50.674564+00:00"
     },
+    "2067820755": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4437,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:22:32.775797+00:00"
+    },
+    "2077638528": {
+      "den_conf": 0.1,
+      "notified": false,
+      "price": 5200,
+      "reason": "951 sqft with den confidence 0.10 clears no ladder rung",
+      "seen_at": "2026-08-20T19:24:12.438138+00:00"
+    },
     "2077761738": {
       "den_conf": 0.85,
       "notified": true,
       "price": 6499,
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:24:30.207523+00:00"
+    },
+    "2077968919": {
+      "den_conf": null,
+      "notified": false,
+      "price": 6949,
+      "reason": "price $6,949 over $6,500 cap",
+      "seen_at": "2026-08-20T19:22:40.169945+00:00"
+    },
+    "2078236218": {
+      "den_conf": null,
+      "notified": false,
+      "price": 6993,
+      "reason": "price $6,993 over $6,500 cap",
+      "seen_at": "2026-08-20T19:22:40.169980+00:00"
+    },
+    "2078976419": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4272,
+      "reason": "537 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:24:09.142628+00:00"
+    },
+    "2078989501": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4685,
+      "reason": "816 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:22:40.170163+00:00"
+    },
+    "2079389086": {
+      "den_conf": null,
+      "notified": false,
+      "price": 7679,
+      "reason": "price $7,679 over $6,500 cap",
+      "seen_at": "2026-08-20T19:26:17.145255+00:00"
+    },
+    "2079517208": {
+      "den_conf": 0.1,
+      "notified": false,
+      "price": 5587,
+      "reason": "1021 sqft with den confidence 0.10 clears no ladder rung",
+      "seen_at": "2026-08-20T19:22:36.371026+00:00"
+    },
+    "2079620039": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4133,
+      "reason": "549 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:24:09.142619+00:00"
+    },
+    "2079687302": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4375,
+      "reason": "687 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:24:09.142651+00:00"
     },
     "2079917817": {
       "den_conf": 0.9,
@@ -43,12 +211,341 @@
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:24:21.860517+00:00"
     },
+    "2079983297": {
+      "den_conf": null,
+      "notified": false,
+      "price": 5944,
+      "reason": "761 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:25:00.770787+00:00"
+    },
+    "2080323751": {
+      "den_conf": 0.03,
+      "notified": false,
+      "price": 5695,
+      "reason": "879 sqft with den confidence 0.03 clears no ladder rung",
+      "seen_at": "2026-08-20T19:25:00.770766+00:00"
+    },
+    "2080382162": {
+      "den_conf": null,
+      "notified": false,
+      "price": 8505,
+      "reason": "price $8,505 over $6,500 cap",
+      "seen_at": "2026-08-20T19:25:00.770817+00:00"
+    },
+    "2080400907": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4304,
+      "reason": "586 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:24:09.142638+00:00"
+    },
+    "2080971635": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4913,
+      "reason": "752 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:24:30.207757+00:00"
+    },
+    "2081121511": {
+      "den_conf": null,
+      "notified": false,
+      "price": 6710,
+      "reason": "price $6,710 over $6,500 cap",
+      "seen_at": "2026-08-20T19:26:25.823131+00:00"
+    },
+    "2081222173": {
+      "den_conf": null,
+      "notified": false,
+      "price": 5730,
+      "reason": "739 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:26:17.145342+00:00"
+    },
+    "2081645214": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4853,
+      "reason": "610 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:26:17.145219+00:00"
+    },
+    "2081650590": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4310,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:24:30.207721+00:00"
+    },
+    "2083113221": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4526,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:26:17.145324+00:00"
+    },
+    "2083197416": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4830,
+      "reason": "596 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:26:17.145213+00:00"
+    },
+    "2083794106": {
+      "den_conf": 0.03,
+      "notified": false,
+      "price": 4980,
+      "reason": "869 sqft with den confidence 0.03 clears no ladder rung",
+      "seen_at": "2026-08-20T19:24:44.928025+00:00"
+    },
+    "2083794107": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4925,
+      "reason": "835 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:24:30.207773+00:00"
+    },
+    "2083890365": {
+      "den_conf": null,
+      "notified": false,
+      "price": 5463,
+      "reason": "631 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:26:17.145232+00:00"
+    },
+    "2084188643": {
+      "den_conf": null,
+      "notified": false,
+      "price": 5436,
+      "reason": "774 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:22:40.169959+00:00"
+    },
+    "2084205138": {
+      "den_conf": null,
+      "notified": false,
+      "price": 5592,
+      "reason": "810 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:24:52.129599+00:00"
+    },
+    "2084402439": {
+      "den_conf": null,
+      "notified": false,
+      "price": 5632,
+      "reason": "513 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:26:17.145239+00:00"
+    },
+    "2084402442": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4748,
+      "reason": "511 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:26:17.145205+00:00"
+    },
+    "2084418158": {
+      "den_conf": null,
+      "notified": false,
+      "price": 3508,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:24:30.207647+00:00"
+    },
+    "2084635020": {
+      "den_conf": null,
+      "notified": false,
+      "price": 3631,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:24:30.207670+00:00"
+    },
+    "2084986808": {
+      "den_conf": null,
+      "notified": false,
+      "price": 3961,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:26:17.145266+00:00"
+    },
+    "2085084758": {
+      "den_conf": null,
+      "notified": false,
+      "price": 7405,
+      "reason": "price $7,405 over $6,500 cap",
+      "seen_at": "2026-08-20T19:25:00.770797+00:00"
+    },
+    "2085661214": {
+      "den_conf": null,
+      "notified": false,
+      "price": 7410,
+      "reason": "price $7,410 over $6,500 cap",
+      "seen_at": "2026-08-20T19:25:00.770811+00:00"
+    },
+    "2086861828": {
+      "den_conf": null,
+      "notified": false,
+      "price": 7405,
+      "reason": "price $7,405 over $6,500 cap",
+      "seen_at": "2026-08-20T19:25:00.770804+00:00"
+    },
+    "2086962336": {
+      "den_conf": null,
+      "notified": false,
+      "price": 6757,
+      "reason": "price $6,757 over $6,500 cap",
+      "seen_at": "2026-08-20T19:24:30.207615+00:00"
+    },
+    "2087078995": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4299,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:24:30.207711+00:00"
+    },
+    "2087664738": {
+      "den_conf": null,
+      "notified": false,
+      "price": 5420,
+      "reason": "814 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:24:52.129591+00:00"
+    },
+    "2087670123": {
+      "den_conf": null,
+      "notified": false,
+      "price": 8905,
+      "reason": "price $8,905 over $6,500 cap",
+      "seen_at": "2026-08-20T19:25:00.770829+00:00"
+    },
+    "2087833216": {
+      "den_conf": 0.03,
+      "notified": false,
+      "price": 5350,
+      "reason": "902 sqft with den confidence 0.03 clears no ladder rung",
+      "seen_at": "2026-08-20T19:24:52.129567+00:00"
+    },
+    "2087834324": {
+      "den_conf": null,
+      "notified": false,
+      "price": 3710,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:24:30.207690+00:00"
+    },
+    "2087912288": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4984,
+      "reason": "771 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:24:44.928052+00:00"
+    },
+    "2087972381": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4628,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:26:17.145196+00:00"
+    },
+    "2088840089": {
+      "den_conf": null,
+      "notified": false,
+      "price": 8263,
+      "reason": "price $8,263 over $6,500 cap",
+      "seen_at": "2026-08-20T19:26:25.823189+00:00"
+    },
+    "2089106181": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4979,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:22:32.775830+00:00"
+    },
+    "2091370361": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4141,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:26:17.145304+00:00"
+    },
+    "2091971662": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4084,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:26:17.145293+00:00"
+    },
+    "2092911271": {
+      "den_conf": null,
+      "notified": false,
+      "price": 7293,
+      "reason": "price $7,293 over $6,500 cap",
+      "seen_at": "2026-08-20T19:26:25.823147+00:00"
+    },
+    "2092924543": {
+      "den_conf": null,
+      "notified": false,
+      "price": 7821,
+      "reason": "price $7,821 over $6,500 cap",
+      "seen_at": "2026-08-20T19:26:25.823180+00:00"
+    },
+    "2093265036": {
+      "den_conf": null,
+      "notified": false,
+      "price": 6496,
+      "reason": "790 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:26:25.823120+00:00"
+    },
+    "2093586760": {
+      "den_conf": null,
+      "notified": false,
+      "price": 7293,
+      "reason": "price $7,293 over $6,500 cap",
+      "seen_at": "2026-08-20T19:26:25.823140+00:00"
+    },
+    "2093608541": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4391,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:26:17.145314+00:00"
+    },
+    "2094770974": {
+      "den_conf": null,
+      "notified": false,
+      "price": 7430,
+      "reason": "price $7,430 over $6,500 cap",
+      "seen_at": "2026-08-20T19:26:25.823154+00:00"
+    },
+    "2094946166": {
+      "den_conf": null,
+      "notified": false,
+      "price": 7460,
+      "reason": "price $7,460 over $6,500 cap",
+      "seen_at": "2026-08-20T19:26:25.823170+00:00"
+    },
+    "2094946200": {
+      "den_conf": 0.03,
+      "notified": false,
+      "price": 6154,
+      "reason": "903 sqft with den confidence 0.03 clears no ladder rung",
+      "seen_at": "2026-08-20T19:26:25.823096+00:00"
+    },
+    "348289124": {
+      "den_conf": 0.05,
+      "notified": false,
+      "price": 5370,
+      "reason": "951 sqft with den confidence 0.05 clears no ladder rung",
+      "seen_at": "2026-08-20T19:23:03.564942+00:00"
+    },
+    "349565562": {
+      "den_conf": 0.15,
+      "notified": false,
+      "price": 4973,
+      "reason": "851 sqft with den confidence 0.15 clears no ladder rung",
+      "seen_at": "2026-08-20T19:24:37.906064+00:00"
+    },
     "401681537": {
       "den_conf": 0.85,
       "notified": true,
       "price": 5330,
       "reason": "confident_den",
       "seen_at": "2026-08-20T19:25:13.668574+00:00"
+    },
+    "401771101": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4685,
+      "reason": "738 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:22:40.170152+00:00"
     },
     "401877560": {
       "den_conf": 0.9,
@@ -64,12 +561,40 @@
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:23:40.970242+00:00"
     },
+    "402056194": {
+      "den_conf": null,
+      "notified": false,
+      "price": 7661,
+      "reason": "price $7,661 over $6,500 cap",
+      "seen_at": "2026-08-20T19:23:50.467181+00:00"
+    },
+    "402147141": {
+      "den_conf": null,
+      "notified": false,
+      "price": 3925,
+      "reason": "716 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:25:00.770854+00:00"
+    },
     "402147142": {
       "den_conf": 0.9,
       "notified": true,
       "price": 6157,
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:26:07.591655+00:00"
+    },
+    "402301695": {
+      "den_conf": 0.05,
+      "notified": false,
+      "price": 5560,
+      "reason": "894 sqft with den confidence 0.05 clears no ladder rung",
+      "seen_at": "2026-08-20T19:23:06.422234+00:00"
+    },
+    "402564293": {
+      "den_conf": 0.05,
+      "notified": false,
+      "price": 5010,
+      "reason": "931 sqft with den confidence 0.05 clears no ladder rung",
+      "seen_at": "2026-08-20T19:22:50.981681+00:00"
     },
     "402564298": {
       "den_conf": 0.85,
@@ -78,12 +603,117 @@
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:25:23.847547+00:00"
     },
+    "402668043": {
+      "den_conf": null,
+      "notified": false,
+      "price": 7140,
+      "reason": "price $7,140 over $6,500 cap",
+      "seen_at": "2026-08-20T19:23:50.467173+00:00"
+    },
+    "402714430": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4514,
+      "reason": "691 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:24:09.142672+00:00"
+    },
+    "402722645": {
+      "den_conf": null,
+      "notified": false,
+      "price": 3563,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:24:30.207660+00:00"
+    },
+    "407499040": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4585,
+      "reason": "712 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:22:40.170140+00:00"
+    },
+    "422760335": {
+      "den_conf": null,
+      "notified": false,
+      "price": 6925,
+      "reason": "price $6,925 over $6,500 cap",
+      "seen_at": "2026-08-20T19:23:50.467166+00:00"
+    },
+    "428167240": {
+      "den_conf": 0.05,
+      "notified": false,
+      "price": 4150,
+      "reason": "882 sqft with den confidence 0.05 clears no ladder rung",
+      "seen_at": "2026-08-20T19:25:03.976150+00:00"
+    },
+    "435638494": {
+      "den_conf": null,
+      "notified": false,
+      "price": 5154,
+      "reason": "718 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:22:53.937302+00:00"
+    },
+    "439531759": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4955,
+      "reason": "826 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:22:47.572081+00:00"
+    },
+    "439638079": {
+      "den_conf": null,
+      "notified": false,
+      "price": 6716,
+      "reason": "price $6,716 over $6,500 cap",
+      "seen_at": "2026-08-20T19:23:50.467150+00:00"
+    },
     "439763227": {
       "den_conf": 0.85,
       "notified": true,
       "price": 6415,
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:23:32.156148+00:00"
+    },
+    "440179943": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4945,
+      "reason": "822 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:22:47.572065+00:00"
+    },
+    "441842409": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4361,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:22:40.170043+00:00"
+    },
+    "441998687": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4600,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:22:40.170106+00:00"
+    },
+    "442422049": {
+      "den_conf": null,
+      "notified": false,
+      "price": 6685,
+      "reason": "price $6,685 over $6,500 cap",
+      "seen_at": "2026-08-20T19:23:50.467142+00:00"
+    },
+    "443688308": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4310,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:22:40.170014+00:00"
+    },
+    "450081822": {
+      "den_conf": null,
+      "notified": false,
+      "price": 5025,
+      "reason": "837 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:22:50.981710+00:00"
     },
     "452433247": {
       "den_conf": 0.85,
@@ -92,6 +722,20 @@
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:25:31.602166+00:00"
     },
+    "452589097": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4475,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-20T19:22:40.170074+00:00"
+    },
+    "453646337": {
+      "den_conf": null,
+      "notified": false,
+      "price": 6675,
+      "reason": "price $6,675 over $6,500 cap",
+      "seen_at": "2026-08-20T19:23:50.467129+00:00"
+    },
     "453646455": {
       "den_conf": 0.85,
       "notified": true,
@@ -99,13 +743,152 @@
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:25:42.378889+00:00"
     },
+    "460529634": {
+      "den_conf": null,
+      "notified": false,
+      "price": 5391,
+      "reason": "809 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:26:17.145226+00:00"
+    },
+    "463290625": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4328,
+      "reason": "703 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:26:07.591859+00:00"
+    },
     "463290629": {
       "den_conf": 0.85,
       "notified": true,
       "price": 6214,
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:26:17.144968+00:00"
+    },
+    "463290631": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4364,
+      "reason": "798 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:26:07.591874+00:00"
+    },
+    "463433150": {
+      "den_conf": null,
+      "notified": false,
+      "price": 3925,
+      "reason": "716 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:25:00.770842+00:00"
+    },
+    "464281647": {
+      "den_conf": null,
+      "notified": false,
+      "price": 4945,
+      "reason": "822 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:22:47.572073+00:00"
+    },
+    "464365409": {
+      "den_conf": null,
+      "notified": false,
+      "price": 6970,
+      "reason": "price $6,970 over $6,500 cap",
+      "seen_at": "2026-08-20T19:26:17.145175+00:00"
+    },
+    "464706524": {
+      "den_conf": 0.03,
+      "notified": false,
+      "price": 4595,
+      "reason": "896 sqft with den confidence 0.03 clears no ladder rung",
+      "seen_at": "2026-08-20T19:26:40.522484+00:00"
+    },
+    "64969165": {
+      "den_conf": null,
+      "notified": false,
+      "price": 6772,
+      "reason": "price $6,772 over $6,500 cap",
+      "seen_at": "2026-08-20T19:24:09.142565+00:00"
+    },
+    "64969167": {
+      "den_conf": 0.05,
+      "notified": false,
+      "price": 6092,
+      "reason": "951 sqft with den confidence 0.05 clears no ladder rung",
+      "seen_at": "2026-08-20T19:24:09.142505+00:00"
+    },
+    "64969212": {
+      "den_conf": 0.03,
+      "notified": false,
+      "price": 6009,
+      "reason": "858 sqft with den confidence 0.03 clears no ladder rung",
+      "seen_at": "2026-08-20T19:23:59.314184+00:00"
+    },
+    "64969219": {
+      "den_conf": null,
+      "notified": false,
+      "price": 6085,
+      "reason": "808 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:23:59.314220+00:00"
+    },
+    "64969284": {
+      "den_conf": null,
+      "notified": false,
+      "price": 7131,
+      "reason": "price $7,131 over $6,500 cap",
+      "seen_at": "2026-08-20T19:24:09.142587+00:00"
+    },
+    "64969314": {
+      "den_conf": null,
+      "notified": false,
+      "price": 6200,
+      "reason": "825 sqft below 850 floor",
+      "seen_at": "2026-08-20T19:24:09.142529+00:00"
+    },
+    "64969323": {
+      "den_conf": null,
+      "notified": false,
+      "price": 7083,
+      "reason": "price $7,083 over $6,500 cap",
+      "seen_at": "2026-08-20T19:24:09.142578+00:00"
+    },
+    "64969328": {
+      "den_conf": null,
+      "notified": false,
+      "price": 7285,
+      "reason": "price $7,285 over $6,500 cap",
+      "seen_at": "2026-08-20T19:24:09.142597+00:00"
+    },
+    "64969337": {
+      "den_conf": null,
+      "notified": false,
+      "price": 7724,
+      "reason": "price $7,724 over $6,500 cap",
+      "seen_at": "2026-08-20T19:24:09.142607+00:00"
+    },
+    "64969338": {
+      "den_conf": null,
+      "notified": false,
+      "price": 7037,
+      "reason": "price $7,037 over $6,500 cap",
+      "seen_at": "2026-08-20T19:24:09.142541+00:00"
     }
   },
-  "sources": {}
+  "sources": {
+    "123597906": "2026-08-20T19:22:32.253537+00:00",
+    "2061022322": "2026-08-20T19:22:32.253529+00:00",
+    "2062614424": "2026-08-20T19:22:32.253532+00:00",
+    "2080734951": "2026-08-20T19:22:32.253542+00:00",
+    "2085124307": "2026-08-20T19:22:32.253541+00:00",
+    "464299520": "2026-08-20T19:22:32.253539+00:00",
+    "464707261": "2026-08-20T19:22:32.253552+00:00",
+    "5XjKYs": "2026-08-20T19:22:32.253538+00:00",
+    "5XjQ4f": "2026-08-20T19:22:32.253524+00:00",
+    "5XjSnF": "2026-08-20T19:22:32.253530+00:00",
+    "5XjVCw": "2026-08-20T19:22:32.253534+00:00",
+    "5XkH8X": "2026-08-20T19:22:32.253547+00:00",
+    "5Yy6Lv": "2026-08-20T19:22:32.253497+00:00",
+    "5ZGkXx": "2026-08-20T19:22:32.253551+00:00",
+    "65fB7S": "2026-08-20T19:22:32.253544+00:00",
+    "65g7KK": "2026-08-20T19:22:32.253549+00:00",
+    "83154263": "2026-08-20T19:22:32.253546+00:00",
+    "CjpwdL": "2026-08-20T19:22:32.253535+00:00",
+    "CmPfVR": "2026-08-20T19:22:32.253545+00:00"
+  }
 }
