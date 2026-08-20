@@ -1,6 +1,6 @@
 {
-  "last_alert_seen": "2026-08-20T19:52:30.506877+00:00",
-  "last_uid": 251819,
+  "last_alert_seen": "2026-08-20T20:50:43.034491+00:00",
+  "last_uid": 251892,
   "listings": {
     "2053889664": {
       "den_conf": null,
@@ -899,6 +899,16 @@
       "reason": "896 sqft with den confidence 0.05 clears no ladder rung",
       "seen_at": "2026-08-20T19:55:15.188307+00:00"
     },
+    "464723218": {
+      "address": "1443 Funston Ave #4",
+      "den_conf": null,
+      "fingerprint": "1443funstonave4|1|800",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4100,
+      "reason": "800 sqft below 850 floor",
+      "seen_at": "2026-08-20T20:50:58.778202+00:00"
+    },
     "64969165": {
       "den_conf": null,
       "notified": false,
@@ -1006,6 +1016,10 @@
     },
     "464707261": {
       "at": "2026-08-20T19:52:54.247068+00:00",
+      "ladder_version": 2
+    },
+    "464723218": {
+      "at": "2026-08-20T20:50:57.777206+00:00",
       "ladder_version": 2
     },
     "5XjKYs": {
