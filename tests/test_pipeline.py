@@ -665,3 +665,25 @@ def test_two_bedroom_message_hides_the_den_score(config):
     assert "second bedroom works as the office" in msg
     assert "confidence" not in msg
     assert "🟢" in msg
+
+
+def test_floor_plans_with_no_availability_are_skipped():
+    """A building publishes every layout it offers, including ones with nothing
+    free. Those have no price, would skip the budget gate entirely (it only
+    applies when price is known), and would be sent showing '$?'."""
+    from src.enrich import expand_building
+
+    item = {
+        "__typename": "Building",
+        "lotId": "X",
+        "fullAddress": "1 Test St",
+        "floorPlans": [
+            {"name": "B2 nothing free", "beds": 2, "baths": 2, "sqft": 950},
+            {"name": "B3 available", "beds": 2, "baths": 2, "sqft": 960,
+             "units": [{"price": 5900}]},
+            {"name": "B4 plan price only", "beds": 2, "sqft": 970, "minPrice": 6100},
+        ],
+    }
+    listings = expand_building(item)
+    assert [l.price for l in listings] == [5900, 6100]
+    assert all("nothing-free" not in l.zpid for l in listings)

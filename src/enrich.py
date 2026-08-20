@@ -259,6 +259,13 @@ def expand_building(item: dict[str, Any]) -> list[Listing]:
         if sqft is not None and not (100 <= sqft <= 20000):
             sqft = None
 
+        price = _plan_price(plan)
+        if price is None:
+            # A building publishes every layout it offers, including ones with
+            # nothing currently free. No price and no units means not rentable
+            # today — unlike a missing sqft, which is merely undisclosed.
+            continue
+
         photos, floorplans = _plan_images(plan)
         ident = str(_first(plan, "zpid") or f"{lot}-{_slug(name)}")
 
@@ -272,7 +279,7 @@ def expand_building(item: dict[str, Any]) -> list[Listing]:
                 zpid=ident,
                 url=url or f"https://www.zillow.com/apartments/{lot}/",
                 address=", ".join(p for p in (name, address) if p) or address,
-                price=_plan_price(plan),
+                price=price,
                 beds=beds,
                 baths=baths,
                 sqft=sqft,

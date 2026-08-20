@@ -208,6 +208,11 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--test-telegram", action="store_true", help="send a test message and exit"
     )
+    parser.add_argument(
+        "--seed-state",
+        action="store_true",
+        help="mark everything currently visible as seen, without notifying",
+    )
     args = parser.parse_args(argv)
 
     load_dotenv()
@@ -227,6 +232,17 @@ def main(argv: list[str] | None = None) -> int:
     if args.backfill:
         count = cycle(config, state, dry_run=True, backfill=args.backfill)
         print(f"\n{count} listing(s) would have been sent.")
+        return 0
+
+    if args.seed_state:
+        # Without this the first live run notifies every match already sitting
+        # in the mailbox window at once. Records them as seen so the watcher
+        # starts quiet and only reports genuinely new listings.
+        count = cycle(config, state, dry_run=True)
+        state.save()
+        state.commit()
+        print(f"\nSeeded. {count} existing match(es) marked seen, none sent.")
+        print("The watcher will now only notify on listings newer than this.")
         return 0
 
     if args.once or not args.loop:
