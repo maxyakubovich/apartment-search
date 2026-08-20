@@ -639,7 +639,10 @@ def test_photos_only_still_respects_the_band(config, monkeypatch):
 def test_open_plan_loft_is_withheld_from_the_weakest_rung(config):
     """A 1,021 sqft unit the model calls affirmatively open-plan buys no
     privacy, so floor area alone must not push it through."""
-    big = Listing(zpid="1", url="u", price=5587, beds=1, sqft=1021)
+    # Floor plan present, so the layout_unknown rung cannot apply and this
+    # isolates the open-plan gate on room_to_sequester.
+    big = Listing(zpid="1", url="u", price=5587, beds=1, sqft=1021,
+                  floorplans=["https://cdn/fp.png"])
     open_plan = DenVerdict(0.05, False, None, "open layout", is_open_plan=True)
     assert not evaluate(big, open_plan, config).notify
 
@@ -711,8 +714,10 @@ def test_labeled_den_surfaces_even_when_it_fails_the_door_test(config):
 
 
 def test_unlabeled_low_confidence_still_needs_the_space(config):
-    # Without a labelled den the rung must not fire.
-    listing = Listing(zpid="1", url="u", price=5000, beds=1, sqft=880)
+    # Without a labelled den the rung must not fire. Floor plan present, so
+    # the layout is known and layout_unknown cannot carry it instead.
+    listing = Listing(zpid="1", url="u", price=5000, beds=1, sqft=880,
+                      floorplans=["https://cdn/fp.png"])
     verdict = DenVerdict(0.15, None, None, "nothing stated", den_labeled=False)
     assert not evaluate(listing, verdict, config).notify
 
@@ -720,3 +725,27 @@ def test_unlabeled_low_confidence_still_needs_the_space(config):
 def test_labeled_den_below_the_floor_is_still_dropped(config):
     listing = Listing(zpid="1", url="u", price=5000, beds=1, sqft=800)
     assert not hard_filter(listing, config)[0]
+
+
+def test_unknown_layout_is_not_the_same_as_confirmed_no_den(config):
+    """Eight in-budget 1BRs were skipped citing "no floor plan provided", scored
+    identically to units whose plan had been read and showed one bedroom. The
+    first group is unknown, the second settled; only the first takes this rung."""
+    unknown = Listing(zpid="428167240", url="u", address="X", price=4150,
+                      beds=1, sqft=882, floorplans=[])
+    verdict = DenVerdict(0.05, None, None, "no floor plan provided")
+    decision = evaluate(unknown, verdict, config)
+    assert decision.notify and decision.reason == "layout_unknown"
+    assert "No floor plan published" in notify.format_message(decision)
+
+    # Same size and score, but the plan was read and showed nothing.
+    seen = Listing(zpid="2094946200", url="u", price=6154, beds=1, sqft=903,
+                   floorplans=["https://cdn/fp.png"])
+    settled = DenVerdict(0.03, False, None, "plan shows a single bedroom")
+    assert not evaluate(seen, settled, config).notify
+
+
+def test_unknown_layout_still_respects_open_plan_and_floor(config):
+    stated_open = DenVerdict(0.05, None, None, "open layout", is_open_plan=True)
+    listing = Listing(zpid="1", url="u", price=5587, beds=1, sqft=1021, floorplans=[])
+    assert not evaluate(listing, stated_open, config).notify

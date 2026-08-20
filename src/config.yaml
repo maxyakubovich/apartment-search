@@ -50,6 +50,13 @@ ladder:
     # with a curtain or a screen, and that is a judgement call to make by eye
     # rather than one to suppress. The message says plainly what fell short.
     when: { den_labeled: true, min_sqft: 850 }
+  - name: layout_unknown
+    # No floor plan was published and the description is generic marketing
+    # copy, so nothing is actually known about the layout. That is not the same
+    # as a plan that shows one bedroom and no den, and it should not be treated
+    # the same: at this size it is worth thirty seconds of your own eyes.
+    # Withdrawn when the listing affirmatively says open-plan.
+    when: { min_den_conf: 0.0, min_sqft: 850, no_floorplan: true, not_open_plan: true }
   - name: room_to_sequester
     # No den signal, but large enough to wall off a desk. Withdrawn when the
     # unit is affirmatively open-plan, where floor area buys no privacy.

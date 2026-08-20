@@ -23,6 +23,7 @@ RUNG_LABELS = {
     "confident_den": "Den confirmed",
     "plausible_den": "Den likely",
     "labeled_den": "Listing labels a den — but check the caveat",
+    "layout_unknown": "Layout unknown — no floor plan published",
     "room_to_sequester": "No den found, but room to wall off a desk",
 }
 
@@ -94,6 +95,12 @@ def format_message(decision: Decision) -> str:
 
     if decision.sqft_unlisted:
         lines.append("⚠️ Zillow did not publish square footage for this unit.")
+
+    if decision.reason == "layout_unknown":
+        lines.append(
+            "⚠️ No floor plan published, so the den question is genuinely open "
+            "— worth a look rather than a match."
+        )
 
     lines.append("")
     lines.append(f'<a href="{_esc(listing.url)}">View on Zillow</a>')

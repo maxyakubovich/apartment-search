@@ -20,7 +20,16 @@ def config():
 
 
 def make(**kwargs) -> Listing:
-    base = dict(zpid="1", url="https://zillow.com/x/1_zpid/", price=5000, beds=1)
+    # Carries a floor plan by default, meaning the layout is KNOWN. Without one
+    # the layout_unknown rung fires and these tests would be measuring that
+    # instead of the confidence ladder they are actually about.
+    base = dict(
+        zpid="1",
+        url="https://zillow.com/x/1_zpid/",
+        price=5000,
+        beds=1,
+        floorplans=["https://cdn/fp.png"],
+    )
     base.update(kwargs)
     return Listing(**base)
 
@@ -129,3 +138,16 @@ def test_polygon_gate_drops_outside_listings(config):
 def test_degenerate_polygon_does_not_drop_everything(config):
     # A malformed polygon should fail open rather than silently muting alerts.
     assert point_in_polygon(37.76, -122.42, [[-122.45, 37.74]])
+
+
+# --- unknown layout ------------------------------------------------------
+
+
+def test_missing_floor_plan_is_surfaced_rather_than_dropped(config):
+    """No published floor plan means the den question is open, not answered.
+    A unit whose plan was read and showed one bedroom is settled and dropped."""
+    unknown = make(sqft=882, price=4150, floorplans=[])
+    assert evaluate(unknown, den(0.05), config).reason == "layout_unknown"
+
+    seen = make(sqft=882, price=4150)  # has a floor plan
+    assert not evaluate(seen, den(0.05), config).notify

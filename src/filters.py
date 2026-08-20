@@ -108,6 +108,11 @@ def evaluate(
             continue
         if cond.get("den_labeled") and verdict.den_labeled is not True:
             continue
+        # "No floor plan was published" and "the floor plan shows no den" are
+        # different facts. The first is unknown and worth your eyes; the second
+        # is settled. Only the unknown case takes this rung.
+        if cond.get("no_floorplan") and listing.floorplans:
+            continue
         # The weakest rung assumes floor area implies a corner that can be
         # walled off. That assumption fails outright in a loft, so it is
         # withdrawn when the layout is affirmatively open-plan.
