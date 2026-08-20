@@ -189,6 +189,104 @@ def normalize(item: dict[str, Any], zpid: str | None = None) -> Listing | None:
     )
 
 
+def _slug(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", str(text).lower()).strip("-") or "unit"
+
+
+def is_building(item: dict[str, Any]) -> bool:
+    """Building detail records describe a complex, not a rentable unit.
+
+    They carry `floorPlans` and `lotId` but no `bedrooms`, `price`, or
+    `livingArea` — so treating one as a listing yields "? sqft, $?" and a
+    description that is building marketing copy rather than a unit layout.
+    """
+    if str(item.get("__typename", "")).lower().startswith("building"):
+        return True
+    return "floorPlans" in item and "bedrooms" not in item
+
+
+def _plan_price(plan: dict[str, Any]) -> int | None:
+    """Cheapest actually-available unit on this floor plan.
+
+    Ranges are quoted per plan, but you rent one unit. The low end is the
+    honest number to filter and display against.
+    """
+    candidates: list[int] = []
+    for unit in _as_list(plan.get("units")):
+        if isinstance(unit, dict):
+            value = _to_int(_first(unit, "price", "rent", "minPrice"))
+            if value:
+                candidates.append(value)
+    direct = _to_int(_first(plan, "minPrice", "price", "lowPrice"))
+    if direct:
+        candidates.append(direct)
+    return min(candidates) if candidates else None
+
+
+def _plan_images(plan: dict[str, Any]) -> tuple[list[str], list[str]]:
+    """A floor plan's own diagram is the single best evidence for the den
+    question, so it is collected explicitly rather than left to keyword luck."""
+    photos, plans = _photo_urls(plan)
+    for key in ("floorPlanUnitPhotos", "floorPlanPhotos", "floorPlanImages"):
+        for entry in _as_list(plan.get(key)):
+            url = entry if isinstance(entry, str) else str(
+                _first(entry, "url", "src") or "" if isinstance(entry, dict) else ""
+            )
+            if url.startswith("http") and url not in plans:
+                plans.append(url)
+    return photos, plans
+
+
+def expand_building(item: dict[str, Any]) -> list[Listing]:
+    """One Listing per floor plan in a building record."""
+    lot = str(_first(item, "lotId", "zpid", "buildingName") or "building")
+    address = _address(_first(item, "fullAddress", "address", "streetAddress"))
+    building_name = _first(item, "buildingName")
+    base_description = str(_first(item, "description") or "")
+    gallery, _ = _photo_urls(item)
+    url = str(_first(item, "bdpUrl", "url") or "")
+    if url and not url.startswith("http"):
+        url = "https://www.zillow.com" + url
+
+    out: list[Listing] = []
+    for plan in _as_list(item.get("floorPlans")):
+        if not isinstance(plan, dict):
+            continue
+        name = str(_first(plan, "name", "floorPlanName", "modelName") or "")
+        beds = _to_float(_first(plan, "beds", "bedrooms"))
+        baths = _to_float(_first(plan, "baths", "bathrooms"))
+        sqft = _to_int(_first(plan, "sqft", "minSqft", "livingArea", "squareFeet"))
+        if sqft is not None and not (100 <= sqft <= 20000):
+            sqft = None
+
+        photos, floorplans = _plan_images(plan)
+        ident = str(_first(plan, "zpid") or f"{lot}-{_slug(name)}")
+
+        # The floor plan name carries the layout hint the building blurb lacks
+        # ("A4 - 1 Bed + Den"), so it leads the text the den analysis sees.
+        parts = [p for p in (building_name, name and f"Floor plan: {name}") if p]
+        description = "\n".join([*parts, base_description]).strip()
+
+        out.append(
+            Listing(
+                zpid=ident,
+                url=url or f"https://www.zillow.com/apartments/{lot}/",
+                address=", ".join(p for p in (name, address) if p) or address,
+                price=_plan_price(plan),
+                beds=beds,
+                baths=baths,
+                sqft=sqft,
+                description=description,
+                photos=photos or gallery,
+                floorplans=floorplans,
+                lat=_to_float(_first(item, "latitude", "lat")),
+                lng=_to_float(_first(item, "longitude", "lng")),
+                reso_facts={"buildingName": building_name} if building_name else {},
+            )
+        )
+    return out
+
+
 def _run_actor(
     actor: str, build_input: Any, urls: list[str], token: str, timeout: int = RUN_TIMEOUT
 ) -> list[dict[str, Any]]:
@@ -239,16 +337,40 @@ def fetch_details(urls: list[str], token: str) -> list[Listing]:
     if not items:
         raise EnrichmentError("; ".join(failures))
 
-    if os.environ.get("WATCHER_DUMP_RAW"):
-        # One-off aid for checking the normalizer against real actor output.
-        print(f"[enrich] {len(items)} raw item(s); first item keys:")
-        print("  " + ", ".join(sorted(items[0].keys())))
-
     listings: list[Listing] = []
+    buildings = 0
     for item in items:
         if not isinstance(item, dict):
+            continue
+        if is_building(item):
+            buildings += 1
+            expanded = expand_building(item)
+            if os.environ.get("WATCHER_DUMP_RAW") and not expanded:
+                print(
+                    f"[enrich] building {item.get('buildingName') or item.get('lotId')}"
+                    f" produced no floor plans; keys present: "
+                    + ", ".join(k for k in ("floorPlans", "bestMatchedUnit") if k in item)
+                )
+            listings.extend(expanded)
             continue
         listing = normalize(item)
         if listing:
             listings.append(listing)
+
+    if os.environ.get("WATCHER_DUMP_RAW"):
+        print(
+            f"[enrich] {len(urls)} url(s) in -> {len(items)} record(s) "
+            f"({buildings} building) -> {len(listings)} listing(s)"
+        )
+        if len(items) < len(urls):
+            # Usually dead listings: a 30-day backfill replays alerts for units
+            # that have since been taken down. Worth showing rather than hiding.
+            print(f"[enrich] {len(urls) - len(items)} url(s) returned nothing")
+        for sample in listings[:2]:
+            print(
+                f"[enrich] sample: {sample.address!r} {sample.beds}bd "
+                f"{sample.sqft}sqft ${sample.price} "
+                f"{len(sample.floorplans)}fp/{len(sample.photos)}photos"
+            )
+
     return listings

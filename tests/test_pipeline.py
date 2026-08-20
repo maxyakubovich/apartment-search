@@ -529,3 +529,84 @@ def test_empty_actor_result_is_an_error_not_success():
             enrich._run_actor("a~b", lambda u: {}, ["u"], "tok")
     finally:
         requests.post = original
+
+
+# --- building expansion ---------------------------------------------------
+
+
+def _building() -> dict:
+    """Shape mirrors a real building detail record: floorPlans and lotId, but
+    no bedrooms/price/livingArea at the top level."""
+    return {
+        "__typename": "BuildingComplex",
+        "lotId": "5Xj7m7",
+        "buildingName": "Argenta",
+        "fullAddress": "1 Polk St, San Francisco, CA 94102",
+        "description": "Luxury living downtown.",
+        "bdpUrl": "/apartments/san-francisco-ca/argenta/5Xj7m7/",
+        "latitude": 37.78,
+        "longitude": -122.41,
+        "floorPlans": [
+            {
+                "name": "A4 - 1 Bed + Den",
+                "beds": 1,
+                "baths": 1,
+                "sqft": 950,
+                "units": [
+                    {"unitNumber": "810", "price": "$5,200"},
+                    {"unitNumber": "910", "price": 4900},
+                ],
+                "floorPlanUnitPhotos": [{"url": "https://cdn/fp-a4.png"}],
+            },
+            {"name": "S1", "beds": 0, "baths": 1, "sqft": 520, "minPrice": 3200},
+        ],
+    }
+
+
+def test_building_records_are_detected():
+    from src.enrich import is_building
+
+    assert is_building(_building())
+    # A real unit record has bedrooms and must not be expanded.
+    assert not is_building({"zpid": "1", "bedrooms": 2, "price": 5000})
+
+
+def test_building_expands_into_one_listing_per_floor_plan():
+    from src.enrich import expand_building
+
+    listings = expand_building(_building())
+    assert len(listings) == 2
+
+    den = listings[0]
+    assert den.beds == 1 and den.sqft == 950
+    # Cheapest available unit, not the range top — you rent one unit.
+    assert den.price == 4900
+    assert den.floorplans == ["https://cdn/fp-a4.png"]
+    # The plan name carries the layout signal the building blurb lacks, and has
+    # to reach the den analysis.
+    assert "1 Bed + Den" in den.description
+    assert "Argenta" in den.description
+
+
+def test_expanded_plans_get_distinct_stable_ids():
+    from src.enrich import expand_building
+
+    ids = [listing.zpid for listing in expand_building(_building())]
+    assert len(set(ids)) == 2
+    assert all(i.startswith("5Xj7m7-") for i in ids)
+    # Stable across runs, so dedup works.
+    assert ids == [listing.zpid for listing in expand_building(_building())]
+
+
+def test_studio_floor_plan_is_dropped_by_the_bed_filter(config):
+    from src.enrich import expand_building
+    from src.filters import hard_filter
+
+    studio = expand_building(_building())[1]
+    assert not hard_filter(studio, config)[0]
+
+
+def test_building_without_floor_plans_yields_nothing():
+    from src.enrich import expand_building
+
+    assert expand_building({"lotId": "x", "floorPlans": []}) == []
