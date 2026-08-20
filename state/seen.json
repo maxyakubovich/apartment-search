@@ -1,6 +1,6 @@
 {
-  "last_alert_seen": "2026-08-20T20:50:43.034491+00:00",
-  "last_uid": 251892,
+  "last_alert_seen": "2026-08-20T22:07:53.696827+00:00",
+  "last_uid": 251901,
   "listings": {
     "2053889664": {
       "den_conf": null,
@@ -157,6 +157,16 @@
       "price": 5200,
       "reason": "layout_unknown",
       "seen_at": "2026-08-20T19:53:12.034961+00:00"
+    },
+    "2077653915": {
+      "address": "A8, 788 Harrison St, San Francisco, CA 94107",
+      "den_conf": 0.05,
+      "fingerprint": "a8788harrisonstsanfranciscoca94107|1|974",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4981,
+      "reason": "974 sqft with den confidence 0.05 clears no ladder rung",
+      "seen_at": "2026-08-20T22:08:13.446885+00:00"
     },
     "2077761738": {
       "den_conf": 0.85,
@@ -540,6 +550,16 @@
       "reason": "price $7,821 over $6,500 cap",
       "seen_at": "2026-08-20T19:53:04.295544+00:00"
     },
+    "2093227080": {
+      "address": "A1, 788 Harrison St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a1788harrisonstsanfranciscoca94107|1|746",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4590,
+      "reason": "746 sqft below 850 floor",
+      "seen_at": "2026-08-20T22:08:00.478824+00:00"
+    },
     "2093265036": {
       "den_conf": null,
       "ladder_version": 2,
@@ -547,6 +567,16 @@
       "price": 6496,
       "reason": "790 sqft below 850 floor",
       "seen_at": "2026-08-20T19:53:04.295407+00:00"
+    },
+    "2093563191": {
+      "address": "A4, 788 Harrison St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a4788harrisonstsanfranciscoca94107|1|845",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4775,
+      "reason": "845 sqft below 850 floor",
+      "seen_at": "2026-08-20T22:08:00.478873+00:00"
     },
     "2093586760": {
       "den_conf": null,
@@ -563,6 +593,26 @@
       "price": 4391,
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-20T19:52:55.036225+00:00"
+    },
+    "2094027338": {
+      "address": "B2, 788 Harrison St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "b2788harrisonstsanfranciscoca94107|2|1003",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 6033,
+      "reason": "two_bedroom",
+      "seen_at": "2026-08-20T22:08:22.315420+00:00"
+    },
+    "2094342293": {
+      "address": "A5, 788 Harrison St, San Francisco, CA 94107",
+      "den_conf": 0.1,
+      "fingerprint": "a5788harrisonstsanfranciscoca94107|1|850",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 4845,
+      "reason": "layout_unknown",
+      "seen_at": "2026-08-20T22:08:05.469472+00:00"
     },
     "2094770974": {
       "den_conf": null,
@@ -1036,6 +1086,10 @@
     },
     "5XjVCw": {
       "at": "2026-08-20T19:52:54.247040+00:00",
+      "ladder_version": 2
+    },
+    "5XkGzw": {
+      "at": "2026-08-20T22:08:00.477693+00:00",
       "ladder_version": 2
     },
     "5XkH8X": {
