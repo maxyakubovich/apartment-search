@@ -1,6 +1,6 @@
 {
-  "last_alert_seen": "2026-08-20T22:07:53.696827+00:00",
-  "last_uid": 251901,
+  "last_alert_seen": "2026-08-20T23:36:41.439543+00:00",
+  "last_uid": 251905,
   "listings": {
     "2053889664": {
       "den_conf": null,
@@ -41,6 +41,16 @@
       "price": 3665,
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-20T19:53:43.198082+00:00"
+    },
+    "2060673040": {
+      "address": "1645 Page St APT 2",
+      "den_conf": 0.75,
+      "fingerprint": "1645pagestapt2|2|950",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 5500,
+      "reason": "two_bedroom",
+      "seen_at": "2026-08-20T23:37:12.495979+00:00"
     },
     "2062149842": {
       "den_conf": 0.05,
@@ -1042,6 +1052,10 @@
   "sources": {
     "123597906": {
       "at": "2026-08-20T19:52:54.247044+00:00",
+      "ladder_version": 2
+    },
+    "2060673040": {
+      "at": "2026-08-20T23:36:56.953073+00:00",
       "ladder_version": 2
     },
     "2061022322": {
