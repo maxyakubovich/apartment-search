@@ -158,6 +158,8 @@ def cycle(
                 notified=False,
                 reason=drop_reason,
                 ladder_version=version,
+                fingerprint=listing.fingerprint,
+                address=listing.address,
             )
             continue
 
@@ -169,6 +171,22 @@ def cycle(
                 state.refresh_price(listing.zpid, listing.price)
                 continue
             _log(f"  {listing.zpid} price dropped to ${listing.price:,} — re-checking")
+
+        # Backstop against the id changing between runs: if this same
+        # apartment was already sent under another key, do not send it again.
+        duplicate = state.already_notified(listing.fingerprint)
+        if duplicate and not backfill:
+            _log(f"  {listing.zpid} skip — already sent as {duplicate}")
+            state.record(
+                listing.zpid,
+                price=listing.price,
+                notified=False,
+                reason=f"duplicate of {duplicate}",
+                ladder_version=version,
+                fingerprint=listing.fingerprint,
+                address=listing.address,
+            )
+            continue
 
         verdict = den_module.analyze(listing, config, client)
         decision = evaluate(listing, verdict, config)
@@ -198,6 +216,8 @@ def cycle(
                 reason=decision.reason,
                 den_conf=verdict.den_conf,
                 ladder_version=version,
+                fingerprint=listing.fingerprint,
+                address=listing.address,
             )
 
     return notified

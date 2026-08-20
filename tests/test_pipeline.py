@@ -824,3 +824,45 @@ def test_null_ladder_version_does_not_crash_the_loop(tmp_path):
     state = State(path)
     assert state.is_new("a", ladder_version=2)
     assert state.is_new("b", ladder_version=2)
+
+
+# --- duplicate suppression ------------------------------------------------
+
+
+def test_same_apartment_under_a_different_id_is_not_resent(tmp_path):
+    """Floor plans are keyed on the scraper's zpid when it supplies one and a
+    synthesised slug when it does not, so one apartment can arrive under two
+    ids across runs and defeat dedup. The fingerprint catches it."""
+    first = Listing(zpid="2066681346", url="u", address="1 Polk St, San Francisco",
+                    price=4835, beds=1, sqft=855)
+    later = Listing(zpid="5Xj7m7-a2-h", url="u", address="1 Polk St, San Francisco",
+                    price=4835, beds=1, sqft=855)
+    assert first.fingerprint == later.fingerprint
+
+    state = State(tmp_path / "seen.json")
+    state.record("2066681346", price=4835, notified=True, reason="layout_unknown",
+                 fingerprint=first.fingerprint, address=first.address)
+    assert state.already_notified(later.fingerprint) == "2066681346"
+
+
+def test_fingerprint_ignores_price_so_drops_still_alert(tmp_path):
+    a = Listing(zpid="1", url="u", address="1 Polk St", price=5000, beds=1, sqft=900)
+    b = Listing(zpid="1", url="u", address="1 Polk St", price=4500, beds=1, sqft=900)
+    assert a.fingerprint == b.fingerprint
+
+
+def test_different_units_in_one_building_stay_distinct(tmp_path):
+    a = Listing(zpid="1", url="u", address="A2, 1 Polk St", beds=1, sqft=855)
+    b = Listing(zpid="2", url="u", address="B4, 1 Polk St", beds=2, sqft=1100)
+    assert a.fingerprint != b.fingerprint
+
+
+def test_addressless_listing_is_not_treated_as_a_duplicate(tmp_path):
+    """Without an address the fingerprint is not a usable identity, and matching
+    on it would silently suppress every such listing after the first."""
+    state = State(tmp_path / "seen.json")
+    nameless = Listing(zpid="1", url="u", address=None, beds=1, sqft=900)
+    state.record("1", price=5000, notified=True, reason="x",
+                 fingerprint=nameless.fingerprint)
+    other = Listing(zpid="2", url="u", address=None, beds=1, sqft=900)
+    assert state.already_notified(other.fingerprint) is None

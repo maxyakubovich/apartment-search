@@ -95,8 +95,12 @@ class State:
         reason: str,
         den_conf: float | None = None,
         ladder_version: int = 0,
+        fingerprint: str | None = None,
+        address: str | None = None,
     ) -> None:
         self.listings[zpid] = {
+            "fingerprint": fingerprint,
+            "address": address,
             "price": price,
             "notified": notified,
             "reason": reason,
@@ -105,6 +109,19 @@ class State:
             "seen_at": datetime.now(timezone.utc).isoformat(),
         }
         self._dirty = True
+
+    def already_notified(self, fingerprint: str | None) -> str | None:
+        """The id we sent this same apartment under before, if any.
+
+        Backstop for the id being unstable: catches a repeat even when the
+        listing arrives under a different key than last time.
+        """
+        if not fingerprint or fingerprint.startswith("|"):
+            return None  # no address to match on; not a usable identity
+        for key, value in self.listings.items():
+            if value.get("notified") and value.get("fingerprint") == fingerprint:
+                return key
+        return None
 
     @property
     def sources(self) -> dict[str, Any]:

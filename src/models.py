@@ -31,6 +31,22 @@ class Listing:
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
 
+    @property
+    def fingerprint(self) -> str:
+        """Identity that survives the id changing underneath us.
+
+        Floor plans are keyed on the scraper's zpid when it supplies one and a
+        synthesised slug when it does not, so the same apartment can arrive
+        under two different ids on two different runs and defeat dedup. Address
+        plus bed count plus floor area does not move. Price is excluded
+        deliberately — it changes, and a price drop should still re-alert.
+        """
+        import re
+
+        address = re.sub(r"[^a-z0-9]+", "", (self.address or "").lower())
+        beds = int(self.beds) if self.beds is not None else "?"
+        return f"{address}|{beds}|{self.sqft or '?'}"
+
 
 @dataclass
 class DenVerdict:
