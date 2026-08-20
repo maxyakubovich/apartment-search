@@ -36,10 +36,43 @@ def call(token: str, method: str, **params) -> dict:
         return {"ok": False, "description": str(exc)}
 
 
+EXAMPLE_TOKEN = "8123456789:AAHdqTcvCH1vGWJxfSeofSAs0K5PALDsaw"
+
+
+def clean(raw: str) -> str:
+    """Salvage a pasted token.
+
+    Tokens get pasted with the documentation's angle brackets still attached,
+    with quotes around them, or with the `bot` URL prefix included. All three
+    produce an identical 'Unauthorized' and none are worth a round trip.
+    """
+    token = raw.strip().strip("<>\"'").strip()
+    if token.lower().startswith("bot") and ":" in token[3:]:
+        token = token[3:]
+    return token
+
+
+def read_token() -> str:
+    if len(sys.argv) > 1:
+        return clean(sys.argv[1])
+    if os.environ.get("TELEGRAM_BOT_TOKEN"):
+        return clean(os.environ["TELEGRAM_BOT_TOKEN"])
+    # Prompting sidesteps shell quoting and paste-mangling entirely, which is
+    # the most common way this step goes wrong.
+    try:
+        return clean(input("Paste your bot token from @BotFather: "))
+    except EOFError:
+        return ""
+
+
 def main() -> int:
-    token = (sys.argv[1] if len(sys.argv) > 1 else os.environ.get("TELEGRAM_BOT_TOKEN", "")).strip()
+    token = read_token()
     if not token:
-        print("usage: python3 scripts/telegram_setup.py <BOT_TOKEN>")
+        print("No token given. Run: python3 scripts/telegram_setup.py")
+        return 1
+    if token == EXAMPLE_TOKEN:
+        print("✗ That's the example token from the docs, not yours.")
+        print("  Open Telegram → @BotFather → /mybots → your bot → API Token.")
         return 1
 
     # 1. Is the token even valid? A typo here looks identical to "no messages".

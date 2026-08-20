@@ -100,8 +100,11 @@ This is for the account that *receives* the Zillow alerts.
 Message [@BotFather](https://t.me/botfather) → `/newbot` → copy the token. Then:
 
 ```bash
-python3 scripts/telegram_setup.py <YOUR_BOT_TOKEN>
+python3 scripts/telegram_setup.py
 ```
+
+It prompts for the token, which avoids shell quoting and paste problems entirely. You can
+also pass it as an argument if you prefer.
 
 That validates the token, clears any webhook (which otherwise makes `getUpdates` return
 an empty list forever), long-polls for 60 seconds while you message the bot, prints the
