@@ -71,20 +71,20 @@ days of real traffic.
 My Zillow → Saved Searches → Edit → frequency **Instant**. Without this there's no
 trigger and nothing else matters.
 
-**Then remove the square-footage cap.** The saved search `SF 750-1k sqft` is set to
-`sqft: 750–1,000`, which silently excludes the best candidates — a 1,100 sqft 2BR at
-$6,000 is exactly what you want and Zillow will never email it. Set the max to **No Max**.
-The pipeline does the sqft filtering itself, and does it better: it treats an unpublished
-square footage as unknown rather than excluding it, which matters because a good share of
-SF landlord listings publish no sqft at all.
+**List every saved search that feeds this.** Zillow's sqft filter snaps to fixed
+anchors, so covering a real range takes two searches — `SF 750-1k sqft` plus a second one
+for everything above 1,000. Both enrollment ids must appear in
+`search.saved_search_enrollment_ids`, or the alerts from the missing one are dropped
+without a trace and the failure looks exactly like a quiet market.
 
-Same logic for the `$3,600` minimum rent — there's no reason to exclude a cheap large
-unit. Let Zillow be broad and let the ladder be strict.
+Get an id from the `savedSearchEnrollmentId` parameter in that search's URL. It's
+cross-checked against the `encodedEnrollmentId` in each alert's unsubscribe link, so
+matching is on the id rather than the display name — renaming a search won't break
+anything.
 
-Only alerts belonging to this one saved search are processed, matched on the enrollment
-id in `search.saved_search_enrollment_id`. That id comes from `savedSearchEnrollmentId`
-in the search URL and is cross-checked against each email's unsubscribe link, so renaming
-the search in Zillow won't break anything.
+One thing worth knowing: listings with **no published square footage still arrive**
+through Zillow's sqft filter (confirmed in a real alert), so the missing-sqft path is
+live rather than theoretical.
 
 ### 2. Gmail app password
 
