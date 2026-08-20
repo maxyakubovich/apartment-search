@@ -51,4 +51,7 @@ jobs:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Prints the field names of the first raw actor item, so the
+          # normalizer can be checked against what actually comes back.
+          WATCHER_DUMP_RAW: "1"
         run: python -m src.main --backfill ${{ inputs.count }}

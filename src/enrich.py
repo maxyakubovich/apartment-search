@@ -13,6 +13,7 @@ drop good apartments.
 
 from __future__ import annotations
 
+import os
 import re
 from typing import Any, Iterable
 
@@ -21,9 +22,38 @@ import requests
 from .models import Listing
 
 APIFY_BASE = "https://api.apify.com/v2/acts"
-PRIMARY_ACTOR = "maxcopell~zillow-detail-scraper"
-FALLBACK_ACTOR = "parseforge~zillow-scraper"
 RUN_TIMEOUT = 240
+
+
+def _primary_input(urls: list[str]) -> dict[str, Any]:
+    # extractBuildingUnits is a string enum, NOT a boolean — passing True makes
+    # the actor exit immediately with an empty dataset and no HTTP error.
+    # Valid: disabled | all | for_sale | recently_sold | for_rent | off_market
+    return {
+        "startUrls": [{"url": u} for u in urls],
+        "propertyStatus": "FOR_RENT",
+        "extractBuildingUnits": "for_rent",
+    }
+
+
+def _fallback_input(urls: list[str]) -> dict[str, Any]:
+    # This actor takes detail URLs under `detailsUrl`, not `startUrls`. Getting
+    # that wrong is not a no-op: its `listingUrl` defaults to a New York search,
+    # so an unrecognised input would return New York rentals as if they were
+    # results. Pin listingUrl to empty so only detailsUrl is ever honoured.
+    return {
+        "detailsUrl": urls,
+        "listingUrl": "",
+        "maxItems": max(len(urls) * 50, 100),
+    }
+
+
+# Ordered by preference. Each entry carries its own input builder because the
+# actors disagree on field names, and a mismatch fails silently rather than loudly.
+ACTORS: list[tuple[str, Any]] = [
+    ("maxcopell~zillow-detail-scraper", _primary_input),
+    ("parseforge~zillow-scraper", _fallback_input),
+]
 
 
 class EnrichmentError(RuntimeError):
@@ -160,24 +190,26 @@ def normalize(item: dict[str, Any], zpid: str | None = None) -> Listing | None:
 
 
 def _run_actor(
-    actor: str, urls: list[str], token: str, timeout: int = RUN_TIMEOUT
+    actor: str, build_input: Any, urls: list[str], token: str, timeout: int = RUN_TIMEOUT
 ) -> list[dict[str, Any]]:
     endpoint = f"{APIFY_BASE}/{actor}/run-sync-get-dataset-items"
-    payload = {
-        "startUrls": [{"url": u} for u in urls],
-        "propertyStatus": "FOR_RENT",
-        "extractBuildingUnits": True,
-    }
     resp = requests.post(
         endpoint,
         params={"token": token, "timeout": timeout},
-        json=payload,
+        json=build_input(urls),
         timeout=timeout + 30,
     )
     if resp.status_code >= 400:
         raise EnrichmentError(f"{actor} returned {resp.status_code}: {resp.text[:300]}")
+
     data = resp.json()
-    return data if isinstance(data, list) else []
+    if not isinstance(data, list):
+        raise EnrichmentError(f"{actor} returned {type(data).__name__}, expected a list")
+    if not data:
+        # An input the actor rejects produces an empty dataset and a 2xx, which
+        # is indistinguishable from success unless we treat it as a failure.
+        raise EnrichmentError(f"{actor} returned no items for {len(urls)} url(s)")
+    return data
 
 
 def fetch_details(urls: list[str], token: str) -> list[Listing]:
@@ -196,15 +228,21 @@ def fetch_details(urls: list[str], token: str) -> list[Listing]:
     if not urls:
         return []
 
-    try:
-        items = _run_actor(PRIMARY_ACTOR, urls, token)
-    except (EnrichmentError, requests.RequestException) as primary_error:
+    items: list[dict[str, Any]] = []
+    failures: list[str] = []
+    for actor, build_input in ACTORS:
         try:
-            items = _run_actor(FALLBACK_ACTOR, urls, token)
-        except (EnrichmentError, requests.RequestException) as fallback_error:
-            raise EnrichmentError(
-                f"both actors failed; primary={primary_error} fallback={fallback_error}"
-            ) from fallback_error
+            items = _run_actor(actor, build_input, urls, token)
+            break
+        except (EnrichmentError, requests.RequestException) as exc:
+            failures.append(f"{actor}: {exc}")
+    if not items:
+        raise EnrichmentError("; ".join(failures))
+
+    if os.environ.get("WATCHER_DUMP_RAW"):
+        # One-off aid for checking the normalizer against real actor output.
+        print(f"[enrich] {len(items)} raw item(s); first item keys:")
+        print("  " + ", ".join(sorted(items[0].keys())))
 
     listings: list[Listing] = []
     for item in items:

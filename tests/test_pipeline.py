@@ -470,3 +470,62 @@ def test_a_bare_string_is_not_treated_as_a_character_set():
     # A strict prefix of the configured id must still be rejected.
     prefix = ENROLLMENT[:12]
     assert source_links_from_email(_alert_for(prefix, "444444"), ENROLLMENT) == []
+
+
+# --- Apify actor inputs ---------------------------------------------------
+
+
+def test_primary_actor_input_uses_string_enums():
+    """Regression: extractBuildingUnits is a string enum, not a boolean.
+
+    Passing True made the actor exit immediately with an empty dataset and a
+    2xx status — zero listings, no error, ten seconds. Pinning the exact enum
+    values here because the failure is completely silent.
+    """
+    from src.enrich import _primary_input
+
+    payload = _primary_input(["https://www.zillow.com/homedetails/1_zpid/"])
+    assert payload["extractBuildingUnits"] == "for_rent"
+    assert payload["propertyStatus"] == "FOR_RENT"
+    assert not isinstance(payload["extractBuildingUnits"], bool)
+    assert payload["startUrls"] == [{"url": "https://www.zillow.com/homedetails/1_zpid/"}]
+
+
+def test_fallback_actor_input_pins_listing_url():
+    """Regression: this actor's listingUrl defaults to a New York search.
+
+    It takes detail URLs under `detailsUrl`, so sending `startUrls` would leave
+    the default in play and return New York rentals as though they were results.
+    """
+    from src.enrich import _fallback_input
+
+    payload = _fallback_input(["https://www.zillow.com/homedetails/1_zpid/"])
+    assert payload["detailsUrl"] == ["https://www.zillow.com/homedetails/1_zpid/"]
+    assert payload["listingUrl"] == ""
+    assert "startUrls" not in payload
+
+
+def test_empty_actor_result_is_an_error_not_success():
+    """A rejected input yields 2xx + empty dataset, which must not read as 'no
+    matches'. It has to raise so the fallback runs and the zpids stay unrecorded."""
+    import requests
+
+    from src import enrich
+
+    class FakeResponse:
+        status_code = 200
+
+        @staticmethod
+        def json():
+            return []
+
+    def fake_post(*args, **kwargs):
+        return FakeResponse()
+
+    original = requests.post
+    requests.post = fake_post
+    try:
+        with pytest.raises(enrich.EnrichmentError, match="no items"):
+            enrich._run_actor("a~b", lambda u: {}, ["u"], "tok")
+    finally:
+        requests.post = original
