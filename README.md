@@ -93,12 +93,16 @@ This is for the account that *receives* the Zillow alerts.
 
 ### 3. Telegram bot
 
-Message [@BotFather](https://t.me/botfather) → `/newbot` → copy the token. Then send your
-new bot any message and read your chat id from:
+Message [@BotFather](https://t.me/botfather) → `/newbot` → copy the token. Then:
 
 ```bash
-curl "https://api.telegram.org/bot<YOUR_TOKEN>/getUpdates"
+python3 scripts/telegram_setup.py <YOUR_BOT_TOKEN>
 ```
+
+That validates the token, clears any webhook (which otherwise makes `getUpdates` return
+an empty list forever), long-polls for 60 seconds while you message the bot, prints the
+chat id, and sends a confirmation message. Raw `curl .../getUpdates | grep` prints nothing
+for about five different reasons and doesn't tell you which.
 
 ### 4. Tokens
 

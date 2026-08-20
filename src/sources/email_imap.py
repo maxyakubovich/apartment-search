@@ -26,6 +26,7 @@ import email.utils
 import imaplib
 import re
 import urllib.parse
+from collections.abc import Collection
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from email.message import Message
@@ -207,13 +208,23 @@ def extract_source_links(body: str) -> list[SourceLink]:
 
 
 def source_links_from_email(
-    alert: AlertEmail, expected_enrollment: str | None = None
+    alert: AlertEmail, expected_enrollments: Collection[str] | str | None = None
 ) -> list[SourceLink]:
-    """Results from one alert, dropped entirely if it is a different search."""
-    if expected_enrollment:
+    """Results from one alert, dropped entirely if it belongs to another search.
+
+    Takes a collection because several saved searches can legitimately feed one
+    watcher — Zillow's square-footage filter snaps to fixed anchors, so covering
+    a real range means splitting it across searches (one capped at 1,000 sqft,
+    another for everything above). Each has its own enrollment id.
+    """
+    if expected_enrollments:
+        # A bare string would make the membership test below match substrings,
+        # which would quietly accept alerts from unrelated searches.
+        if isinstance(expected_enrollments, str):
+            expected_enrollments = [expected_enrollments]
         found = enrollment_id(alert.body)
         # An email with no enrollment id at all is not a saved-search alert
         # (price drops, marketing) and is skipped rather than guessed at.
-        if found != expected_enrollment:
+        if found not in set(expected_enrollments):
             return []
     return extract_source_links(alert.body)

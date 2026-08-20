@@ -3,12 +3,18 @@
 # ladder after a few days of real traffic.
 
 search:
-  # Only process alerts belonging to this saved search. Taken from the
-  # `savedSearchEnrollmentId` in the search URL, and cross-checked against the
-  # `encodedEnrollmentId` in each alert's unsubscribe link. Matching on the id
-  # rather than the search's display name ("SF 750-1k sqft") means renaming the
-  # search in Zillow will not silently break the watcher.
-  saved_search_enrollment_id: X1-SS5o5te731uya10000000000_5f90w
+  # Only alerts belonging to these saved searches are processed. Each id comes
+  # from `savedSearchEnrollmentId` in that search's URL, and is cross-checked
+  # against the `encodedEnrollmentId` in every alert's unsubscribe link.
+  # Matching on the id rather than the display name ("SF 750-1k sqft") means
+  # renaming a search in Zillow will not silently break the watcher.
+  #
+  # Zillow's sqft filter snaps to fixed anchors, so covering a real range means
+  # splitting it across two searches. Both must be listed here or the alerts
+  # from the missing one are dropped without a trace.
+  saved_search_enrollment_ids:
+    - X1-SS5o5te731uya10000000000_5f90w # "SF 750-1k sqft"
+    # - X1-SS...                          # the >1,000 sqft search — TODO: add
 
   # Hard gates. A listing failing any of these is dropped before it costs
   # anything — no Apify fetch, no Claude call.

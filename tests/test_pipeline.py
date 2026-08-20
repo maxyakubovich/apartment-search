@@ -440,3 +440,33 @@ def test_message_escapes_html_in_listing_text(config):
     msg = notify.format_message(evaluate(listing, verdict, config))
     assert "A &amp; B &lt;lofts&gt;" in msg
     assert "quiet &amp; bright" in msg
+
+
+def _alert_for(enrollment: str, zpid: str) -> AlertEmail:
+    body = _link(
+        f"https://www.zillow.com/email/unsubscribe?encodedEnrollmentId={enrollment}"
+    ) + _link(
+        "https://www.zillow.com/routing/email/property-notifications/zpid_target/"
+        f"{zpid}_zpid/{enrollment}_sse/?utm_content=forrentimage"
+    )
+    return AlertEmail("m", "Rental Results", None, body)
+
+
+def test_accepts_any_of_several_saved_searches():
+    # Zillow's sqft filter snaps to anchors, so a real range needs two searches.
+    # Both must feed the watcher or one search's alerts vanish silently.
+    small, large = ENROLLMENT, "X1-SSover1000sqft_abc"
+    configured = [small, large]
+
+    assert len(source_links_from_email(_alert_for(small, "111111"), configured)) == 1
+    assert len(source_links_from_email(_alert_for(large, "222222"), configured)) == 1
+    assert source_links_from_email(_alert_for("X1-SSunrelated", "333333"), configured) == []
+
+
+def test_a_bare_string_is_not_treated_as_a_character_set():
+    # `found not in "X1-SSabc"` would substring-match and wrongly accept
+    # alerts from unrelated searches. A lone string must behave as one id.
+    assert len(source_links_from_email(_alert_for(ENROLLMENT, "111111"), ENROLLMENT)) == 1
+    # A strict prefix of the configured id must still be rejected.
+    prefix = ENROLLMENT[:12]
+    assert source_links_from_email(_alert_for(prefix, "444444"), ENROLLMENT) == []

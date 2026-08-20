@@ -80,7 +80,7 @@ def cycle(
     if backfill:
         lookback = max(lookback, 24 * 30)
 
-    saved_search = config["search"].get("saved_search_enrollment_id")
+    saved_searches = config["search"].get("saved_search_enrollment_ids") or []
 
     alerts = fetch_alert_emails(gmail, gmail_pw, lookback_hours=lookback, limit=limit)
     if not alerts:
@@ -90,7 +90,7 @@ def cycle(
     links: list[SourceLink] = []
     price_change_idents: set[str] = set()
     for alert in alerts:
-        found = source_links_from_email(alert, saved_search)
+        found = source_links_from_email(alert, saved_searches)
         known = {link.ident for link in links}
         links.extend(link for link in found if link.ident not in known)
         # Price-change alerts are the one case worth re-examining something we
@@ -98,7 +98,7 @@ def cycle(
         if "price" in alert.subject.lower():
             price_change_idents.update(link.ident for link in found)
 
-    _log(f"{len(alerts)} alert email(s), {len(links)} result link(s) for this search")
+    _log(f"{len(alerts)} alert email(s), {len(links)} result link(s) across {len(saved_searches) or 'all'} search(es)")
 
     if not links:
         _warn_parser_stalled(state, tg_token, tg_chat, dry_run)
