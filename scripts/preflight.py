@@ -113,19 +113,24 @@ def check_telegram() -> bool:
     if not token or not chat:
         print(f"{BAD} Telegram — TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID not set in .env")
         return False
+    # getChat validates the token and the chat id together without sending
+    # anything. Preflight gets run repeatedly while tuning, and a notification
+    # every time would train you to ignore the ones that matter.
     status, body = _get(
-        "https://api.telegram.org/bot{}/sendMessage?{}".format(
-            token,
-            urllib.parse.urlencode(
-                {"chat_id": chat, "text": "✓ Preflight check — all wired up."}
-            ),
+        "https://api.telegram.org/bot{}/getChat?{}".format(
+            token, urllib.parse.urlencode({"chat_id": chat})
         )
     )
     if status != 200 or not (isinstance(body, dict) and body.get("ok")):
         detail = body.get("description") if isinstance(body, dict) else body
         print(f"{BAD} Telegram — {detail}")
+        if isinstance(detail, str) and "chat not found" in detail.lower():
+            print("  The token is valid but the chat id is wrong, or you have")
+            print("  not sent the bot a message yet.")
+            print("  Re-run: python3 scripts/telegram_setup.py")
         return False
-    print(f"{OK} Telegram — test message delivered to chat {chat}")
+    name = body.get("result", {}).get("first_name") or body.get("result", {}).get("title", "")
+    print(f"{OK} Telegram — chat {chat} reachable ({name}), nothing sent")
     return True
 
 

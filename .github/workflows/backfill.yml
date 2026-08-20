@@ -1,0 +1,54 @@
+name: backfill
+
+# The accuracy check, run inside Actions so it can use the repository secrets.
+# GitHub secrets are write-only — there is no way to read them back out into a
+# local .env — so running the replay here avoids having to regenerate keys just
+# to test.
+#
+# Always a dry run: it decides, prints its full reasoning, and sends nothing.
+# No state is written, so it can be run repeatedly while tuning the ladder.
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: "How many recent alert emails to replay"
+        required: true
+        default: "20"
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Check credentials
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        # Reports which of the four services work before spending anything on
+        # the replay. Does not fail the job: a missing Telegram id is fine here
+        # because nothing is sent anyway.
+        continue-on-error: true
+        run: python scripts/preflight.py
+
+      - name: Replay recent alerts
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m src.main --backfill ${{ inputs.count }}
