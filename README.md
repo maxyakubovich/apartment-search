@@ -126,9 +126,22 @@ Settings → Secrets and variables → Actions:
 `GMAIL_ADDRESS` `GMAIL_APP_PASSWORD` `TELEGRAM_BOT_TOKEN` `TELEGRAM_CHAT_ID`
 `APIFY_TOKEN` `ANTHROPIC_API_KEY` `DISPATCH_PAT`
 
-### 6. Start it
+### 6. Push and start it
 
-Actions → **watch** → Run workflow. It re-dispatches itself from then on.
+Create the repo at [github.com/new](https://github.com/new) — name it exactly
+`apartment-search`, set it **Public**, add no README or .gitignore. Then:
+
+```bash
+python3 scripts/setup_remote.py
+```
+
+It prompts for your GitHub username, verifies the repo exists and is public, wires up
+`origin`, and pushes. Verify first because a private repo silently breaks the design —
+Actions minutes are capped there, and the watch loop needs a public repo's unlimited ones.
+
+Then Actions → **backfill** → Run workflow to check accuracy against real listings, and
+once that looks right, Actions → **watch** → Run workflow. It re-dispatches itself from
+then on.
 
 ## Local use
 
