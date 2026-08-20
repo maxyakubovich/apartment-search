@@ -2,6 +2,12 @@
 # Everything the matching logic depends on lives here. Expect to adjust the
 # ladder after a few days of real traffic.
 
+# Bump this after any change to the ladder, thresholds, or den prompt.
+# Listings judged under an older version and NOT notified are reconsidered
+# automatically. Editing state/seen.json by hand cannot work while the watcher
+# is running: it holds its own copy in memory and writes it back wholesale.
+ladder_version: 2
+
 search:
   # Only alerts belonging to these saved searches are processed. Each id comes
   # from `savedSearchEnrollmentId` in that search's URL, and is cross-checked

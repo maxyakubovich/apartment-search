@@ -81,10 +81,17 @@ def cycle(
         lookback = max(lookback, 24 * 30)
 
     saved_searches = config["search"].get("saved_search_enrollment_ids") or []
+    version = int(config.get("ladder_version", 0))
+    # Backfill re-reads everything; the live loop only wants new mail.
+    since_uid = 0 if backfill else int(state.get_flag("last_uid") or 0)
 
-    alerts = fetch_alert_emails(gmail, gmail_pw, lookback_hours=lookback, limit=limit)
+    alerts, highest_uid = fetch_alert_emails(
+        gmail, gmail_pw, lookback_hours=lookback, limit=limit, since_uid=since_uid
+    )
+    if not backfill and highest_uid > since_uid:
+        state.set_flag("last_uid", highest_uid)
     if not alerts:
-        _log("no Zillow alerts in window")
+        _log("no new Zillow alerts")
         return 0
 
     links: list[SourceLink] = []
@@ -113,7 +120,7 @@ def cycle(
             link
             for link in links
             if link.ident in price_change_idents
-            or state.should_scrape_source(link.ident, link.is_building)
+            or state.should_scrape_source(link.ident, link.is_building, version)
         ]
 
     if not targets:
@@ -134,7 +141,7 @@ def cycle(
 
     if not backfill:
         for link in targets:
-            state.note_source_scraped(link.ident)
+            state.note_source_scraped(link.ident, version)
 
     _log(f"  -> {len(listings)} unit(s) returned")
 
@@ -150,12 +157,13 @@ def cycle(
                 price=listing.price,
                 notified=False,
                 reason=drop_reason,
+                ladder_version=version,
             )
             continue
 
         # Seen-check before the Claude call, not after: a listing we are not
         # going to send is not worth analysing.
-        if not backfill and not state.is_new(listing.zpid):
+        if not backfill and not state.is_new(listing.zpid, version):
             if not state.should_renotify(listing.zpid, listing.price):
                 _log(f"  {listing.zpid} skip — seen, no material price drop")
                 state.refresh_price(listing.zpid, listing.price)
@@ -189,6 +197,7 @@ def cycle(
                 notified=decision.notify,
                 reason=decision.reason,
                 den_conf=verdict.den_conf,
+                ladder_version=version,
             )
 
     return notified

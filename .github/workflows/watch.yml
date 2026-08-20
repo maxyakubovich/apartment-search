@@ -54,10 +54,12 @@ jobs:
         run: python -m src.main --loop
 
       - name: Re-dispatch the next loop
-        # Runs even when the loop failed, so a transient error does not end the
-        # chain permanently. GITHUB_TOKEN deliberately cannot trigger another
-        # workflow, so this needs a PAT with `actions: write`.
-        if: always()
+        # Runs when the loop failed, so a transient error does not end the
+        # chain permanently — but NOT when it was cancelled. always() includes
+        # cancellation, which made the Cancel button spawn a replacement run and
+        # left the chain unstoppable. GITHUB_TOKEN deliberately cannot trigger
+        # another workflow, so this needs a PAT with `actions: write`.
+        if: ${{ !cancelled() }}
         env:
           DISPATCH_PAT: ${{ secrets.DISPATCH_PAT }}
         run: |

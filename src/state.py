@@ -56,8 +56,23 @@ class State:
     def listings(self) -> dict[str, Any]:
         return self._data.setdefault("listings", {})
 
-    def is_new(self, zpid: str) -> bool:
-        return zpid not in self.listings
+    def is_new(self, zpid: str, ladder_version: int = 0) -> bool:
+        """Whether this listing still needs judging.
+
+        A record made under an older ladder_version is treated as unjudged, so
+        changing the thresholds or the den prompt automatically reconsiders
+        everything it would now catch. Without that, the listings a fix was
+        written for are exactly the ones already marked seen.
+
+        Anything actually notified stays suppressed regardless of version — you
+        should never be sent the same flat twice because logic moved on.
+        """
+        prior = self.listings.get(zpid)
+        if prior is None:
+            return True
+        if prior.get("notified"):
+            return False
+        return int(prior.get("ladder_version", 0)) < ladder_version
 
     def should_renotify(self, zpid: str, price: int | None) -> bool:
         """True when a previously-notified listing has dropped materially."""
@@ -79,12 +94,14 @@ class State:
         notified: bool,
         reason: str,
         den_conf: float | None = None,
+        ladder_version: int = 0,
     ) -> None:
         self.listings[zpid] = {
             "price": price,
             "notified": notified,
             "reason": reason,
             "den_conf": den_conf,
+            "ladder_version": ladder_version,
             "seen_at": datetime.now(timezone.utc).isoformat(),
         }
         self._dirty = True
@@ -93,15 +110,25 @@ class State:
     def sources(self) -> dict[str, Any]:
         return self._data.setdefault("sources", {})
 
-    def should_scrape_source(self, ident: str, is_building: bool) -> bool:
+    def should_scrape_source(
+        self, ident: str, is_building: bool, ladder_version: int = 0
+    ) -> bool:
         """Whether a link from an alert email is worth an Apify call.
 
         A single-unit page is immutable once scraped, so it is fetched once.
         A building page is not: new units are listed in the same complex over
         time, so it is refetched on a cooldown instead of being retired.
         """
-        last = self.sources.get(ident)
-        if last is None:
+        entry = self.sources.get(ident)
+        if entry is None:
+            return True
+        # Stored as a bare timestamp before versioning existed.
+        if isinstance(entry, dict):
+            last, version = entry.get("at"), int(entry.get("ladder_version", 0))
+        else:
+            last, version = entry, 0
+        # A newer ladder needs the units re-derived, not just re-judged.
+        if version < ladder_version:
             return True
         if not is_building:
             return False
@@ -111,8 +138,11 @@ class State:
             return True
         return datetime.now(timezone.utc) - when >= BUILDING_RESCRAPE_INTERVAL
 
-    def note_source_scraped(self, ident: str) -> None:
-        self.sources[ident] = datetime.now(timezone.utc).isoformat()
+    def note_source_scraped(self, ident: str, ladder_version: int = 0) -> None:
+        self.sources[ident] = {
+            "at": datetime.now(timezone.utc).isoformat(),
+            "ladder_version": ladder_version,
+        }
         self._dirty = True
 
     def refresh_price(self, zpid: str, price: int | None) -> None:

@@ -771,3 +771,42 @@ def test_state_commits_are_throttled_except_after_a_send(tmp_path, monkeypatch):
 
     state.commit(force=True)
     assert calls, "a send must commit immediately regardless of the interval"
+
+
+# --- ladder versioning ----------------------------------------------------
+
+
+def test_bumping_the_ladder_version_reopens_unsent_listings(tmp_path):
+    """Editing state/seen.json by hand cannot work while the watcher runs: it
+    holds its own copy in memory and writes it back wholesale, which is exactly
+    how a reset got clobbered. Versioning does the same job declaratively."""
+    state = State(tmp_path / "seen.json")
+    state.record("111", price=5000, notified=False, reason="clears no rung",
+                 ladder_version=1)
+
+    assert not state.is_new("111", ladder_version=1)   # same logic, settled
+    assert state.is_new("111", ladder_version=2)       # logic moved on, reopen
+
+
+def test_already_sent_listings_are_never_resent_after_a_bump(tmp_path):
+    state = State(tmp_path / "seen.json")
+    state.record("222", price=6000, notified=True, reason="two_bedroom",
+                 ladder_version=1)
+    assert not state.is_new("222", ladder_version=99)
+
+
+def test_sources_are_rescraped_after_a_bump(tmp_path):
+    """A new ladder needs the units re-derived, not merely re-judged."""
+    state = State(tmp_path / "seen.json")
+    state.note_source_scraped("5Xj7m7", ladder_version=1)
+    assert not state.should_scrape_source("5Xj7m7", is_building=False, ladder_version=1)
+    assert state.should_scrape_source("5Xj7m7", is_building=False, ladder_version=2)
+
+
+def test_legacy_bare_timestamp_sources_still_parse(tmp_path):
+    # Written before versioning existed; must not crash or block forever.
+    import json
+    path = tmp_path / "seen.json"
+    path.write_text(json.dumps({"listings": {}, "sources": {"X": "2026-08-20T00:00:00+00:00"}}))
+    state = State(path)
+    assert state.should_scrape_source("X", is_building=False, ladder_version=2)

@@ -105,23 +105,41 @@ def _parse_date(raw: str | None) -> datetime | None:
 
 
 def fetch_alert_emails(
-    address: str, app_password: str, lookback_hours: int = 48, limit: int = 50
-) -> list[AlertEmail]:
+    address: str,
+    app_password: str,
+    lookback_hours: int = 48,
+    limit: int = 50,
+    since_uid: int = 0,
+) -> tuple[list[AlertEmail], int]:
+    """Recent Zillow alerts, plus the highest UID seen.
+
+    Downloading every matching message on every cycle is what a naive poll
+    does, and at a two-minute cadence that is roughly 3.5 GB a day — past
+    Gmail's IMAP download cap, so the watcher would start failing after a few
+    hours. SEARCH is cheap and returns only ids; passing `since_uid` means
+    bodies are fetched for genuinely new mail only, so an idle cycle transfers
+    almost nothing.
+    """
     since = datetime.now(timezone.utc) - timedelta(hours=lookback_hours)
     # IMAP SINCE is day-granular; the real cutoff is applied below.
     since_token = (since - timedelta(days=1)).strftime("%d-%b-%Y")
 
     out: list[AlertEmail] = []
+    highest = since_uid
     conn = imaplib.IMAP4_SSL(IMAP_HOST)
     try:
         conn.login(address, app_password)
         conn.select(MAILBOX, readonly=True)
-        status, data = conn.search(None, f'(SINCE {since_token} FROM "zillow")')
+        status, data = conn.uid("search", None, f'(SINCE {since_token} FROM "zillow")')
         if status != "OK" or not data or not data[0]:
-            return []
+            return [], highest
 
-        for msg_id in data[0].split()[-limit:]:
-            status, raw = conn.fetch(msg_id, "(RFC822)")
+        uids = [int(u) for u in data[0].split()]
+        highest = max([highest, *uids]) if uids else highest
+        fresh = [u for u in uids if u > since_uid][-limit:]
+
+        for uid in fresh:
+            status, raw = conn.uid("fetch", str(uid), "(RFC822)")
             if status != "OK" or not raw or not raw[0]:
                 continue
             msg = email.message_from_bytes(raw[0][1])
@@ -130,7 +148,7 @@ def fetch_alert_emails(
                 continue
             out.append(
                 AlertEmail(
-                    message_id=msg.get("Message-ID", msg_id.decode()),
+                    message_id=msg.get("Message-ID", str(uid)),
                     subject=msg.get("Subject", ""),
                     received=received or datetime.now(timezone.utc),
                     body=_decode_body(msg),
@@ -141,7 +159,7 @@ def fetch_alert_emails(
             conn.logout()
         except Exception:
             pass
-    return out
+    return out, highest
 
 
 def _decode_target(raw: str) -> str:
