@@ -1,6 +1,6 @@
 {
-  "last_alert_seen": "2026-08-20T23:36:41.439543+00:00",
-  "last_uid": 251905,
+  "last_alert_seen": "2026-08-21T00:38:17.565308+00:00",
+  "last_uid": 251908,
   "listings": {
     "2053889664": {
       "den_conf": null,
@@ -896,6 +896,16 @@
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:25:42.378889+00:00"
     },
+    "458707719": {
+      "address": "4927 California St #A",
+      "den_conf": null,
+      "fingerprint": "4927californiasta|1|750",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 3795,
+      "reason": "750 sqft below 850 floor",
+      "seen_at": "2026-08-21T00:38:56.725121+00:00"
+    },
     "460529634": {
       "den_conf": null,
       "ladder_version": 2,
@@ -1072,6 +1082,10 @@
     },
     "2085124307": {
       "at": "2026-08-20T19:52:54.247050+00:00",
+      "ladder_version": 2
+    },
+    "458707719": {
+      "at": "2026-08-21T00:38:56.724092+00:00",
       "ladder_version": 2
     },
     "464299520": {
