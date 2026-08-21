@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-21T20:24:25.382264+00:00",
+  "last_alert_seen": "2026-08-21T21:36:09.428543+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 251985,
+  "last_uid": 251989,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -966,6 +966,16 @@
       "reason": "716 sqft below 850 floor",
       "seen_at": "2026-08-20T19:54:49.448429+00:00"
     },
+    "463682602": {
+      "address": "G22, 22 Terra Vista Ave, San Francisco, CA 94115",
+      "den_conf": null,
+      "fingerprint": "g2222terravistaavesanfranciscoca94115|1|700",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4495,
+      "reason": "700 sqft below 850 floor",
+      "seen_at": "2026-08-21T21:36:15.886402+00:00"
+    },
     "464281647": {
       "den_conf": null,
       "ladder_version": 2,
@@ -1009,6 +1019,26 @@
       "price": 4295,
       "reason": "layout_unknown",
       "seen_at": "2026-08-21T16:31:04.883053+00:00"
+    },
+    "464752145": {
+      "address": "Studio, 22 Terra Vista Ave, San Francisco, CA 94115",
+      "den_conf": null,
+      "fingerprint": "studio22terravistaavesanfranciscoca94115|0|350",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 2795,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-21T21:36:15.886373+00:00"
+    },
+    "464752232": {
+      "address": "Townhouse, 22 Terra Vista Ave, San Francisco, CA 94115",
+      "den_conf": null,
+      "fingerprint": "townhouse22terravistaavesanfranciscoca94115|1|760",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4595,
+      "reason": "760 sqft below 850 floor",
+      "seen_at": "2026-08-21T21:36:15.886442+00:00"
     },
     "64969165": {
       "den_conf": null,
@@ -1145,6 +1175,10 @@
     },
     "5XjQ4f": {
       "at": "2026-08-20T19:52:54.247027+00:00",
+      "ladder_version": 2
+    },
+    "5XjRrp": {
+      "at": "2026-08-21T21:36:15.885041+00:00",
       "ladder_version": 2
     },
     "5XjSnF": {
