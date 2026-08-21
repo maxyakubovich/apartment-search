@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-21T08:20:44.135360+00:00",
+  "last_alert_seen": "2026-08-21T16:30:10.178044+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 251930,
+  "last_uid": 251955,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -990,6 +990,16 @@
       "reason": "800 sqft below 850 floor",
       "seen_at": "2026-08-20T20:50:58.778202+00:00"
     },
+    "464744532": {
+      "address": "2350 N Point St #4",
+      "den_conf": 0.05,
+      "fingerprint": "2350npointst4|1|850",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 4295,
+      "reason": "layout_unknown",
+      "seen_at": "2026-08-21T16:31:04.883053+00:00"
+    },
     "64969165": {
       "den_conf": null,
       "notified": false,
@@ -1109,6 +1119,10 @@
     },
     "464723218": {
       "at": "2026-08-20T20:50:57.777206+00:00",
+      "ladder_version": 2
+    },
+    "464744532": {
+      "at": "2026-08-21T16:30:58.628947+00:00",
       "ladder_version": 2
     },
     "5XjKYs": {
