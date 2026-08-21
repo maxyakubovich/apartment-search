@@ -24,7 +24,12 @@ from . import den as den_module
 from . import enrich, notify
 from .config import load_config, load_dotenv, optional, require
 from .filters import evaluate, hard_filter
-from .sources.email_imap import SourceLink, fetch_alert_emails, source_links_from_email
+from .sources.email_imap import (
+    SourceLink,
+    enrollment_id,
+    extract_source_links,
+    fetch_alert_emails,
+)
 from .state import State
 
 PARSER_WARNING_KEY = "last_parser_warning"
@@ -40,21 +45,36 @@ def _anthropic_client():
     return anthropic.Anthropic(api_key=require("ANTHROPIC_API_KEY"))
 
 
-def _warn_parser_stalled(state: State, token: str, chat_id: str, dry_run: bool) -> None:
-    """Alerts arriving but nothing parseable means Zillow changed their template.
+def _warn_parser_stalled(
+    state: State,
+    token: str,
+    chat_id: str,
+    dry_run: bool,
+    subjects: list[str] | None = None,
+) -> None:
+    """Alerts for THIS search arrived but yielded nothing parseable.
 
     Worth an explicit ping: the failure mode otherwise is total silence, which
-    is indistinguishable from a quiet market.
+    is indistinguishable from a quiet market. Only fires for mail that actually
+    belongs to the watched search — alerts for the other saved search, and
+    Zillow marketing, are expected to yield nothing and must not raise an alarm.
+
+    The subject lines are included because the fix always starts by looking at
+    the offending email, and hunting for it afterwards is the slow part.
     """
     last = state.get_flag(PARSER_WARNING_KEY)
     if last:
         when = datetime.fromisoformat(last)
         if datetime.now(timezone.utc) - when < timedelta(hours=24):
             return
+    detail = ""
+    if subjects:
+        listed = "\n".join(f"• {s[:80]}" for s in subjects[:3])
+        detail = f"\n\nAffected email(s):\n{listed}"
     msg = (
-        "⚠️ Zillow alert emails are arriving but no listing links could be "
-        "parsed from them. The email template likely changed — the watcher "
-        "needs its parser updated."
+        "⚠️ Zillow alerts for your saved search arrived but no listing links "
+        "could be parsed. The email template likely changed — forward one of "
+        f"these to have the parser updated.{detail}"
     )
     _log(msg)
     if not dry_run:
@@ -96,8 +116,27 @@ def cycle(
 
     links: list[SourceLink] = []
     price_change_idents: set[str] = set()
+    # Counted separately from `alerts`: the mailbox also receives alerts for the
+    # >1,000 sqft saved search, which are triaged by hand, plus Zillow marketing
+    # that carries no enrollment id at all. Neither is a parser failure, and
+    # conflating them with one produces a false alarm.
+    ours = 0
+    unparsed: list[str] = []
+    wanted = set(saved_searches)
     for alert in alerts:
-        found = source_links_from_email(alert, saved_searches)
+        if wanted:
+            found_id = enrollment_id(alert.body)
+            if found_id not in wanted:
+                _log(
+                    f"  ignoring alert from {found_id or 'no saved search'}: "
+                    f"{alert.subject[:60]}"
+                )
+                continue
+        ours += 1
+        found = extract_source_links(alert.body)
+        if not found:
+            _log(f"  !! no links parsed from: {alert.subject[:70]}")
+            unparsed.append(alert.subject)
         known = {link.ident for link in links}
         links.extend(link for link in found if link.ident not in known)
         # Price-change alerts are the one case worth re-examining something we
@@ -105,10 +144,18 @@ def cycle(
         if "price" in alert.subject.lower():
             price_change_idents.update(link.ident for link in found)
 
-    _log(f"{len(alerts)} alert email(s), {len(links)} result link(s) across {len(saved_searches) or 'all'} search(es)")
+    _log(
+        f"{len(alerts)} alert email(s), {ours} for this search, "
+        f"{len(links)} result link(s)"
+    )
 
     if not links:
-        _warn_parser_stalled(state, tg_token, tg_chat, dry_run)
+        if ours:
+            # Emails that genuinely belong to our search yielded nothing —
+            # that is the template having changed underneath us.
+            _warn_parser_stalled(state, tg_token, tg_chat, dry_run, unparsed)
+        else:
+            _log("nothing for this saved search in that batch")
         return 0
 
     state.note_alert_seen()

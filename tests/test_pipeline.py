@@ -866,3 +866,35 @@ def test_addressless_listing_is_not_treated_as_a_duplicate(tmp_path):
                  fingerprint=nameless.fingerprint)
     other = Listing(zpid="2", url="u", address=None, beds=1, sqft=900)
     assert state.already_notified(other.fingerprint) is None
+
+
+# --- parser-stall warning -------------------------------------------------
+
+
+def test_alerts_from_another_saved_search_do_not_raise_a_false_alarm():
+    """The mailbox also receives alerts for the >1,000 sqft search, which are
+    triaged by hand. Filtering those out is correct behaviour and must not be
+    reported as the parser having broken — that warning fired for exactly this
+    reason once and cost a morning."""
+    other = _alert_for("X1-SSover1000sqft", "111111")
+    assert source_links_from_email(other, [ENROLLMENT]) == []
+    # And it carries an enrollment id, so it is identifiably not ours.
+    assert enrollment_id(other.body) == "X1-SSover1000sqft"
+
+
+def test_marketing_mail_has_no_enrollment_id_at_all():
+    promo = AlertEmail("m", "Your home value report", None,
+                       _link("https://www.zillow.com/myzillow/?utm_content=header"))
+    assert enrollment_id(promo.body) is None
+    assert source_links_from_email(promo, [ENROLLMENT]) == []
+
+
+def test_our_search_yielding_nothing_is_the_real_failure():
+    """An email that DOES belong to our search but parses to zero links is the
+    template having changed, and must still warn."""
+    body = _link(
+        f"https://www.zillow.com/email/unsubscribe?encodedEnrollmentId={ENROLLMENT}"
+    ) + _link("https://www.zillow.com/some-new-shape/?utm_content=brandnewvalue")
+    alert = AlertEmail("m", "3 Rental Results", None, body)
+    assert enrollment_id(alert.body) == ENROLLMENT   # it IS ours
+    assert extract_source_links(alert.body) == []    # but nothing parsed
