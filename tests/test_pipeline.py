@@ -898,3 +898,39 @@ def test_our_search_yielding_nothing_is_the_real_failure():
     alert = AlertEmail("m", "3 Rental Results", None, body)
     assert enrollment_id(alert.body) == ENROLLMENT   # it IS ours
     assert extract_source_links(alert.body) == []    # but nothing parsed
+
+
+def test_a_failed_telegram_send_is_not_recorded_as_delivered(tmp_path):
+    """Recording the DECISION rather than the OUTCOME retires a listing that
+    never reached the phone: you never see it, and nothing ever says so.
+    Unrecorded means the next cycle tries again."""
+    state = State(tmp_path / "seen.json")
+    # What the fixed code does on a failed send: nothing.
+    assert state.is_new("999", ladder_version=2)
+
+    # And on a successful one:
+    state.record("999", price=5000, notified=True, reason="two_bedroom",
+                 ladder_version=2)
+    assert not state.is_new("999", ladder_version=2)
+
+
+def test_building_cooldown_is_short_enough_to_act_on_a_new_alert(tmp_path):
+    """A building link in a NEW alert is Zillow saying a unit matched there.
+    A 12h cooldown suppressed exactly that signal; new units sat unseen for
+    up to half a day."""
+    from datetime import datetime, timedelta, timezone
+    from src.state import BUILDING_RESCRAPE_INTERVAL
+
+    assert BUILDING_RESCRAPE_INTERVAL <= timedelta(minutes=30)
+
+    state = State(tmp_path / "seen.json")
+    state.note_source_scraped("5Xj7m7", ladder_version=2)
+    # Immediately after: still on cooldown, so a burst of alerts cannot thrash.
+    assert not state.should_scrape_source("5Xj7m7", True, 2)
+    # Backdated past the window: eligible again.
+    old = (datetime.now(timezone.utc) - timedelta(minutes=20)).isoformat()
+    state.sources["5Xj7m7"] = {"at": old, "ladder_version": 2}
+    assert state.should_scrape_source("5Xj7m7", True, 2)
+    # A single home never needs re-scraping.
+    state.note_source_scraped("15147609", ladder_version=2)
+    assert not state.should_scrape_source("15147609", False, 2)

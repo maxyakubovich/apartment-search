@@ -247,11 +247,17 @@ def cycle(
         if verdict.evidence:
             _log(f"      evidence: {verdict.evidence}")
 
+        delivered = decision.notify
         if decision.notify and not dry_run:
-            if notify.send_listing(tg_token, tg_chat, decision):
+            delivered = notify.send_listing(tg_token, tg_chat, decision)
+            if delivered:
                 notified += 1
             else:
-                _log(f"  {listing.zpid} telegram send failed")
+                # Recording a failed send as delivered would retire the listing
+                # permanently — you would never see it and nothing would say so.
+                # Leaving it unrecorded means the next cycle tries again.
+                _log(f"  {listing.zpid} TELEGRAM SEND FAILED — left for retry")
+                continue
         elif decision.notify:
             notified += 1
 
@@ -259,7 +265,7 @@ def cycle(
             state.record(
                 listing.zpid,
                 price=listing.price,
-                notified=decision.notify,
+                notified=delivered,
                 reason=decision.reason,
                 den_conf=verdict.den_conf,
                 ladder_version=version,

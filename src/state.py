@@ -23,9 +23,13 @@ STATE_PATH = Path(__file__).parent.parent / "state" / "seen.json"
 # Re-notify when a listing we already sent drops by at least this fraction.
 PRICE_DROP_THRESHOLD = 0.05
 
-# Buildings keep listing new units, so their pages are refetched periodically
-# rather than being marked done forever after the first scrape.
-BUILDING_RESCRAPE_INTERVAL = timedelta(hours=12)
+# Buildings keep listing new units, so their pages are refetched rather than
+# retired after one scrape. The window is deliberately short: the live loop only
+# reads mail it has not seen, so a building link in a new alert IS Zillow saying
+# a new unit matched there. A long cooldown suppressed exactly that signal and
+# delayed new units by up to half a day. This is now only a thrash guard for the
+# same building appearing across several alerts that arrive together.
+BUILDING_RESCRAPE_INTERVAL = timedelta(minutes=15)
 
 # Committing on every two-minute cycle produced ~700 commits a day and made any
 # human push collide with the bot. State is pushed on this interval instead —
