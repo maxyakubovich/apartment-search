@@ -1,7 +1,17 @@
 {
-  "last_alert_seen": "2026-08-21T00:38:17.565308+00:00",
-  "last_uid": 251908,
+  "last_alert_seen": "2026-08-21T02:41:49.513054+00:00",
+  "last_uid": 251909,
   "listings": {
+    "15074888": {
+      "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
+      "den_conf": null,
+      "fingerprint": "1bedroom1700californiastsanfranciscoca94109|1|753",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6464,
+      "reason": "753 sqft below 850 floor",
+      "seen_at": "2026-08-21T02:41:58.910839+00:00"
+    },
     "2053889664": {
       "den_conf": null,
       "ladder_version": 2,
@@ -1142,6 +1152,10 @@
     },
     "83154263": {
       "at": "2026-08-20T19:52:54.247060+00:00",
+      "ladder_version": 2
+    },
+    "CjjXmJ": {
+      "at": "2026-08-21T02:41:57.928971+00:00",
       "ladder_version": 2
     },
     "CjpwdL": {
