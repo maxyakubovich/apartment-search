@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-21T21:36:09.428543+00:00",
+  "last_alert_seen": "2026-08-22T00:33:25.299221+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 251989,
+  "last_uid": 251997,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -259,6 +259,16 @@
       "price": 4375,
       "reason": "687 sqft below 850 floor",
       "seen_at": "2026-08-20T19:53:04.295688+00:00"
+    },
+    "2079764643": {
+      "address": "2B, 3 Bayside Village Pl, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "2b3baysidevillageplsanfranciscoca94107|2|923",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7093,
+      "reason": "price $7,093 over $6,500 cap",
+      "seen_at": "2026-08-22T00:33:34.515720+00:00"
     },
     "2079917817": {
       "den_conf": 0.9,
@@ -879,6 +889,26 @@
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-20T19:53:12.035201+00:00"
     },
+    "444070290": {
+      "address": "0C, 3 Bayside Village Pl, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "0c3baysidevillageplsanfranciscoca94107|0|478",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 3908,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-22T00:33:34.515455+00:00"
+    },
+    "448059940": {
+      "address": "1A, 3 Bayside Village Pl, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "1a3baysidevillageplsanfranciscoca94107|1|617",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4675,
+      "reason": "617 sqft below 850 floor",
+      "seen_at": "2026-08-22T00:33:34.515599+00:00"
+    },
     "450081822": {
       "den_conf": null,
       "ladder_version": 2,
@@ -902,6 +932,16 @@
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-20T19:53:12.035265+00:00"
     },
+    "452918979": {
+      "address": "0B, 3 Bayside Village Pl, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "0b3baysidevillageplsanfranciscoca94107|0|460",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 3948,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-22T00:33:34.515530+00:00"
+    },
     "453646337": {
       "den_conf": null,
       "ladder_version": 2,
@@ -916,6 +956,36 @@
       "price": 5729,
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:25:42.378889+00:00"
+    },
+    "453794229": {
+      "address": "1D, 3 Bayside Village Pl, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "1d3baysidevillageplsanfranciscoca94107|1|652",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4720,
+      "reason": "652 sqft below 850 floor",
+      "seen_at": "2026-08-22T00:33:34.515649+00:00"
+    },
+    "454675340": {
+      "address": "2H, 3 Bayside Village Pl, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "2h3baysidevillageplsanfranciscoca94107|2|1099",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7405,
+      "reason": "price $7,405 over $6,500 cap",
+      "seen_at": "2026-08-22T00:33:34.515749+00:00"
+    },
+    "455132646": {
+      "address": "1L, 3 Bayside Village Pl, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "1l3baysidevillageplsanfranciscoca94107|1|739",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4550,
+      "reason": "739 sqft below 850 floor",
+      "seen_at": "2026-08-22T00:33:34.515567+00:00"
     },
     "458707719": {
       "address": "4927 California St #A",
@@ -934,6 +1004,16 @@
       "price": 5391,
       "reason": "809 sqft below 850 floor",
       "seen_at": "2026-08-20T19:55:15.188384+00:00"
+    },
+    "463215916": {
+      "address": "2G, 3 Bayside Village Pl, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "2g3baysidevillageplsanfranciscoca94107|2|1030",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7172,
+      "reason": "price $7,172 over $6,500 cap",
+      "seen_at": "2026-08-22T00:33:34.515735+00:00"
     },
     "463290625": {
       "den_conf": null,
@@ -957,6 +1037,26 @@
       "price": 4364,
       "reason": "798 sqft below 850 floor",
       "seen_at": "2026-08-20T19:55:35.720277+00:00"
+    },
+    "463327474": {
+      "address": "1F, 3 Bayside Village Pl, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "1f3baysidevillageplsanfranciscoca94107|1|658",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4700,
+      "reason": "658 sqft below 850 floor",
+      "seen_at": "2026-08-22T00:33:34.515625+00:00"
+    },
+    "463327475": {
+      "address": "1J, 3 Bayside Village Pl, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "1j3baysidevillageplsanfranciscoca94107|1|719",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4805,
+      "reason": "719 sqft below 850 floor",
+      "seen_at": "2026-08-22T00:33:34.515701+00:00"
     },
     "463433150": {
       "den_conf": null,
@@ -1039,6 +1139,16 @@
       "price": 4595,
       "reason": "760 sqft below 850 floor",
       "seen_at": "2026-08-21T21:36:15.886442+00:00"
+    },
+    "464758584": {
+      "address": "1M, 3 Bayside Village Pl, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "1m3baysidevillageplsanfranciscoca94107|1|790",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4730,
+      "reason": "790 sqft below 850 floor",
+      "seen_at": "2026-08-22T00:33:34.515674+00:00"
     },
     "64969165": {
       "den_conf": null,
@@ -1187,6 +1297,10 @@
     },
     "5XjVCw": {
       "at": "2026-08-20T19:52:54.247040+00:00",
+      "ladder_version": 2
+    },
+    "5Xk2zx": {
+      "at": "2026-08-22T00:33:33.423296+00:00",
       "ladder_version": 2
     },
     "5XkGzw": {
