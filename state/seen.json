@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-22T04:42:26.927747+00:00",
+  "last_alert_seen": "2026-08-22T19:20:31.622882+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 252025,
+  "last_uid": 252030,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -268,7 +268,7 @@
       "notified": false,
       "price": 7093,
       "reason": "price $7,093 over $6,500 cap",
-      "seen_at": "2026-08-22T00:33:34.515720+00:00"
+      "seen_at": "2026-08-22T19:20:43.799995+00:00"
     },
     "2079917817": {
       "den_conf": 0.9,
@@ -881,6 +881,36 @@
       "reason": "price $6,685 over $6,500 cap",
       "seen_at": "2026-08-20T19:53:43.197905+00:00"
     },
+    "442726562": {
+      "address": "SP Renovation 2, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "sprenovation2900folsomstsanfranciscoca94107|0|563",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4317,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-22T19:20:43.800190+00:00"
+    },
+    "442726563": {
+      "address": "1C Renovation 2, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "1crenovation2900folsomstsanfranciscoca94107|1|546",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4535,
+      "reason": "546 sqft below 850 floor",
+      "seen_at": "2026-08-22T19:20:43.800215+00:00"
+    },
+    "443122495": {
+      "address": "2AQ Renovation 2, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "2aqrenovation2900folsomstsanfranciscoca94107|2|1086",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6501,
+      "reason": "price $6,501 over $6,500 cap",
+      "seen_at": "2026-08-22T19:22:06.375951+00:00"
+    },
     "443688308": {
       "den_conf": null,
       "ladder_version": 2,
@@ -889,15 +919,45 @@
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-20T19:53:12.035201+00:00"
     },
+    "443691596": {
+      "address": "2R Renovation 2, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": 0.9,
+      "fingerprint": "2rrenovation2900folsomstsanfranciscoca94107|2|950",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 6252,
+      "reason": "two_bedroom",
+      "seen_at": "2026-08-22T19:21:39.025761+00:00"
+    },
+    "443703826": {
+      "address": "1M, 3 Bayside Village Pl, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "1m3baysidevillageplsanfranciscoca94107|1|790",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5010,
+      "reason": "790 sqft below 850 floor",
+      "seen_at": "2026-08-22T19:20:43.799968+00:00"
+    },
     "444070290": {
       "address": "0C, 3 Bayside Village Pl, San Francisco, CA 94107",
       "den_conf": null,
       "fingerprint": "0c3baysidevillageplsanfranciscoca94107|0|478",
       "ladder_version": 2,
       "notified": false,
-      "price": 3908,
+      "price": 3900,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-22T00:33:34.515455+00:00"
+      "seen_at": "2026-08-22T19:20:43.799749+00:00"
+    },
+    "444070462": {
+      "address": "2N Balcony Townhouse, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "2nbalconytownhouse900folsomstsanfranciscoca94107|2|940",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 5843,
+      "reason": "two_bedroom",
+      "seen_at": "2026-08-22T19:20:53.747147+00:00"
     },
     "448059940": {
       "address": "1A, 3 Bayside Village Pl, San Francisco, CA 94107",
@@ -907,7 +967,7 @@
       "notified": false,
       "price": 4675,
       "reason": "617 sqft below 850 floor",
-      "seen_at": "2026-08-22T00:33:34.515599+00:00"
+      "seen_at": "2026-08-22T19:20:43.799871+00:00"
     },
     "450081822": {
       "den_conf": null,
@@ -916,6 +976,16 @@
       "price": 5025,
       "reason": "837 sqft below 850 floor",
       "seen_at": "2026-08-20T19:53:26.891547+00:00"
+    },
+    "450823050": {
+      "address": "1AL Renovation 2, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "1alrenovation2900folsomstsanfranciscoca94107|1|687",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4745,
+      "reason": "687 sqft below 850 floor",
+      "seen_at": "2026-08-22T19:20:43.800333+00:00"
     },
     "452433247": {
       "den_conf": 0.85,
@@ -932,15 +1002,55 @@
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-20T19:53:12.035265+00:00"
     },
+    "452779583": {
+      "address": "2G Balcony Renovation 2, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": 0.9,
+      "fingerprint": "2gbalconyrenovation2900folsomstsanfranciscoca94107|2|914",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 6323,
+      "reason": "two_bedroom",
+      "seen_at": "2026-08-22T19:21:57.385717+00:00"
+    },
+    "452779585": {
+      "address": "2G Balcony, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": 0.9,
+      "fingerprint": "2gbalcony900folsomstsanfranciscoca94107|2|914",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 6323,
+      "reason": "two_bedroom",
+      "seen_at": "2026-08-22T19:21:48.244399+00:00"
+    },
     "452918979": {
       "address": "0B, 3 Bayside Village Pl, San Francisco, CA 94107",
       "den_conf": null,
       "fingerprint": "0b3baysidevillageplsanfranciscoca94107|0|460",
       "ladder_version": 2,
       "notified": false,
-      "price": 3948,
+      "price": 3940,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-22T00:33:34.515530+00:00"
+      "seen_at": "2026-08-22T19:20:43.799808+00:00"
+    },
+    "453024573": {
+      "address": "SM Renovation 2, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "smrenovation2900folsomstsanfranciscoca94107|0|561",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4287,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-22T19:20:43.800166+00:00"
+    },
+    "453317711": {
+      "address": "1AF Renovation 2, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "1afrenovation2900folsomstsanfranciscoca94107|1|677",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4650,
+      "reason": "677 sqft below 850 floor",
+      "seen_at": "2026-08-22T19:20:43.800279+00:00"
     },
     "453646337": {
       "den_conf": null,
@@ -965,7 +1075,17 @@
       "notified": false,
       "price": 4720,
       "reason": "652 sqft below 850 floor",
-      "seen_at": "2026-08-22T00:33:34.515649+00:00"
+      "seen_at": "2026-08-22T19:20:43.799921+00:00"
+    },
+    "453794238": {
+      "address": "SB Renovation 2, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "sbrenovation2900folsomstsanfranciscoca94107|0|481",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 3992,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-22T19:20:43.800069+00:00"
     },
     "454675340": {
       "address": "2H, 3 Bayside Village Pl, San Francisco, CA 94107",
@@ -975,7 +1095,17 @@
       "notified": false,
       "price": 7405,
       "reason": "price $7,405 over $6,500 cap",
-      "seen_at": "2026-08-22T00:33:34.515749+00:00"
+      "seen_at": "2026-08-22T19:20:43.800043+00:00"
+    },
+    "455038886": {
+      "address": "2F Renovation 2, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "2frenovation2900folsomstsanfranciscoca94107|2|902",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 6083,
+      "reason": "two_bedroom",
+      "seen_at": "2026-08-22T19:21:30.485216+00:00"
     },
     "455132646": {
       "address": "1L, 3 Bayside Village Pl, San Francisco, CA 94107",
@@ -985,7 +1115,47 @@
       "notified": false,
       "price": 4550,
       "reason": "739 sqft below 850 floor",
-      "seen_at": "2026-08-22T00:33:34.515567+00:00"
+      "seen_at": "2026-08-22T19:20:43.799843+00:00"
+    },
+    "455388166": {
+      "address": "SR, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "sr900folsomstsanfranciscoca94107|0|566",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4077,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-22T19:20:43.800117+00:00"
+    },
+    "455565735": {
+      "address": "1AM Renovation 2, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "1amrenovation2900folsomstsanfranciscoca94107|1|688",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4735,
+      "reason": "688 sqft below 850 floor",
+      "seen_at": "2026-08-22T19:20:43.800305+00:00"
+    },
+    "455701185": {
+      "address": "1AF, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "1af900folsomstsanfranciscoca94107|1|677",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4595,
+      "reason": "677 sqft below 850 floor",
+      "seen_at": "2026-08-22T19:20:43.800238+00:00"
+    },
+    "455802232": {
+      "address": "SH, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "sh900folsomstsanfranciscoca94107|0|529",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4167,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-22T19:20:43.800141+00:00"
     },
     "458707719": {
       "address": "4927 California St #A",
@@ -1005,6 +1175,16 @@
       "reason": "809 sqft below 850 floor",
       "seen_at": "2026-08-20T19:55:15.188384+00:00"
     },
+    "462853863": {
+      "address": "2P Townhouse Renovation 2, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "2ptownhouserenovation2900folsomstsanfranciscoca94107|2|940",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 5968,
+      "reason": "two_bedroom",
+      "seen_at": "2026-08-22T19:21:02.685159+00:00"
+    },
     "463215916": {
       "address": "2G, 3 Bayside Village Pl, San Francisco, CA 94107",
       "den_conf": null,
@@ -1013,7 +1193,7 @@
       "notified": false,
       "price": 7172,
       "reason": "price $7,172 over $6,500 cap",
-      "seen_at": "2026-08-22T00:33:34.515735+00:00"
+      "seen_at": "2026-08-22T19:20:43.800020+00:00"
     },
     "463290625": {
       "den_conf": null,
@@ -1046,7 +1226,7 @@
       "notified": false,
       "price": 4700,
       "reason": "658 sqft below 850 floor",
-      "seen_at": "2026-08-22T00:33:34.515625+00:00"
+      "seen_at": "2026-08-22T19:20:43.799897+00:00"
     },
     "463327475": {
       "address": "1J, 3 Bayside Village Pl, San Francisco, CA 94107",
@@ -1056,7 +1236,7 @@
       "notified": false,
       "price": 4805,
       "reason": "719 sqft below 850 floor",
-      "seen_at": "2026-08-22T00:33:34.515701+00:00"
+      "seen_at": "2026-08-22T19:20:43.799945+00:00"
     },
     "463433150": {
       "den_conf": null,
@@ -1076,6 +1256,16 @@
       "reason": "700 sqft below 850 floor",
       "seen_at": "2026-08-21T21:36:15.886402+00:00"
     },
+    "463909928": {
+      "address": "2J Renovation 2, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "2jrenovation2900folsomstsanfranciscoca94107|2|917",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 6053,
+      "reason": "two_bedroom",
+      "seen_at": "2026-08-22T19:21:21.690214+00:00"
+    },
     "464281647": {
       "den_conf": null,
       "ladder_version": 2,
@@ -1084,6 +1274,26 @@
       "reason": "822 sqft below 850 floor",
       "seen_at": "2026-08-20T19:53:21.036734+00:00"
     },
+    "464347393": {
+      "address": "2AX Renovation 2, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": 0.9,
+      "fingerprint": "2axrenovation2900folsomstsanfranciscoca94107|2|1115",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 6388,
+      "reason": "two_bedroom",
+      "seen_at": "2026-08-22T19:22:06.375865+00:00"
+    },
+    "464347397": {
+      "address": "SG Renovation 2, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "sgrenovation2900folsomstsanfranciscoca94107|0|545",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4072,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-22T19:20:43.800093+00:00"
+    },
     "464365409": {
       "den_conf": null,
       "ladder_version": 2,
@@ -1091,6 +1301,26 @@
       "price": 6970,
       "reason": "price $6,970 over $6,500 cap",
       "seen_at": "2026-08-20T19:55:35.720300+00:00"
+    },
+    "464479226": {
+      "address": "2K Renovation 2, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "2krenovation2900folsomstsanfranciscoca94107|2|920",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 6038,
+      "reason": "two_bedroom",
+      "seen_at": "2026-08-22T19:21:12.190598+00:00"
+    },
+    "464499994": {
+      "address": "2B Renovation 2, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "2brenovation2900folsomstsanfranciscoca94107|2|844",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5963,
+      "reason": "844 sqft below 850 floor",
+      "seen_at": "2026-08-22T19:20:53.747233+00:00"
     },
     "464706524": {
       "den_conf": 0.05,
@@ -1149,6 +1379,16 @@
       "price": 4730,
       "reason": "790 sqft below 850 floor",
       "seen_at": "2026-08-22T00:33:34.515674+00:00"
+    },
+    "464769415": {
+      "address": "1BF Balcony, 900 Folsom St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "1bfbalcony900folsomstsanfranciscoca94107|1|849",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4855,
+      "reason": "849 sqft below 850 floor",
+      "seen_at": "2026-08-22T19:20:43.800365+00:00"
     },
     "64969165": {
       "den_conf": null,
@@ -1293,6 +1533,10 @@
       "at": "2026-08-20T19:52:54.247046+00:00",
       "ladder_version": 2
     },
+    "5XjPfY": {
+      "at": "2026-08-22T19:20:42.822729+00:00",
+      "ladder_version": 2
+    },
     "5XjQ4f": {
       "at": "2026-08-20T19:52:54.247027+00:00",
       "ladder_version": 2
@@ -1310,7 +1554,7 @@
       "ladder_version": 2
     },
     "5Xk2zx": {
-      "at": "2026-08-22T00:33:33.423296+00:00",
+      "at": "2026-08-22T19:20:42.822706+00:00",
       "ladder_version": 2
     },
     "5XkGzw": {
