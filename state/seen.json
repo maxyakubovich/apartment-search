@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-22T19:24:08.867529+00:00",
+  "last_alert_seen": "2026-08-23T19:38:44.494400+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 252041,
+  "last_uid": 252073,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -1520,6 +1520,16 @@
       "reason": "849 sqft below 850 floor",
       "seen_at": "2026-08-22T19:20:43.800365+00:00"
     },
+    "464777410": {
+      "address": "5 Prado St APT 204",
+      "den_conf": 0.1,
+      "fingerprint": "5pradostapt204|1|1000",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 5500,
+      "reason": "layout_unknown",
+      "seen_at": "2026-08-23T19:39:13.555807+00:00"
+    },
     "64969165": {
       "den_conf": null,
       "notified": false,
@@ -1657,6 +1667,10 @@
     },
     "464744532": {
       "at": "2026-08-21T16:30:58.628947+00:00",
+      "ladder_version": 2
+    },
+    "464777410": {
+      "at": "2026-08-23T19:39:06.019120+00:00",
       "ladder_version": 2
     },
     "5XjKYs": {
