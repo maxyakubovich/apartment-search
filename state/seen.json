@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-23T19:38:44.494400+00:00",
+  "last_alert_seen": "2026-08-24T00:49:47.456001+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 252087,
+  "last_uid": 252093,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -51,9 +51,9 @@
       "fingerprint": "a111222harrisonstsanfranciscoca94103|1|788",
       "ladder_version": 2,
       "notified": false,
-      "price": 4937,
+      "price": 4944,
       "reason": "788 sqft below 850 floor",
-      "seen_at": "2026-08-22T19:24:28.213637+00:00"
+      "seen_at": "2026-08-24T00:49:56.224798+00:00"
     },
     "2059252535": {
       "den_conf": null,
@@ -187,9 +187,9 @@
       "fingerprint": "a41222harrisonstsanfranciscoca94103|1|741",
       "ladder_version": 2,
       "notified": false,
-      "price": 4316,
+      "price": 4307,
       "reason": "741 sqft below 850 floor",
-      "seen_at": "2026-08-22T19:24:23.068093+00:00"
+      "seen_at": "2026-08-24T00:49:56.224690+00:00"
     },
     "2073566333": {
       "address": "B12, 1222 Harrison St, San Francisco, CA 94103",
@@ -197,9 +197,9 @@
       "fingerprint": "b121222harrisonstsanfranciscoca94103|2|1267",
       "ladder_version": 2,
       "notified": false,
-      "price": 6841,
-      "reason": "price $6,841 over $6,500 cap",
-      "seen_at": "2026-08-22T19:24:55.233739+00:00"
+      "price": 6840,
+      "reason": "price $6,840 over $6,500 cap",
+      "seen_at": "2026-08-24T00:49:56.224884+00:00"
     },
     "2077160146": {
       "address": "B3, 1222 Harrison St, San Francisco, CA 94103",
@@ -207,7 +207,7 @@
       "fingerprint": "b31222harrisonstsanfranciscoca94103|2|987",
       "ladder_version": 2,
       "notified": true,
-      "price": 5896,
+      "price": 5895,
       "reason": "two_bedroom",
       "seen_at": "2026-08-22T19:24:46.998138+00:00"
     },
@@ -217,7 +217,7 @@
       "fingerprint": "b41222harrisonstsanfranciscoca94103|2|1012",
       "ladder_version": 2,
       "notified": true,
-      "price": 5906,
+      "price": 5905,
       "reason": "two_bedroom",
       "seen_at": "2026-08-22T19:24:55.233663+00:00"
     },
@@ -268,9 +268,9 @@
       "fingerprint": "a121222harrisonstsanfranciscoca94103|1|784",
       "ladder_version": 2,
       "notified": false,
-      "price": 4656,
+      "price": 4663,
       "reason": "784 sqft below 850 floor",
-      "seen_at": "2026-08-22T19:24:23.068144+00:00"
+      "seen_at": "2026-08-24T00:49:56.224747+00:00"
     },
     "2078643637": {
       "address": "B2, 1222 Harrison St, San Francisco, CA 94103",
@@ -278,7 +278,7 @@
       "fingerprint": "b21222harrisonstsanfranciscoca94103|2|984",
       "ladder_version": 2,
       "notified": true,
-      "price": 5696,
+      "price": 5695,
       "reason": "two_bedroom",
       "seen_at": "2026-08-22T19:24:37.982121+00:00"
     },
@@ -411,7 +411,7 @@
       "notified": false,
       "price": 3565,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-22T19:24:18.566152+00:00"
+      "seen_at": "2026-08-24T00:49:56.224505+00:00"
     },
     "2081645214": {
       "den_conf": null,
@@ -535,7 +535,7 @@
       "notified": false,
       "price": 3773,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-22T19:24:18.566188+00:00"
+      "seen_at": "2026-08-24T00:49:56.224560+00:00"
     },
     "2084986808": {
       "den_conf": null,
@@ -559,9 +559,9 @@
       "fingerprint": "a31222harrisonstsanfranciscoca94103|1|680",
       "ladder_version": 2,
       "notified": false,
-      "price": 4161,
+      "price": 4152,
       "reason": "680 sqft below 850 floor",
-      "seen_at": "2026-08-22T19:24:18.566214+00:00"
+      "seen_at": "2026-08-24T00:49:56.224592+00:00"
     },
     "2085661214": {
       "den_conf": null,
@@ -601,7 +601,7 @@
       "fingerprint": "a181222harrisonstsanfranciscoca94103|1|917",
       "ladder_version": 2,
       "notified": true,
-      "price": 4762,
+      "price": 4768,
       "reason": "layout_unknown",
       "seen_at": "2026-08-22T19:24:28.213565+00:00"
     },
@@ -611,9 +611,9 @@
       "fingerprint": "a71222harrisonstsanfranciscoca94103|1|757",
       "ladder_version": 2,
       "notified": false,
-      "price": 4436,
+      "price": 4427,
       "reason": "757 sqft below 850 floor",
-      "seen_at": "2026-08-22T19:24:23.068121+00:00"
+      "seen_at": "2026-08-24T00:49:56.224719+00:00"
     },
     "2087664738": {
       "den_conf": null,
@@ -1305,6 +1305,16 @@
       "reason": "809 sqft below 850 floor",
       "seen_at": "2026-08-20T19:55:15.188384+00:00"
     },
+    "461647232": {
+      "address": "A22, 1222 Harrison St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "a221222harrisonstsanfranciscoca94103|1|961",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4192,
+      "reason": "duplicate of 2084047774",
+      "seen_at": "2026-08-24T00:49:56.224648+00:00"
+    },
     "462853863": {
       "address": "2P Townhouse Renovation 2, 900 Folsom St, San Francisco, CA 94107",
       "den_conf": 0.85,
@@ -1742,7 +1752,7 @@
       "ladder_version": 2
     },
     "CkHnq4": {
-      "at": "2026-08-22T19:24:18.565048+00:00",
+      "at": "2026-08-24T00:49:55.331242+00:00",
       "ladder_version": 2
     },
     "CmPfVR": {
