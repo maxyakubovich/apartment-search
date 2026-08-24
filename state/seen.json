@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-24T16:09:37.530552+00:00",
+  "last_alert_seen": "2026-08-24T17:49:45.314334+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 252138,
+  "last_uid": 252147,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -1730,6 +1730,16 @@
       "reason": "layout_unknown",
       "seen_at": "2026-08-23T19:39:13.555807+00:00"
     },
+    "464786345": {
+      "address": "1 Wall Pl",
+      "den_conf": null,
+      "fingerprint": "1wallpl|1|800",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4450,
+      "reason": "800 sqft below 850 floor",
+      "seen_at": "2026-08-24T17:49:59.230414+00:00"
+    },
     "64969165": {
       "den_conf": null,
       "notified": false,
@@ -1875,6 +1885,10 @@
     },
     "464777410": {
       "at": "2026-08-23T19:39:06.019120+00:00",
+      "ladder_version": 2
+    },
+    "464786345": {
+      "at": "2026-08-24T17:49:58.501262+00:00",
       "ladder_version": 2
     },
     "5XjKYs": {
