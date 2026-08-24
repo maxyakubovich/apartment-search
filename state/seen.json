@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-24T00:49:47.456001+00:00",
+  "last_alert_seen": "2026-08-24T13:07:42.902727+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 252101,
+  "last_uid": 252117,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -63,6 +63,16 @@
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-20T19:53:43.198082+00:00"
     },
+    "2060251497": {
+      "address": "1-T, 30 Otis St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "1t30otisstsanfranciscoca94103|1|683",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5807,
+      "reason": "683 sqft below 850 floor",
+      "seen_at": "2026-08-24T13:07:48.072709+00:00"
+    },
     "2060673040": {
       "address": "1645 Page St APT 2",
       "den_conf": 0.75,
@@ -73,6 +83,16 @@
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T23:37:12.495979+00:00"
     },
+    "2061744497": {
+      "address": "2-P, 30 Otis St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "2p30otisstsanfranciscoca94103|2|1089",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 8893,
+      "reason": "price $8,893 over $6,500 cap",
+      "seen_at": "2026-08-24T13:07:57.213149+00:00"
+    },
     "2062149842": {
       "den_conf": 0.05,
       "ladder_version": 2,
@@ -80,6 +100,16 @@
       "price": 5729,
       "reason": "996 sqft with den confidence 0.05 clears no ladder rung",
       "seen_at": "2026-08-20T19:54:49.448361+00:00"
+    },
+    "2062159500": {
+      "address": "Studio H, 30 Otis St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "studioh30otisstsanfranciscoca94103|0|449",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4462,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-24T13:07:48.072415+00:00"
     },
     "2063309085": {
       "den_conf": null,
@@ -180,6 +210,146 @@
       "price": 4437,
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-20T19:54:42.598144+00:00"
+    },
+    "2070494925": {
+      "address": "1-P, 30 Otis St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "1p30otisstsanfranciscoca94103|1|596",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4941,
+      "reason": "596 sqft below 850 floor",
+      "seen_at": "2026-08-24T13:07:48.072609+00:00"
+    },
+    "2070500555": {
+      "address": "3-A, 30 Otis St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "3a30otisstsanfranciscoca94103|3|1146",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 8697,
+      "reason": "price $8,697 over $6,500 cap",
+      "seen_at": "2026-08-24T13:07:57.213222+00:00"
+    },
+    "2070500585": {
+      "address": "2-E, 30 Otis St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "2e30otisstsanfranciscoca94103|2|904",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7762,
+      "reason": "price $7,762 over $6,500 cap",
+      "seen_at": "2026-08-24T13:07:57.213119+00:00"
+    },
+    "2070500589": {
+      "address": "1-C, 30 Otis St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "1c30otisstsanfranciscoca94103|1|498",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4302,
+      "reason": "498 sqft below 850 floor",
+      "seen_at": "2026-08-24T13:07:48.072455+00:00"
+    },
+    "2070557622": {
+      "address": "1-S, 30 Otis St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "1s30otisstsanfranciscoca94103|1|641",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4792,
+      "reason": "641 sqft below 850 floor",
+      "seen_at": "2026-08-24T13:07:48.072521+00:00"
+    },
+    "2070581430": {
+      "address": "1-J, 30 Otis St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "1j30otisstsanfranciscoca94103|1|563",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5017,
+      "reason": "563 sqft below 850 floor",
+      "seen_at": "2026-08-24T13:07:48.072647+00:00"
+    },
+    "2070581484": {
+      "address": "1-L, 30 Otis St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "1l30otisstsanfranciscoca94103|1|573",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6288,
+      "reason": "573 sqft below 850 floor",
+      "seen_at": "2026-08-24T13:07:48.072771+00:00"
+    },
+    "2070581517": {
+      "address": "1-Y, 30 Otis St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "1y30otisstsanfranciscoca94103|1|745",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4898,
+      "reason": "745 sqft below 850 floor",
+      "seen_at": "2026-08-24T13:07:48.072551+00:00"
+    },
+    "2070581525": {
+      "address": "2-Q, 30 Otis St, San Francisco, CA 94103",
+      "den_conf": 0.9,
+      "fingerprint": "2q30otisstsanfranciscoca94103|2|1130",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 5355,
+      "reason": "two_bedroom",
+      "seen_at": "2026-08-24T13:07:57.213002+00:00"
+    },
+    "2070581539": {
+      "address": "2 + DEN - A, 30 Otis St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "2dena30otisstsanfranciscoca94103|2|1300",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 8977,
+      "reason": "price $8,977 over $6,500 cap",
+      "seen_at": "2026-08-24T13:07:57.213182+00:00"
+    },
+    "2070581581": {
+      "address": "2-J, 30 Otis St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "2j30otisstsanfranciscoca94103|2|937",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6727,
+      "reason": "price $6,727 over $6,500 cap",
+      "seen_at": "2026-08-24T13:07:57.213080+00:00"
+    },
+    "2070581583": {
+      "address": "1-E, 30 Otis St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "1e30otisstsanfranciscoca94103|1|555",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5465,
+      "reason": "555 sqft below 850 floor",
+      "seen_at": "2026-08-24T13:07:48.072681+00:00"
+    },
+    "2070581586": {
+      "address": "Studio E, 30 Otis St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "studioe30otisstsanfranciscoca94103|0|499",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4133,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-24T13:07:48.072356+00:00"
+    },
+    "2070581600": {
+      "address": "1-N, 30 Otis St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "1n30otisstsanfranciscoca94103|1|583",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4646,
+      "reason": "583 sqft below 850 floor",
+      "seen_at": "2026-08-24T13:07:48.072490+00:00"
     },
     "2071565561": {
       "address": "A4, 1222 Harrison St, San Francisco, CA 94103",
@@ -1287,6 +1457,16 @@
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-22T19:20:43.800141+00:00"
     },
+    "457742099": {
+      "address": "1 + DEN - D, 30 Otis St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "1dend30otisstsanfranciscoca94103|1|844",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5829,
+      "reason": "844 sqft below 850 floor",
+      "seen_at": "2026-08-24T13:07:48.072740+00:00"
+    },
     "458707719": {
       "address": "4927 California St #A",
       "den_conf": null,
@@ -1741,6 +1921,10 @@
     },
     "83154263": {
       "at": "2026-08-20T19:52:54.247060+00:00",
+      "ladder_version": 2
+    },
+    "ChGdPx": {
+      "at": "2026-08-24T13:07:47.022303+00:00",
       "ladder_version": 2
     },
     "CjjXmJ": {
