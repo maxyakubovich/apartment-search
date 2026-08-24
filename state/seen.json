@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-24T17:49:45.314334+00:00",
+  "last_alert_seen": "2026-08-24T18:22:25.651438+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 252147,
+  "last_uid": 252154,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -1819,6 +1819,16 @@
       "reason": "price $7,037 over $6,500 cap",
       "seen_at": "2026-08-20T19:55:35.720158+00:00"
     },
+    "80749797": {
+      "address": "630 Mason St APT 803",
+      "den_conf": null,
+      "fingerprint": "630masonstapt803|1|750",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4195,
+      "reason": "750 sqft below 850 floor",
+      "seen_at": "2026-08-24T18:22:32.590520+00:00"
+    },
     "82785554": {
       "address": "55 Page St APT 525",
       "den_conf": null,
@@ -1941,6 +1951,10 @@
     },
     "65g7KK": {
       "at": "2026-08-20T19:52:54.247064+00:00",
+      "ladder_version": 2
+    },
+    "80749797": {
+      "at": "2026-08-24T18:22:32.589373+00:00",
       "ladder_version": 2
     },
     "82785554": {
