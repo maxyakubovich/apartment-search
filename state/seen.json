@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-24T18:22:25.651438+00:00",
+  "last_alert_seen": "2026-08-24T19:31:37.510526+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 252154,
+  "last_uid": 252161,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -857,6 +857,26 @@
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-20T19:52:55.036212+00:00"
     },
+    "2091545482": {
+      "address": "Yerba Buena E1B, 355 Berry St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "yerbabuenae1b355berrystsanfranciscoca94158|0|600",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5170,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-24T19:31:46.512096+00:00"
+    },
+    "2091730315": {
+      "address": "Alta Plaza A1C, 355 Berry St, San Francisco, CA 94158",
+      "den_conf": 0.03,
+      "fingerprint": "altaplazaa1c355berrystsanfranciscoca94158|1|880",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5374,
+      "reason": "880 sqft with den confidence 0.03 clears no ladder rung",
+      "seen_at": "2026-08-24T19:32:05.888766+00:00"
+    },
     "2091971662": {
       "den_conf": null,
       "ladder_version": 2,
@@ -864,6 +884,16 @@
       "price": 4084,
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-20T19:52:55.036195+00:00"
+    },
+    "2092017872": {
+      "address": "Rossi A1A, 355 Berry St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "rossia1a355berrystsanfranciscoca94158|1|565",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4798,
+      "reason": "565 sqft below 850 floor",
+      "seen_at": "2026-08-24T19:31:46.512140+00:00"
     },
     "2092911271": {
       "den_conf": null,
@@ -953,6 +983,16 @@
       "reason": "price $7,430 over $6,500 cap",
       "seen_at": "2026-08-20T19:53:04.295497+00:00"
     },
+    "2094810969": {
+      "address": "Balboa A1B, 355 Berry St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "balboaa1b355berrystsanfranciscoca94158|1|740",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5031,
+      "reason": "740 sqft below 850 floor",
+      "seen_at": "2026-08-24T19:31:46.512178+00:00"
+    },
     "2094946166": {
       "den_conf": null,
       "ladder_version": 2,
@@ -978,6 +1018,16 @@
       "price": 4850,
       "reason": "two_bedroom",
       "seen_at": "2026-08-24T15:08:34.530758+00:00"
+    },
+    "2123270531": {
+      "address": "Duboce A1.5DL, 355 Berry St, San Francisco, CA 94158",
+      "den_conf": 0.05,
+      "fingerprint": "dubocea15dl355berrystsanfranciscoca94158|1|1050",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5385,
+      "reason": "1050 sqft with den confidence 0.05 clears no ladder rung",
+      "seen_at": "2026-08-24T19:32:19.357939+00:00"
     },
     "348289124": {
       "den_conf": 0.05,
@@ -1923,6 +1973,10 @@
     },
     "5XjVCw": {
       "at": "2026-08-20T19:52:54.247040+00:00",
+      "ladder_version": 2
+    },
+    "5XjVQc": {
+      "at": "2026-08-24T19:31:46.511100+00:00",
       "ladder_version": 2
     },
     "5Xk2zx": {
