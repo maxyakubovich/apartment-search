@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-24T13:07:42.902727+00:00",
+  "last_alert_seen": "2026-08-24T15:08:05.407516+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 252117,
+  "last_uid": 252127,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -969,6 +969,16 @@
       "reason": "903 sqft with den confidence 0.03 clears no ladder rung",
       "seen_at": "2026-08-20T19:53:04.295371+00:00"
     },
+    "2115405121": {
+      "address": "2809 Bush St",
+      "den_conf": 0.75,
+      "fingerprint": "2809bushst|2|900",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 4850,
+      "reason": "two_bedroom",
+      "seen_at": "2026-08-24T15:08:34.530758+00:00"
+    },
     "348289124": {
       "den_conf": 0.05,
       "ladder_version": 2,
@@ -1833,6 +1843,10 @@
     },
     "2085124307": {
       "at": "2026-08-20T19:52:54.247050+00:00",
+      "ladder_version": 2
+    },
+    "2115405121": {
+      "at": "2026-08-24T15:08:21.746731+00:00",
       "ladder_version": 2
     },
     "401755982": {
