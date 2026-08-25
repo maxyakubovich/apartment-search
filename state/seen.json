@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-25T01:20:37.703957+00:00",
+  "last_alert_seen": "2026-08-25T01:37:21.134275+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 252188,
+  "last_uid": 252191,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -2043,6 +2043,10 @@
     },
     "CjpwdL": {
       "at": "2026-08-20T19:52:54.247042+00:00",
+      "ladder_version": 2
+    },
+    "CkBCpy": {
+      "at": "2026-08-25T01:37:26.633663+00:00",
       "ladder_version": 2
     },
     "CkHnq4": {
