@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-25T12:20:29.547718+00:00",
+  "last_alert_seen": "2026-08-25T13:34:13.066829+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 252268,
+  "last_uid": 252275,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -42,12 +42,14 @@
       "seen_at": "2026-08-25T12:20:38.233878+00:00"
     },
     "2057094827": {
+      "address": "Halo, 1200 4th St, San Francisco, CA 94158",
       "den_conf": null,
+      "fingerprint": "halo12004thstsanfranciscoca94158|1|739",
       "ladder_version": 2,
       "notified": false,
       "price": 5267,
       "reason": "739 sqft below 850 floor",
-      "seen_at": "2026-08-20T19:54:42.598189+00:00"
+      "seen_at": "2026-08-25T13:34:17.966345+00:00"
     },
     "2057579790": {
       "address": "SA7, 8 10th St, San Francisco, CA 94103",
@@ -228,12 +230,14 @@
       "seen_at": "2026-08-20T19:25:50.674564+00:00"
     },
     "2067820755": {
+      "address": "Orb, 1200 4th St, San Francisco, CA 94158",
       "den_conf": null,
+      "fingerprint": "orb12004thstsanfranciscoca94158|0|529",
       "ladder_version": 2,
       "notified": false,
       "price": 4437,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-20T19:54:42.598144+00:00"
+      "seen_at": "2026-08-25T13:34:17.966253+00:00"
     },
     "2070494925": {
       "address": "1-P, 30 Otis St, San Francisco, CA 94103",
@@ -433,6 +437,16 @@
       "reason": "974 sqft with den confidence 0.05 clears no ladder rung",
       "seen_at": "2026-08-20T22:08:13.446885+00:00"
     },
+    "2077700862": {
+      "address": "Helix, 1200 4th St, San Francisco, CA 94158",
+      "den_conf": 0.1,
+      "fingerprint": "helix12004thstsanfranciscoca94158|1|861",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5449,
+      "reason": "861 sqft with den confidence 0.10 clears no ladder rung",
+      "seen_at": "2026-08-25T13:34:21.457963+00:00"
+    },
     "2077761738": {
       "den_conf": 0.85,
       "notified": true,
@@ -441,12 +455,14 @@
       "seen_at": "2026-08-20T19:24:30.207523+00:00"
     },
     "2077968919": {
+      "address": "Panorama, 1200 4th St, San Francisco, CA 94158",
       "den_conf": null,
+      "fingerprint": "panorama12004thstsanfranciscoca94158|2|1135",
       "ladder_version": 2,
       "notified": false,
-      "price": 6949,
-      "reason": "price $6,949 over $6,500 cap",
-      "seen_at": "2026-08-20T19:54:49.448404+00:00"
+      "price": 6929,
+      "reason": "price $6,929 over $6,500 cap",
+      "seen_at": "2026-08-25T13:34:21.458019+00:00"
     },
     "2078236218": {
       "den_conf": null,
@@ -932,12 +948,14 @@
       "seen_at": "2026-08-20T19:53:04.295565+00:00"
     },
     "2089106181": {
+      "address": "Rev, 1200 4th St, San Francisco, CA 94158",
       "den_conf": null,
+      "fingerprint": "rev12004thstsanfranciscoca94158|0|768",
       "ladder_version": 2,
       "notified": false,
       "price": 4979,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-20T19:54:42.598166+00:00"
+      "seen_at": "2026-08-25T13:34:17.966312+00:00"
     },
     "2091370361": {
       "den_conf": null,
@@ -2062,7 +2080,7 @@
       "ladder_version": 2
     },
     "5XjSnF": {
-      "at": "2026-08-20T19:52:54.247034+00:00",
+      "at": "2026-08-25T13:34:17.229941+00:00",
       "ladder_version": 2
     },
     "5XjVCw": {
