@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-25T13:34:13.066829+00:00",
+  "last_alert_seen": "2026-08-25T22:44:28.867930+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 252333,
+  "last_uid": 252364,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -14,12 +14,14 @@
       "seen_at": "2026-08-21T02:41:58.910839+00:00"
     },
     "2053889664": {
+      "address": "Washington, 1155 4th St, San Francisco, CA 94158",
       "den_conf": null,
+      "fingerprint": "washington11554thstsanfranciscoca94158|1|790",
       "ladder_version": 2,
       "notified": false,
       "price": 5631,
       "reason": "790 sqft below 850 floor",
-      "seen_at": "2026-08-20T19:53:12.035147+00:00"
+      "seen_at": "2026-08-25T20:57:47.515629+00:00"
     },
     "2055101382": {
       "address": "E, 8 10th St, San Francisco, CA 94103",
@@ -465,12 +467,14 @@
       "seen_at": "2026-08-25T13:34:21.458019+00:00"
     },
     "2078236218": {
+      "address": "Kennedy, 1155 4th St, San Francisco, CA 94158",
       "den_conf": null,
+      "fingerprint": "kennedy11554thstsanfranciscoca94158|2|1047",
       "ladder_version": 2,
       "notified": false,
       "price": 6993,
       "reason": "price $6,993 over $6,500 cap",
-      "seen_at": "2026-08-20T19:53:12.035170+00:00"
+      "seen_at": "2026-08-25T20:57:47.515666+00:00"
     },
     "2078513998": {
       "address": "A12, 1222 Harrison St, San Francisco, CA 94103",
@@ -728,12 +732,14 @@
       "seen_at": "2026-08-22T19:24:23.068014+00:00"
     },
     "2084188643": {
+      "address": "Reagan, 1155 4th St, San Francisco, CA 94158",
       "den_conf": null,
+      "fingerprint": "reagan11554thstsanfranciscoca94158|1|774",
       "ladder_version": 2,
       "notified": false,
       "price": 5436,
       "reason": "774 sqft below 850 floor",
-      "seen_at": "2026-08-20T19:53:12.035132+00:00"
+      "seen_at": "2026-08-25T20:57:47.515567+00:00"
     },
     "2084205138": {
       "address": "Y, 8 10th St, San Francisco, CA 94103",
@@ -1062,6 +1068,16 @@
       "price": 4391,
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-20T19:52:55.036225+00:00"
+    },
+    "2093769743": {
+      "address": "Harrison, 1155 4th St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "harrison11554thstsanfranciscoca94158|2|1416",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7686,
+      "reason": "price $7,686 over $6,500 cap",
+      "seen_at": "2026-08-25T20:57:47.515700+00:00"
     },
     "2094027338": {
       "address": "B2, 788 Harrison St, San Francisco, CA 94107",
@@ -2064,7 +2080,7 @@
       "ladder_version": 2
     },
     "5XjKYs": {
-      "at": "2026-08-20T19:52:54.247046+00:00",
+      "at": "2026-08-25T20:57:46.535118+00:00",
       "ladder_version": 2
     },
     "5XjPfY": {
