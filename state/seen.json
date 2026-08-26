@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-26T00:33:27.951224+00:00",
+  "last_alert_seen": "2026-08-26T02:41:04.322623+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 252382,
+  "last_uid": 252389,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -743,6 +743,16 @@
       "reason": "835 sqft below 850 floor",
       "seen_at": "2026-08-26T00:01:39.542342+00:00"
     },
+    "2083868941": {
+      "address": "C4, 200 Buchanan St, San Francisco, CA 94102",
+      "den_conf": null,
+      "fingerprint": "c4200buchananstsanfranciscoca94102|2|1078",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 8735,
+      "reason": "price $8,735 over $6,500 cap",
+      "seen_at": "2026-08-26T02:41:12.414315+00:00"
+    },
     "2083890365": {
       "den_conf": null,
       "ladder_version": 2,
@@ -1182,6 +1192,106 @@
       "price": 6154,
       "reason": "903 sqft with den confidence 0.03 clears no ladder rung",
       "seen_at": "2026-08-20T19:53:04.295371+00:00"
+    },
+    "2100062525": {
+      "address": "C2, 200 Buchanan St, San Francisco, CA 94102",
+      "den_conf": null,
+      "fingerprint": "c2200buchananstsanfranciscoca94102|2|1217",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 9310,
+      "reason": "price $9,310 over $6,500 cap",
+      "seen_at": "2026-08-26T02:41:12.414390+00:00"
+    },
+    "2100062550": {
+      "address": "A5, 200 Buchanan St, San Francisco, CA 94102",
+      "den_conf": null,
+      "fingerprint": "a5200buchananstsanfranciscoca94102|1|943",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6560,
+      "reason": "price $6,560 over $6,500 cap",
+      "seen_at": "2026-08-26T02:41:12.414241+00:00"
+    },
+    "2100062569": {
+      "address": "C3, 200 Buchanan St, San Francisco, CA 94102",
+      "den_conf": null,
+      "fingerprint": "c3200buchananstsanfranciscoca94102|2|1300",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 9150,
+      "reason": "price $9,150 over $6,500 cap",
+      "seen_at": "2026-08-26T02:41:12.414366+00:00"
+    },
+    "2100062621": {
+      "address": "B1, 200 Buchanan St, San Francisco, CA 94102",
+      "den_conf": null,
+      "fingerprint": "b1200buchananstsanfranciscoca94102|2|1388",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 8365,
+      "reason": "price $8,365 over $6,500 cap",
+      "seen_at": "2026-08-26T02:41:12.414267+00:00"
+    },
+    "2100062631": {
+      "address": "A2, 200 Buchanan St, San Francisco, CA 94102",
+      "den_conf": null,
+      "fingerprint": "a2200buchananstsanfranciscoca94102|1|805",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5400,
+      "reason": "805 sqft below 850 floor",
+      "seen_at": "2026-08-26T02:41:12.414208+00:00"
+    },
+    "2100062663": {
+      "address": "S2, 200 Buchanan St, San Francisco, CA 94102",
+      "den_conf": null,
+      "fingerprint": "s2200buchananstsanfranciscoca94102|0|453",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4885,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-26T02:41:12.414139+00:00"
+    },
+    "2100062705": {
+      "address": "C6, 200 Buchanan St, San Francisco, CA 94102",
+      "den_conf": null,
+      "fingerprint": "c6200buchananstsanfranciscoca94102|2|1329",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 8950,
+      "reason": "price $8,950 over $6,500 cap",
+      "seen_at": "2026-08-26T02:41:12.414342+00:00"
+    },
+    "2100062706": {
+      "address": "A1, 200 Buchanan St, San Francisco, CA 94102",
+      "den_conf": null,
+      "fingerprint": "a1200buchananstsanfranciscoca94102|1|650",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5030,
+      "reason": "650 sqft below 850 floor",
+      "seen_at": "2026-08-26T02:41:12.414177+00:00"
+    },
+    "2100062715": {
+      "address": "S3, 200 Buchanan St, San Francisco, CA 94102",
+      "den_conf": null,
+      "fingerprint": "s3200buchananstsanfranciscoca94102|0|499",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4800,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-26T02:41:12.414073+00:00"
+    },
+    "2100062749": {
+      "address": "C9, 200 Buchanan St, San Francisco, CA 94102",
+      "den_conf": null,
+      "fingerprint": "c9200buchananstsanfranciscoca94102|2|1388",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 8690,
+      "reason": "price $8,690 over $6,500 cap",
+      "seen_at": "2026-08-26T02:41:12.414291+00:00"
     },
     "2115405121": {
       "address": "2809 Bush St",
@@ -2179,6 +2289,10 @@
     },
     "65fB7S": {
       "at": "2026-08-20T19:52:54.247055+00:00",
+      "ladder_version": 2
+    },
+    "65fGFR": {
+      "at": "2026-08-26T02:41:11.417109+00:00",
       "ladder_version": 2
     },
     "65g7KK": {
