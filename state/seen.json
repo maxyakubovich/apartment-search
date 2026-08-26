@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-26T02:41:04.322623+00:00",
+  "last_alert_seen": "2026-08-26T03:40:24.458618+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 252389,
+  "last_uid": 252418,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -2074,6 +2074,16 @@
       "reason": "800 sqft below 850 floor",
       "seen_at": "2026-08-24T17:49:59.230414+00:00"
     },
+    "63196294": {
+      "address": "1083 Clay St APT 203",
+      "den_conf": 0.15,
+      "fingerprint": "1083claystapt203|1|990",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 6500,
+      "reason": "labeled_den",
+      "seen_at": "2026-08-26T03:40:52.606212+00:00"
+    },
     "64969165": {
       "den_conf": null,
       "notified": false,
@@ -2285,6 +2295,10 @@
     },
     "5ZGkXx": {
       "at": "2026-08-20T19:52:54.247066+00:00",
+      "ladder_version": 2
+    },
+    "63196294": {
+      "at": "2026-08-26T03:40:37.334795+00:00",
       "ladder_version": 2
     },
     "65fB7S": {
