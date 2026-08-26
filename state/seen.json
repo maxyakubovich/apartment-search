@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-26T11:19:24.426761+00:00",
+  "last_alert_seen": "2026-08-26T13:45:51.715957+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 252473,
+  "last_uid": 252487,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -49,9 +49,9 @@
       "fingerprint": "halo12004thstsanfranciscoca94158|1|739",
       "ladder_version": 2,
       "notified": false,
-      "price": 5267,
+      "price": 5207,
       "reason": "739 sqft below 850 floor",
-      "seen_at": "2026-08-25T13:34:17.966345+00:00"
+      "seen_at": "2026-08-26T13:45:58.869007+00:00"
     },
     "2057579790": {
       "address": "SA7, 8 10th St, San Francisco, CA 94103",
@@ -125,7 +125,7 @@
       "den_conf": 0.05,
       "ladder_version": 2,
       "notified": false,
-      "price": 5729,
+      "price": 5669,
       "reason": "996 sqft with den confidence 0.05 clears no ladder rung",
       "seen_at": "2026-08-20T19:54:49.448361+00:00"
     },
@@ -239,7 +239,7 @@
       "notified": false,
       "price": 4437,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-25T13:34:17.966253+00:00"
+      "seen_at": "2026-08-26T13:45:58.868905+00:00"
     },
     "2070494925": {
       "address": "1-P, 30 Otis St, San Francisco, CA 94103",
@@ -455,7 +455,7 @@
       "fingerprint": "helix12004thstsanfranciscoca94158|1|861",
       "ladder_version": 2,
       "notified": false,
-      "price": 5449,
+      "price": 5389,
       "reason": "861 sqft with den confidence 0.10 clears no ladder rung",
       "seen_at": "2026-08-25T13:34:21.457963+00:00"
     },
@@ -1021,7 +1021,7 @@
       "notified": false,
       "price": 4979,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-25T13:34:17.966312+00:00"
+      "seen_at": "2026-08-26T13:45:58.868969+00:00"
     },
     "2091370361": {
       "den_conf": null,
@@ -1816,6 +1816,16 @@
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-22T19:20:43.800141+00:00"
     },
+    "456022605": {
+      "address": "Panorama, 1200 4th St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "panorama12004thstsanfranciscoca94158|2|1070",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6837,
+      "reason": "price $6,837 over $6,500 cap",
+      "seen_at": "2026-08-26T13:45:58.869094+00:00"
+    },
     "457742099": {
       "address": "1 + DEN - D, 30 Otis St, San Francisco, CA 94103",
       "den_conf": null,
@@ -2281,7 +2291,7 @@
       "ladder_version": 2
     },
     "5XjSnF": {
-      "at": "2026-08-25T13:34:17.229941+00:00",
+      "at": "2026-08-26T13:45:57.945372+00:00",
       "ladder_version": 2
     },
     "5XjVCw": {
