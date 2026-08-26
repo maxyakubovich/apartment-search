@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-26T13:45:51.715957+00:00",
+  "last_alert_seen": "2026-08-26T17:25:02.588093+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 252538,
+  "last_uid": 252613,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -834,6 +834,16 @@
       "price": 3773,
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-26T00:33:33.186933+00:00"
+    },
+    "2084884630": {
+      "address": "502, 1745 Franklin St, San Francisco, CA 94109",
+      "den_conf": 0.05,
+      "fingerprint": "5021745franklinstsanfranciscoca94109|1|867",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 3895,
+      "reason": "867 sqft with den confidence 0.05 clears no ladder rung",
+      "seen_at": "2026-08-26T17:25:25.429459+00:00"
     },
     "2084986808": {
       "den_conf": null,
@@ -2312,6 +2322,10 @@
     },
     "5XkH8X": {
       "at": "2026-08-26T11:19:31.304236+00:00",
+      "ladder_version": 2
+    },
+    "5XqLw8": {
+      "at": "2026-08-26T17:25:08.153340+00:00",
       "ladder_version": 2
     },
     "5Yy6Lv": {
