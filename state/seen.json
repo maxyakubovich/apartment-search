@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-26T03:40:24.458618+00:00",
+  "last_alert_seen": "2026-08-26T11:19:24.426761+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 252461,
+  "last_uid": 252473,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -188,7 +188,7 @@
     "2066662138": {
       "den_conf": 0.85,
       "notified": true,
-      "price": 6009,
+      "price": 5809,
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:25:59.454056+00:00"
     },
@@ -227,7 +227,7 @@
     "2066714894": {
       "den_conf": 0.85,
       "notified": true,
-      "price": 5820,
+      "price": 5715,
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:25:50.674564+00:00"
     },
@@ -1332,7 +1332,7 @@
     "401681537": {
       "den_conf": 0.85,
       "notified": true,
-      "price": 5330,
+      "price": 5130,
       "reason": "confident_den",
       "seen_at": "2026-08-20T19:25:13.668574+00:00"
     },
@@ -1377,19 +1377,24 @@
       "seen_at": "2026-08-20T19:53:43.197984+00:00"
     },
     "402147141": {
+      "address": "A5, 55 9th St, San Francisco, CA 94103",
       "den_conf": null,
+      "fingerprint": "a5559thstsanfranciscoca94103|1|716",
       "ladder_version": 2,
       "notified": false,
       "price": 3925,
       "reason": "716 sqft below 850 floor",
-      "seen_at": "2026-08-20T19:54:49.448449+00:00"
+      "seen_at": "2026-08-26T11:19:32.247629+00:00"
     },
     "402147142": {
+      "address": "B2-946SQ, 55 9th St, San Francisco, CA 94103",
       "den_conf": 0.9,
+      "fingerprint": "b2946sq559thstsanfranciscoca94103|2|946",
+      "ladder_version": 2,
       "notified": true,
-      "price": 6157,
+      "price": 5372,
       "reason": "two_bedroom",
-      "seen_at": "2026-08-20T19:26:07.591655+00:00"
+      "seen_at": "2026-08-26T11:19:43.472535+00:00"
     },
     "402301695": {
       "den_conf": 0.1,
@@ -1410,7 +1415,7 @@
     "402564298": {
       "den_conf": 0.85,
       "notified": true,
-      "price": 5653,
+      "price": 5453,
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:25:23.847547+00:00"
     },
@@ -1445,6 +1450,16 @@
       "price": 4585,
       "reason": "712 sqft below 850 floor",
       "seen_at": "2026-08-20T19:53:12.035306+00:00"
+    },
+    "418049649": {
+      "address": "A3, 55 9th St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "a3559thstsanfranciscoca94103|1|750",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4055,
+      "reason": "750 sqft below 850 floor",
+      "seen_at": "2026-08-26T11:19:32.247707+00:00"
     },
     "422760335": {
       "den_conf": null,
@@ -1634,7 +1649,7 @@
     "452433247": {
       "den_conf": 0.85,
       "notified": true,
-      "price": 5690,
+      "price": 5490,
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:25:31.602166+00:00"
     },
@@ -1707,7 +1722,7 @@
     "453646455": {
       "den_conf": 0.85,
       "notified": true,
-      "price": 5729,
+      "price": 5529,
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:25:42.378889+00:00"
     },
@@ -2286,7 +2301,7 @@
       "ladder_version": 2
     },
     "5XkH8X": {
-      "at": "2026-08-20T19:52:54.247062+00:00",
+      "at": "2026-08-26T11:19:31.304236+00:00",
       "ladder_version": 2
     },
     "5Yy6Lv": {
