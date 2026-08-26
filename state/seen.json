@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-26T17:25:02.588093+00:00",
+  "last_alert_seen": "2026-08-26T19:30:14.838127+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 252657,
+  "last_uid": 252671,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -400,6 +400,16 @@
       "price": 6839,
       "reason": "price $6,839 over $6,500 cap",
       "seen_at": "2026-08-26T00:33:33.187226+00:00"
+    },
+    "2076775718": {
+      "address": "2 Bedroom 1 Bath Apartment, 900 Broderick St, San Francisco, CA 94115",
+      "den_conf": null,
+      "fingerprint": "2bedroom1bathapartment900broderickstsanfranciscoca94115|2|800",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6295,
+      "reason": "800 sqft below 850 floor",
+      "seen_at": "2026-08-26T19:30:27.436161+00:00"
     },
     "2077073654": {
       "address": "A4, 1222 Harrison St, San Francisco, CA 94103",
@@ -2362,6 +2372,10 @@
     },
     "83154263": {
       "at": "2026-08-20T19:52:54.247060+00:00",
+      "ladder_version": 2
+    },
+    "9NKvZK": {
+      "at": "2026-08-26T19:30:26.654632+00:00",
       "ladder_version": 2
     },
     "ChGdPx": {
