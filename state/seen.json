@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-27T02:42:17.717452+00:00",
+  "last_alert_seen": "2026-08-27T06:12:06.807481+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 252791,
+  "last_uid": 252797,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -176,6 +176,16 @@
       "price": 6350,
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:23:23.556613+00:00"
+    },
+    "2065796546": {
+      "address": "700 Central Ave #A",
+      "den_conf": 0.7,
+      "fingerprint": "700centralavea|2|850",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 4100,
+      "reason": "confident_den",
+      "seen_at": "2026-08-27T06:12:31.324425+00:00"
     },
     "2066486652": {
       "den_conf": null,
@@ -2328,6 +2338,10 @@
     },
     "2062614424": {
       "at": "2026-08-20T19:52:54.247037+00:00",
+      "ladder_version": 2
+    },
+    "2065796546": {
+      "at": "2026-08-27T06:12:18.072114+00:00",
       "ladder_version": 2
     },
     "2080018704": {
