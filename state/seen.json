@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-27T21:09:05.104556+00:00",
+  "last_alert_seen": "2026-08-28T02:40:13.161274+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 253069,
+  "last_uid": 253099,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -541,6 +541,96 @@
       "price": 4685,
       "reason": "816 sqft below 850 floor",
       "seen_at": "2026-08-20T19:53:12.035348+00:00"
+    },
+    "2079146369": {
+      "address": "A07, 390 1st St, San Francisco, CA 94105",
+      "den_conf": null,
+      "fingerprint": "a073901ststsanfranciscoca94105|1|755",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4607,
+      "reason": "755 sqft below 850 floor",
+      "seen_at": "2026-08-28T02:40:22.734716+00:00"
+    },
+    "2079146370": {
+      "address": "B08, 390 1st St, San Francisco, CA 94105",
+      "den_conf": null,
+      "fingerprint": "b083901ststsanfranciscoca94105|2|991",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6657,
+      "reason": "price $6,657 over $6,500 cap",
+      "seen_at": "2026-08-28T02:40:22.734744+00:00"
+    },
+    "2079146371": {
+      "address": "S02, 390 1st St, San Francisco, CA 94105",
+      "den_conf": null,
+      "fingerprint": "s023901ststsanfranciscoca94105|0|361",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 3852,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-28T02:40:22.734575+00:00"
+    },
+    "2079146376": {
+      "address": "A10, 390 1st St, San Francisco, CA 94105",
+      "den_conf": null,
+      "fingerprint": "a103901ststsanfranciscoca94105|1|508",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4247,
+      "reason": "508 sqft below 850 floor",
+      "seen_at": "2026-08-28T02:40:22.734692+00:00"
+    },
+    "2079146377": {
+      "address": "S01, 390 1st St, San Francisco, CA 94105",
+      "den_conf": null,
+      "fingerprint": "s013901ststsanfranciscoca94105|0|448",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4179,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-28T02:40:22.734634+00:00"
+    },
+    "2079146394": {
+      "address": "B03, 390 1st St, San Francisco, CA 94105",
+      "den_conf": null,
+      "fingerprint": "b033901ststsanfranciscoca94105|2|914",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7465,
+      "reason": "price $7,465 over $6,500 cap",
+      "seen_at": "2026-08-28T02:40:22.734811+00:00"
+    },
+    "2079146403": {
+      "address": "A03, 390 1st St, San Francisco, CA 94105",
+      "den_conf": null,
+      "fingerprint": "a033901ststsanfranciscoca94105|1|638",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4169,
+      "reason": "638 sqft below 850 floor",
+      "seen_at": "2026-08-28T02:40:22.734666+00:00"
+    },
+    "2079146420": {
+      "address": "B04, 390 1st St, San Francisco, CA 94105",
+      "den_conf": null,
+      "fingerprint": "b043901ststsanfranciscoca94105|2|1014",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7021,
+      "reason": "price $7,021 over $6,500 cap",
+      "seen_at": "2026-08-28T02:40:22.734770+00:00"
+    },
+    "2079146426": {
+      "address": "B06, 390 1st St, San Francisco, CA 94105",
+      "den_conf": null,
+      "fingerprint": "b063901ststsanfranciscoca94105|2|958",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7071,
+      "reason": "price $7,071 over $6,500 cap",
+      "seen_at": "2026-08-28T02:40:22.734791+00:00"
     },
     "2079389086": {
       "den_conf": null,
@@ -2376,6 +2466,10 @@
       "at": "2026-08-20T19:52:54.247050+00:00",
       "ladder_version": 2
     },
+    "2089696406": {
+      "at": "2026-08-28T02:40:21.989495+00:00",
+      "ladder_version": 2
+    },
     "2115405121": {
       "at": "2026-08-24T15:08:21.746731+00:00",
       "ladder_version": 2
@@ -2418,6 +2512,10 @@
     },
     "464877503": {
       "at": "2026-08-27T21:09:16.419259+00:00",
+      "ladder_version": 2
+    },
+    "464880954": {
+      "at": "2026-08-28T02:40:21.989490+00:00",
       "ladder_version": 2
     },
     "5XjKYs": {
@@ -2530,6 +2628,10 @@
     },
     "CkBCpy": {
       "at": "2026-08-25T01:37:26.633663+00:00",
+      "ladder_version": 2
+    },
+    "CkCkYW": {
+      "at": "2026-08-28T02:40:21.989464+00:00",
       "ladder_version": 2
     },
     "CkHnq4": {
