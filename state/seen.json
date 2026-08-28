@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-28T11:15:45.951794+00:00",
+  "last_alert_seen": "2026-08-28T15:40:40.195768+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 253138,
+  "last_uid": 253163,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -12,6 +12,26 @@
       "price": 6464,
       "reason": "753 sqft below 850 floor",
       "seen_at": "2026-08-21T02:41:58.910839+00:00"
+    },
+    "2053865789": {
+      "address": "2 Bed/2 Bath-B2.0, 1 Brady St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "2bed2bathb201bradystsanfranciscoca94103|2|917",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6617,
+      "reason": "price $6,617 over $6,500 cap",
+      "seen_at": "2026-08-28T15:41:05.023762+00:00"
+    },
+    "2053865801": {
+      "address": "1 Bed/1 Bath-A2.0, 1 Brady St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "1bed1batha201bradystsanfranciscoca94103|1|563",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4407,
+      "reason": "563 sqft below 850 floor",
+      "seen_at": "2026-08-28T15:40:48.761350+00:00"
     },
     "2053889664": {
       "address": "Washington, 1155 4th St, San Francisco, CA 94158",
@@ -111,6 +131,36 @@
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T23:37:12.495979+00:00"
     },
+    "2061504825": {
+      "address": "Studio-S1.0, 1 Brady St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "studios101bradystsanfranciscoca94103|0|448",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 3799,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-28T15:40:48.761281+00:00"
+    },
+    "2061504869": {
+      "address": "2 Bed/2 Bath-B1.0, 1 Brady St, San Francisco, CA 94103",
+      "den_conf": 0.9,
+      "fingerprint": "2bed2bathb101bradystsanfranciscoca94103|2|947",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 6499,
+      "reason": "two_bedroom",
+      "seen_at": "2026-08-28T15:41:05.023644+00:00"
+    },
+    "2061504876": {
+      "address": "2 Bed/2 Bath-B5.0, 1 Brady St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "2bed2bathb501bradystsanfranciscoca94103|2|1002",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6689,
+      "reason": "price $6,689 over $6,500 cap",
+      "seen_at": "2026-08-28T15:41:05.023783+00:00"
+    },
     "2061744497": {
       "address": "2-P, 30 Otis St, San Francisco, CA 94103",
       "den_conf": null,
@@ -120,6 +170,26 @@
       "price": 8893,
       "reason": "price $8,893 over $6,500 cap",
       "seen_at": "2026-08-24T13:07:57.213149+00:00"
+    },
+    "2061782259": {
+      "address": "2 Bed/2 Bath-B7.0, 1 Brady St, San Francisco, CA 94103",
+      "den_conf": 0.9,
+      "fingerprint": "2bed2bathb701bradystsanfranciscoca94103|2|1030",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 6477,
+      "reason": "two_bedroom",
+      "seen_at": "2026-08-28T15:40:56.957953+00:00"
+    },
+    "2061782274": {
+      "address": "2 Bed/2 Bath-B6.0, 1 Brady St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "2bed2bathb601bradystsanfranciscoca94103|2|997",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6604,
+      "reason": "price $6,604 over $6,500 cap",
+      "seen_at": "2026-08-28T15:41:05.023737+00:00"
     },
     "2062149842": {
       "den_conf": 0.05,
@@ -138,6 +208,56 @@
       "price": 4462,
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-24T13:07:48.072415+00:00"
+    },
+    "2062926383": {
+      "address": "Studio-S3.0, 1 Brady St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "studios301bradystsanfranciscoca94103|0|489",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 3734,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-28T15:40:48.761220+00:00"
+    },
+    "2062926394": {
+      "address": "2 Bed/2 Bath-B8.0, 1 Brady St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "2bed2bathb801bradystsanfranciscoca94103|2|1013",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6869,
+      "reason": "price $6,869 over $6,500 cap",
+      "seen_at": "2026-08-28T15:41:05.023802+00:00"
+    },
+    "2062926418": {
+      "address": "Studio-S2.0, 1 Brady St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "studios201bradystsanfranciscoca94103|0|470",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 3883,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-28T15:40:48.761318+00:00"
+    },
+    "2062926480": {
+      "address": "1 Bed/1 Bath-A3.0, 1 Brady St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "1bed1batha301bradystsanfranciscoca94103|1|665",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5194,
+      "reason": "665 sqft below 850 floor",
+      "seen_at": "2026-08-28T15:40:48.761410+00:00"
+    },
+    "2062926497": {
+      "address": "1 Bed/1 Bath-A1.0, 1 Brady St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "1bed1batha101bradystsanfranciscoca94103|1|542",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4761,
+      "reason": "542 sqft below 850 floor",
+      "seen_at": "2026-08-28T15:40:48.761380+00:00"
     },
     "2063309085": {
       "den_conf": null,
@@ -2691,6 +2811,10 @@
     },
     "ChGdPx": {
       "at": "2026-08-24T13:07:47.022303+00:00",
+      "ladder_version": 2
+    },
+    "ChVMgg": {
+      "at": "2026-08-28T15:40:48.112336+00:00",
       "ladder_version": 2
     },
     "CjjXmJ": {
