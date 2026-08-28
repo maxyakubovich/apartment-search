@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-28T07:44:17.658429+00:00",
+  "last_alert_seen": "2026-08-28T11:15:45.951794+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 253112,
+  "last_uid": 253117,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -164,16 +164,19 @@
       "seen_at": "2026-08-20T19:55:24.901501+00:00"
     },
     "2065403033": {
-      "den_conf": 0.85,
-      "notified": true,
-      "price": 6485,
-      "reason": "two_bedroom",
-      "seen_at": "2026-08-20T19:23:50.467046+00:00"
+      "address": "BM4, 255 King St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "bm4255kingstsanfranciscoca94107|2|1175",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6720,
+      "reason": "price $6,720 over $6,500 cap",
+      "seen_at": "2026-08-28T11:16:01.735987+00:00"
     },
     "2065571544": {
       "den_conf": 0.85,
       "notified": true,
-      "price": 6350,
+      "price": 6420,
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:23:23.556613+00:00"
     },
@@ -188,12 +191,14 @@
       "seen_at": "2026-08-27T06:12:31.324425+00:00"
     },
     "2066486652": {
+      "address": "S2, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
+      "fingerprint": "s2255kingstsanfranciscoca94107|0|534",
       "ladder_version": 2,
       "notified": false,
-      "price": 4320,
+      "price": 4445,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-20T19:53:12.035225+00:00"
+      "seen_at": "2026-08-28T11:15:56.658944+00:00"
     },
     "2066662138": {
       "den_conf": 0.85,
@@ -206,7 +211,7 @@
       "den_conf": 0.1,
       "ladder_version": 2,
       "notified": true,
-      "price": 5045,
+      "price": 5185,
       "reason": "layout_unknown",
       "seen_at": "2026-08-20T19:53:31.404671+00:00"
     },
@@ -214,25 +219,37 @@
       "den_conf": 0.1,
       "ladder_version": 2,
       "notified": true,
-      "price": 4870,
+      "price": 5015,
       "reason": "layout_unknown",
       "seen_at": "2026-08-20T19:53:21.036608+00:00"
+    },
+    "2066681340": {
+      "address": "A24, 255 King St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a24255kingstsanfranciscoca94107|1|677",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4695,
+      "reason": "677 sqft below 850 floor",
+      "seen_at": "2026-08-28T11:15:56.659108+00:00"
     },
     "2066681346": {
       "den_conf": 0.1,
       "ladder_version": 2,
       "notified": true,
-      "price": 4835,
+      "price": 4980,
       "reason": "layout_unknown",
       "seen_at": "2026-08-20T19:53:16.670609+00:00"
     },
     "2066681353": {
+      "address": "B16, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
+      "fingerprint": "b16255kingstsanfranciscoca94107|2|1123",
       "ladder_version": 2,
       "notified": false,
-      "price": 6775,
-      "reason": "price $6,775 over $6,500 cap",
-      "seen_at": "2026-08-20T19:53:43.197929+00:00"
+      "price": 6890,
+      "reason": "price $6,890 over $6,500 cap",
+      "seen_at": "2026-08-28T11:16:01.736079+00:00"
     },
     "2066714894": {
       "den_conf": 0.85,
@@ -535,12 +552,14 @@
       "seen_at": "2026-08-20T19:53:04.295647+00:00"
     },
     "2078989501": {
+      "address": "A31, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
+      "fingerprint": "a31255kingstsanfranciscoca94107|1|816",
       "ladder_version": 2,
       "notified": false,
-      "price": 4685,
+      "price": 4670,
       "reason": "816 sqft below 850 floor",
-      "seen_at": "2026-08-20T19:53:12.035348+00:00"
+      "seen_at": "2026-08-28T11:15:56.659079+00:00"
     },
     "2079146369": {
       "address": "A07, 390 1st St, San Francisco, CA 94105",
@@ -1457,7 +1476,7 @@
       "den_conf": 0.05,
       "ladder_version": 2,
       "notified": false,
-      "price": 5370,
+      "price": 5215,
       "reason": "951 sqft with den confidence 0.05 clears no ladder rung",
       "seen_at": "2026-08-20T19:53:39.060635+00:00"
     },
@@ -1487,12 +1506,14 @@
       "seen_at": "2026-08-21T20:24:44.298394+00:00"
     },
     "401771101": {
+      "address": "A25, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
+      "fingerprint": "a25255kingstsanfranciscoca94107|1|738",
       "ladder_version": 2,
       "notified": false,
-      "price": 4685,
+      "price": 4670,
       "reason": "738 sqft below 850 floor",
-      "seen_at": "2026-08-20T19:53:12.035327+00:00"
+      "seen_at": "2026-08-28T11:15:56.659049+00:00"
     },
     "401877560": {
       "den_conf": 0.9,
@@ -1502,19 +1523,24 @@
       "seen_at": "2026-08-20T19:23:15.062427+00:00"
     },
     "401877561": {
-      "den_conf": 0.85,
-      "notified": true,
-      "price": 6450,
-      "reason": "two_bedroom",
-      "seen_at": "2026-08-20T19:23:40.970242+00:00"
-    },
-    "402056194": {
+      "address": "B4-1250, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
+      "fingerprint": "b41250255kingstsanfranciscoca94107|2|1250",
       "ladder_version": 2,
       "notified": false,
-      "price": 7661,
-      "reason": "price $7,661 over $6,500 cap",
-      "seen_at": "2026-08-20T19:53:43.197984+00:00"
+      "price": 6735,
+      "reason": "price $6,735 over $6,500 cap",
+      "seen_at": "2026-08-28T11:16:01.736019+00:00"
+    },
+    "402056194": {
+      "address": "B9, 255 King St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "b9255kingstsanfranciscoca94107|2|1306",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7961,
+      "reason": "price $7,961 over $6,500 cap",
+      "seen_at": "2026-08-28T11:16:01.736224+00:00"
     },
     "402147141": {
       "address": "A5, 55 9th St, San Francisco, CA 94103",
@@ -1540,15 +1566,25 @@
       "den_conf": 0.1,
       "ladder_version": 2,
       "notified": true,
-      "price": 5560,
+      "price": 5405,
       "reason": "layout_unknown",
       "seen_at": "2026-08-20T19:53:43.197515+00:00"
+    },
+    "402301696": {
+      "address": "A3-M, 255 King St, San Francisco, CA 94107",
+      "den_conf": 0.05,
+      "fingerprint": "a3m255kingstsanfranciscoca94107|1|860",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 5090,
+      "reason": "layout_unknown",
+      "seen_at": "2026-08-28T11:16:01.735692+00:00"
     },
     "402564293": {
       "den_conf": 0.1,
       "ladder_version": 2,
       "notified": true,
-      "price": 5010,
+      "price": 5455,
       "reason": "layout_unknown",
       "seen_at": "2026-08-20T19:53:26.891254+00:00"
     },
@@ -1560,12 +1596,14 @@
       "seen_at": "2026-08-20T19:25:23.847547+00:00"
     },
     "402668043": {
+      "address": "B5, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
+      "fingerprint": "b5255kingstsanfranciscoca94107|2|1112",
       "ladder_version": 2,
       "notified": false,
-      "price": 7140,
-      "reason": "price $7,140 over $6,500 cap",
-      "seen_at": "2026-08-20T19:53:43.197958+00:00"
+      "price": 7125,
+      "reason": "price $7,125 over $6,500 cap",
+      "seen_at": "2026-08-28T11:16:01.736166+00:00"
     },
     "402714430": {
       "den_conf": null,
@@ -1584,12 +1622,14 @@
       "seen_at": "2026-08-20T19:53:43.198035+00:00"
     },
     "407499040": {
+      "address": "A1-L, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
+      "fingerprint": "a1l255kingstsanfranciscoca94107|1|712",
       "ladder_version": 2,
       "notified": false,
-      "price": 4585,
+      "price": 4725,
       "reason": "712 sqft below 850 floor",
-      "seen_at": "2026-08-20T19:53:12.035306+00:00"
+      "seen_at": "2026-08-28T11:15:56.659137+00:00"
     },
     "411364963": {
       "address": "SA1, 8 10th St, San Francisco, CA 94103",
@@ -1628,43 +1668,54 @@
       "seen_at": "2026-08-20T19:54:54.510693+00:00"
     },
     "435638494": {
+      "address": "A5, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
+      "fingerprint": "a5255kingstsanfranciscoca94107|1|718",
       "ladder_version": 2,
       "notified": false,
-      "price": 5154,
+      "price": 4984,
       "reason": "718 sqft below 850 floor",
-      "seen_at": "2026-08-20T19:53:31.404766+00:00"
+      "seen_at": "2026-08-28T11:15:56.659221+00:00"
     },
     "439531759": {
+      "address": "A20, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
+      "fingerprint": "a20255kingstsanfranciscoca94107|1|826",
       "ladder_version": 2,
       "notified": false,
-      "price": 4955,
+      "price": 4935,
       "reason": "826 sqft below 850 floor",
-      "seen_at": "2026-08-20T19:53:21.036748+00:00"
+      "seen_at": "2026-08-28T11:15:56.659164+00:00"
     },
     "439638079": {
+      "address": "B8, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
+      "fingerprint": "b8255kingstsanfranciscoca94107|2|1247",
       "ladder_version": 2,
       "notified": false,
-      "price": 6716,
-      "reason": "price $6,716 over $6,500 cap",
-      "seen_at": "2026-08-20T19:53:43.197917+00:00"
+      "price": 7591,
+      "reason": "price $7,591 over $6,500 cap",
+      "seen_at": "2026-08-28T11:16:01.736195+00:00"
     },
     "439763227": {
-      "den_conf": 0.85,
-      "notified": true,
-      "price": 6415,
-      "reason": "two_bedroom",
-      "seen_at": "2026-08-20T19:23:32.156148+00:00"
-    },
-    "440179943": {
+      "address": "B1-M, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
+      "fingerprint": "b1m255kingstsanfranciscoca94107|2|1203",
       "ladder_version": 2,
       "notified": false,
-      "price": 4945,
+      "price": 6700,
+      "reason": "price $6,700 over $6,500 cap",
+      "seen_at": "2026-08-28T11:16:01.735955+00:00"
+    },
+    "440179943": {
+      "address": "A4-M, 255 King St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a4m255kingstsanfranciscoca94107|1|822",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5105,
       "reason": "822 sqft below 850 floor",
-      "seen_at": "2026-08-20T19:53:21.036713+00:00"
+      "seen_at": "2026-08-28T11:16:01.735772+00:00"
     },
     "441842409": {
       "den_conf": null,
@@ -1675,20 +1726,24 @@
       "seen_at": "2026-08-20T19:53:12.035246+00:00"
     },
     "441998687": {
+      "address": "S1-M, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
+      "fingerprint": "s1m255kingstsanfranciscoca94107|0|651",
       "ladder_version": 2,
       "notified": false,
-      "price": 4600,
+      "price": 4715,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-20T19:53:12.035288+00:00"
+      "seen_at": "2026-08-28T11:15:56.659016+00:00"
     },
     "442422049": {
+      "address": "BH5, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
+      "fingerprint": "bh5255kingstsanfranciscoca94107|2|1139",
       "ladder_version": 2,
       "notified": false,
-      "price": 6685,
-      "reason": "price $6,685 over $6,500 cap",
-      "seen_at": "2026-08-20T19:53:43.197905+00:00"
+      "price": 6970,
+      "reason": "price $6,970 over $6,500 cap",
+      "seen_at": "2026-08-28T11:16:01.736109+00:00"
     },
     "442726562": {
       "address": "SP Renovation 2, 900 Folsom St, San Francisco, CA 94107",
@@ -1721,12 +1776,14 @@
       "seen_at": "2026-08-22T19:22:06.375951+00:00"
     },
     "443688308": {
+      "address": "S3, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
+      "fingerprint": "s3255kingstsanfranciscoca94107|0|432",
       "ladder_version": 2,
       "notified": false,
-      "price": 4310,
+      "price": 4435,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-20T19:53:12.035201+00:00"
+      "seen_at": "2026-08-28T11:15:56.658881+00:00"
     },
     "443691596": {
       "address": "2R Renovation 2, 900 Folsom St, San Francisco, CA 94107",
@@ -1779,12 +1836,14 @@
       "seen_at": "2026-08-22T19:20:43.799871+00:00"
     },
     "450081822": {
+      "address": "A2CH, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
+      "fingerprint": "a2ch255kingstsanfranciscoca94107|1|837",
       "ladder_version": 2,
       "notified": false,
-      "price": 5025,
+      "price": 5170,
       "reason": "837 sqft below 850 floor",
-      "seen_at": "2026-08-20T19:53:26.891547+00:00"
+      "seen_at": "2026-08-28T11:16:01.735826+00:00"
     },
     "450823050": {
       "address": "1AL Renovation 2, 900 Folsom St, San Francisco, CA 94107",
@@ -1804,12 +1863,24 @@
       "seen_at": "2026-08-20T19:25:31.602166+00:00"
     },
     "452589097": {
+      "address": "S4, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
+      "fingerprint": "s4255kingstsanfranciscoca94107|0|557",
       "ladder_version": 2,
       "notified": false,
-      "price": 4475,
+      "price": 4590,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-20T19:53:12.035265+00:00"
+      "seen_at": "2026-08-28T11:15:56.658983+00:00"
+    },
+    "452697348": {
+      "address": "B3, 255 King St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "b3255kingstsanfranciscoca94107|2|1112",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7035,
+      "reason": "price $7,035 over $6,500 cap",
+      "seen_at": "2026-08-28T11:16:01.736138+00:00"
     },
     "452779583": {
       "address": "2G Balcony Renovation 2, 900 Folsom St, San Francisco, CA 94107",
@@ -1862,12 +1933,14 @@
       "seen_at": "2026-08-22T19:20:43.800279+00:00"
     },
     "453646337": {
+      "address": "B17, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
+      "fingerprint": "b17255kingstsanfranciscoca94107|2|1309",
       "ladder_version": 2,
       "notified": false,
-      "price": 6675,
-      "reason": "price $6,675 over $6,500 cap",
-      "seen_at": "2026-08-20T19:53:43.197888+00:00"
+      "price": 6745,
+      "reason": "price $6,745 over $6,500 cap",
+      "seen_at": "2026-08-28T11:16:01.736049+00:00"
     },
     "453646455": {
       "den_conf": 0.85,
@@ -2136,12 +2209,14 @@
       "seen_at": "2026-08-22T19:21:21.690214+00:00"
     },
     "464281647": {
+      "address": "A1, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
+      "fingerprint": "a1255kingstsanfranciscoca94107|1|822",
       "ladder_version": 2,
       "notified": false,
-      "price": 4945,
+      "price": 5105,
       "reason": "822 sqft below 850 floor",
-      "seen_at": "2026-08-20T19:53:21.036734+00:00"
+      "seen_at": "2026-08-28T11:16:01.735800+00:00"
     },
     "464324522": {
       "address": "1X1 C, 460 Davis Ct, San Francisco, CA 94111",
@@ -2539,7 +2614,7 @@
       "ladder_version": 2
     },
     "5XjVCw": {
-      "at": "2026-08-20T19:52:54.247040+00:00",
+      "at": "2026-08-28T11:15:55.920913+00:00",
       "ladder_version": 2
     },
     "5XjVQc": {
