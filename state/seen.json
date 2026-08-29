@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-29T00:13:50.181683+00:00",
+  "last_alert_seen": "2026-08-29T04:51:26.801739+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 253373,
+  "last_uid": 253390,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -51,7 +51,7 @@
       "notified": false,
       "price": 4846,
       "reason": "789 sqft below 850 floor",
-      "seen_at": "2026-08-29T00:14:00.339698+00:00"
+      "seen_at": "2026-08-29T04:51:35.462994+00:00"
     },
     "2056589788": {
       "address": "2B, 8 10th St, San Francisco, CA 94103",
@@ -61,7 +61,7 @@
       "notified": false,
       "price": 7395,
       "reason": "price $7,395 over $6,500 cap",
-      "seen_at": "2026-08-29T00:14:14.452994+00:00"
+      "seen_at": "2026-08-29T04:51:35.463312+00:00"
     },
     "2057088165": {
       "address": "SA3, 8 10th St, San Francisco, CA 94103",
@@ -71,7 +71,7 @@
       "notified": false,
       "price": 3568,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-29T00:14:00.339536+00:00"
+      "seen_at": "2026-08-29T04:51:35.462781+00:00"
     },
     "2057094827": {
       "address": "Halo, 1200 4th St, San Francisco, CA 94158",
@@ -91,7 +91,7 @@
       "notified": false,
       "price": 3794,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-29T00:14:00.339649+00:00"
+      "seen_at": "2026-08-29T04:51:35.462917+00:00"
     },
     "2057898771": {
       "address": "C, 8 10th St, San Francisco, CA 94103",
@@ -866,7 +866,7 @@
       "notified": false,
       "price": 4337,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-29T00:14:00.339665+00:00"
+      "seen_at": "2026-08-29T04:51:35.462943+00:00"
     },
     "2080323751": {
       "den_conf": 0.03,
@@ -884,7 +884,7 @@
       "notified": false,
       "price": 5519,
       "reason": "761 sqft below 850 floor",
-      "seen_at": "2026-08-29T00:14:00.339804+00:00"
+      "seen_at": "2026-08-29T04:51:35.463196+00:00"
     },
     "2080382162": {
       "address": "2A, 8 10th St, San Francisco, CA 94103",
@@ -894,7 +894,7 @@
       "notified": false,
       "price": 8695,
       "reason": "price $8,695 over $6,500 cap",
-      "seen_at": "2026-08-29T00:14:14.453014+00:00"
+      "seen_at": "2026-08-29T04:51:35.463381+00:00"
     },
     "2080400907": {
       "den_conf": null,
@@ -912,7 +912,7 @@
       "notified": false,
       "price": 3570,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-29T00:14:00.339570+00:00"
+      "seen_at": "2026-08-29T04:51:35.462813+00:00"
     },
     "2080971635": {
       "address": "F1, 8 10th St, San Francisco, CA 94103",
@@ -922,7 +922,7 @@
       "notified": false,
       "price": 5043,
       "reason": "752 sqft below 850 floor",
-      "seen_at": "2026-08-29T00:14:00.339759+00:00"
+      "seen_at": "2026-08-29T04:51:35.463096+00:00"
     },
     "2081121511": {
       "den_conf": null,
@@ -1030,7 +1030,7 @@
       "notified": false,
       "price": 4655,
       "reason": "835 sqft below 850 floor",
-      "seen_at": "2026-08-29T00:14:00.339682+00:00"
+      "seen_at": "2026-08-29T04:51:35.462968+00:00"
     },
     "2083868941": {
       "address": "C4, 200 Buchanan St, San Francisco, CA 94102",
@@ -1040,7 +1040,7 @@
       "notified": false,
       "price": 8735,
       "reason": "price $8,735 over $6,500 cap",
-      "seen_at": "2026-08-26T02:41:12.414315+00:00"
+      "seen_at": "2026-08-29T04:51:35.462620+00:00"
     },
     "2083890365": {
       "den_conf": null,
@@ -1112,7 +1112,7 @@
       "notified": false,
       "price": 3651,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-29T00:14:00.339585+00:00"
+      "seen_at": "2026-08-29T04:51:35.462841+00:00"
     },
     "2084685037": {
       "address": "S1, 1222 Harrison St, San Francisco, CA 94103",
@@ -1170,7 +1170,7 @@
       "notified": false,
       "price": 7190,
       "reason": "price $7,190 over $6,500 cap",
-      "seen_at": "2026-08-29T00:14:14.452977+00:00"
+      "seen_at": "2026-08-29T04:51:35.463276+00:00"
     },
     "2086806232": {
       "address": "Y, 8 10th St, San Francisco, CA 94103",
@@ -1180,7 +1180,7 @@
       "notified": false,
       "price": 5342,
       "reason": "810 sqft below 850 floor",
-      "seen_at": "2026-08-29T00:14:00.339775+00:00"
+      "seen_at": "2026-08-29T04:51:35.463123+00:00"
     },
     "2086861828": {
       "den_conf": null,
@@ -1236,7 +1236,7 @@
       "notified": false,
       "price": 5485,
       "reason": "814 sqft below 850 floor",
-      "seen_at": "2026-08-29T00:14:00.339790+00:00"
+      "seen_at": "2026-08-29T04:51:35.463160+00:00"
     },
     "2087670123": {
       "address": "2E, 8 10th St, San Francisco, CA 94103",
@@ -1246,7 +1246,7 @@
       "notified": false,
       "price": 9095,
       "reason": "price $9,095 over $6,500 cap",
-      "seen_at": "2026-08-29T00:14:14.453024+00:00"
+      "seen_at": "2026-08-29T04:51:35.463414+00:00"
     },
     "2087833216": {
       "den_conf": 0.03,
@@ -1264,7 +1264,7 @@
       "notified": false,
       "price": 7395,
       "reason": "price $7,395 over $6,500 cap",
-      "seen_at": "2026-08-29T00:14:14.453005+00:00"
+      "seen_at": "2026-08-29T04:51:35.463348+00:00"
     },
     "2087834324": {
       "address": "SA1, 8 10th St, San Francisco, CA 94103",
@@ -1294,7 +1294,7 @@
       "notified": false,
       "price": 4929,
       "reason": "771 sqft below 850 floor",
-      "seen_at": "2026-08-29T00:14:00.339730+00:00"
+      "seen_at": "2026-08-29T04:51:35.463042+00:00"
     },
     "2087912293": {
       "address": "SC, 8 10th St, San Francisco, CA 94103",
@@ -1510,7 +1510,7 @@
       "notified": false,
       "price": 9310,
       "reason": "price $9,310 over $6,500 cap",
-      "seen_at": "2026-08-26T02:41:12.414390+00:00"
+      "seen_at": "2026-08-29T04:51:35.462739+00:00"
     },
     "2100062550": {
       "address": "A5, 200 Buchanan St, San Francisco, CA 94102",
@@ -1530,7 +1530,7 @@
       "notified": false,
       "price": 9150,
       "reason": "price $9,150 over $6,500 cap",
-      "seen_at": "2026-08-26T02:41:12.414366+00:00"
+      "seen_at": "2026-08-29T04:51:35.462681+00:00"
     },
     "2100062621": {
       "address": "B1, 200 Buchanan St, San Francisco, CA 94102",
@@ -1540,7 +1540,7 @@
       "notified": false,
       "price": 8365,
       "reason": "price $8,365 over $6,500 cap",
-      "seen_at": "2026-08-26T02:41:12.414267+00:00"
+      "seen_at": "2026-08-29T04:51:35.462556+00:00"
     },
     "2100062631": {
       "address": "A2, 200 Buchanan St, San Francisco, CA 94102",
@@ -1548,9 +1548,9 @@
       "fingerprint": "a2200buchananstsanfranciscoca94102|1|805",
       "ladder_version": 2,
       "notified": false,
-      "price": 5400,
+      "price": 5960,
       "reason": "805 sqft below 850 floor",
-      "seen_at": "2026-08-26T02:41:12.414208+00:00"
+      "seen_at": "2026-08-29T04:51:35.462486+00:00"
     },
     "2100062663": {
       "address": "S2, 200 Buchanan St, San Francisco, CA 94102",
@@ -1570,7 +1570,7 @@
       "notified": false,
       "price": 8950,
       "reason": "price $8,950 over $6,500 cap",
-      "seen_at": "2026-08-26T02:41:12.414342+00:00"
+      "seen_at": "2026-08-29T04:51:35.462653+00:00"
     },
     "2100062706": {
       "address": "A1, 200 Buchanan St, San Francisco, CA 94102",
@@ -1590,7 +1590,27 @@
       "notified": false,
       "price": 4800,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-26T02:41:12.414073+00:00"
+      "seen_at": "2026-08-29T04:51:35.462356+00:00"
+    },
+    "2100062717": {
+      "address": "S2, 200 Buchanan St, San Francisco, CA 94102",
+      "den_conf": null,
+      "fingerprint": "s2200buchananstsanfranciscoca94102|0|453",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4810,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-29T04:51:35.462422+00:00"
+    },
+    "2100062729": {
+      "address": "A5, 200 Buchanan St, San Francisco, CA 94102",
+      "den_conf": null,
+      "fingerprint": "a5200buchananstsanfranciscoca94102|1|943",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6511,
+      "reason": "price $6,511 over $6,500 cap",
+      "seen_at": "2026-08-29T04:51:35.462523+00:00"
     },
     "2100062749": {
       "address": "C9, 200 Buchanan St, San Francisco, CA 94102",
@@ -1600,7 +1620,17 @@
       "notified": false,
       "price": 8690,
       "reason": "price $8,690 over $6,500 cap",
-      "seen_at": "2026-08-26T02:41:12.414291+00:00"
+      "seen_at": "2026-08-29T04:51:35.462586+00:00"
+    },
+    "2100062762": {
+      "address": "A1, 200 Buchanan St, San Francisco, CA 94102",
+      "den_conf": null,
+      "fingerprint": "a1200buchananstsanfranciscoca94102|1|650",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5275,
+      "reason": "650 sqft below 850 floor",
+      "seen_at": "2026-08-29T04:51:35.462457+00:00"
     },
     "2115405121": {
       "address": "2809 Bush St",
@@ -1763,7 +1793,7 @@
       "notified": false,
       "price": 3766,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-29T00:14:00.339632+00:00"
+      "seen_at": "2026-08-29T04:51:35.462891+00:00"
     },
     "402668043": {
       "address": "B5, 255 King St, San Francisco, CA 94107",
@@ -1809,7 +1839,7 @@
       "notified": false,
       "price": 3745,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-29T00:14:00.339614+00:00"
+      "seen_at": "2026-08-29T04:51:35.462866+00:00"
     },
     "418049649": {
       "address": "A3, 55 9th St, San Francisco, CA 94103",
@@ -2850,7 +2880,7 @@
       "ladder_version": 2
     },
     "65fGFR": {
-      "at": "2026-08-26T02:41:11.417109+00:00",
+      "at": "2026-08-29T04:51:34.426236+00:00",
       "ladder_version": 2
     },
     "65g7KK": {
@@ -2890,7 +2920,7 @@
       "ladder_version": 2
     },
     "CjpwdL": {
-      "at": "2026-08-29T00:13:59.071729+00:00",
+      "at": "2026-08-29T04:51:34.426255+00:00",
       "ladder_version": 2
     },
     "CkBCpy": {
