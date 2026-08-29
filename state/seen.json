@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-29T15:16:06.215402+00:00",
+  "last_alert_seen": "2026-08-29T20:52:32.659400+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 253462,
+  "last_uid": 253522,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -568,6 +568,16 @@
       "reason": "741 sqft below 850 floor",
       "seen_at": "2026-08-24T00:49:56.224690+00:00"
     },
+    "2072648749": {
+      "address": "The Golden Gate, 1475 Fillmore St, San Francisco, CA 94115",
+      "den_conf": null,
+      "fingerprint": "thegoldengate1475fillmorestsanfranciscoca94115|2|1056",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6520,
+      "reason": "price $6,520 over $6,500 cap",
+      "seen_at": "2026-08-29T20:52:46.303531+00:00"
+    },
     "2073566333": {
       "address": "B12, 1222 Harrison St, San Francisco, CA 94103",
       "den_conf": null,
@@ -617,6 +627,16 @@
       "price": 5904,
       "reason": "two_bedroom",
       "seen_at": "2026-08-22T19:24:55.233663+00:00"
+    },
+    "2077475421": {
+      "address": "The Sunset, 1475 Fillmore St, San Francisco, CA 94115",
+      "den_conf": null,
+      "fingerprint": "thesunset1475fillmorestsanfranciscoca94115|1|705",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4499,
+      "reason": "705 sqft below 850 floor",
+      "seen_at": "2026-08-29T20:52:38.034651+00:00"
     },
     "2077638528": {
       "den_conf": 0.1,
@@ -1342,6 +1362,16 @@
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-26T13:45:58.868969+00:00"
     },
+    "2090034320": {
+      "address": "The Telegraph, 1475 Fillmore St, San Francisco, CA 94115",
+      "den_conf": null,
+      "fingerprint": "thetelegraph1475fillmorestsanfranciscoca94115|1|785",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4019,
+      "reason": "785 sqft below 850 floor",
+      "seen_at": "2026-08-29T20:52:38.034622+00:00"
+    },
     "2091370361": {
       "den_conf": null,
       "ladder_version": 2,
@@ -1661,6 +1691,16 @@
       "price": 5385,
       "reason": "1050 sqft with den confidence 0.05 clears no ladder rung",
       "seen_at": "2026-08-24T19:32:19.357939+00:00"
+    },
+    "2125063925": {
+      "address": "The Heights, 1475 Fillmore St, San Francisco, CA 94115",
+      "den_conf": null,
+      "fingerprint": "theheights1475fillmorestsanfranciscoca94115|2|989",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7855,
+      "reason": "price $7,855 over $6,500 cap",
+      "seen_at": "2026-08-29T20:52:46.303554+00:00"
     },
     "348289124": {
       "den_conf": 0.05,
@@ -2307,6 +2347,16 @@
       "reason": "duplicate of 2084047774",
       "seen_at": "2026-08-24T00:49:56.224648+00:00"
     },
+    "462168228": {
+      "address": "The Skyline, 1475 Fillmore St, San Francisco, CA 94115",
+      "den_conf": 0.9,
+      "fingerprint": "theskyline1475fillmorestsanfranciscoca94115|2|930",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 6304,
+      "reason": "two_bedroom",
+      "seen_at": "2026-08-29T20:52:46.303454+00:00"
+    },
     "462853863": {
       "address": "2P Townhouse Renovation 2, 900 Folsom St, San Francisco, CA 94107",
       "den_conf": 0.85,
@@ -2437,6 +2487,16 @@
       "price": 5105,
       "reason": "822 sqft below 850 floor",
       "seen_at": "2026-08-28T11:16:01.735800+00:00"
+    },
+    "464292487": {
+      "address": "The Marina, 1475 Fillmore St, San Francisco, CA 94115",
+      "den_conf": null,
+      "fingerprint": "themarina1475fillmorestsanfranciscoca94115|0|492",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 3558,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-29T20:52:38.034573+00:00"
     },
     "464324522": {
       "address": "1X1 C, 460 Davis Ct, San Francisco, CA 94111",
@@ -2861,6 +2921,10 @@
     },
     "5XjVQc": {
       "at": "2026-08-24T19:31:46.511100+00:00",
+      "ladder_version": 2
+    },
+    "5XjVzy": {
+      "at": "2026-08-29T20:52:37.257618+00:00",
       "ladder_version": 2
     },
     "5XjtJz": {
