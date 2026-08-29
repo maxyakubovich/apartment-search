@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-29T15:11:23.198637+00:00",
+  "last_alert_seen": "2026-08-29T15:16:06.215402+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 253433,
+  "last_uid": 253437,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -150,6 +150,16 @@
       "price": 5500,
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T23:37:12.495979+00:00"
+    },
+    "2061240027": {
+      "address": "2 Bedroom 1 Bath Apartment, 2927 Sacramento St, San Francisco, CA 94115",
+      "den_conf": null,
+      "fingerprint": "2bedroom1bathapartment2927sacramentostsanfranciscoca94115|2|758",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6495,
+      "reason": "758 sqft below 850 floor",
+      "seen_at": "2026-08-29T15:16:13.897285+00:00"
     },
     "2061504825": {
       "address": "Studio-S1.0, 1 Brady St, San Francisco, CA 94103",
@@ -2883,6 +2893,10 @@
     },
     "5ZGkXx": {
       "at": "2026-08-20T19:52:54.247066+00:00",
+      "ladder_version": 2
+    },
+    "5bLLN7": {
+      "at": "2026-08-29T15:16:13.896084+00:00",
       "ladder_version": 2
     },
     "63196294": {
