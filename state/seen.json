@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-29T20:52:32.659400+00:00",
+  "last_alert_seen": "2026-08-30T00:05:20.817239+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 253538,
+  "last_uid": 253546,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -2075,6 +2075,16 @@
       "reason": "two_bedroom",
       "seen_at": "2026-08-22T19:20:53.747147+00:00"
     },
+    "446192065": {
+      "address": "190 Cervantes Blvd",
+      "den_conf": null,
+      "fingerprint": "190cervantesblvd|1|775",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5650,
+      "reason": "775 sqft below 850 floor",
+      "seen_at": "2026-08-30T00:05:36.652470+00:00"
+    },
     "448059940": {
       "address": "1A, 3 Bayside Village Pl, San Francisco, CA 94107",
       "den_conf": null,
@@ -2841,6 +2851,10 @@
     },
     "401755982": {
       "at": "2026-08-21T20:24:43.570939+00:00",
+      "ladder_version": 2
+    },
+    "446192065": {
+      "at": "2026-08-30T00:05:35.894597+00:00",
       "ladder_version": 2
     },
     "458707719": {
