@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-30T00:05:20.817239+00:00",
+  "last_alert_seen": "2026-08-30T01:10:27.532001+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 253547,
+  "last_uid": 253550,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -568,6 +568,16 @@
       "reason": "741 sqft below 850 floor",
       "seen_at": "2026-08-24T00:49:56.224690+00:00"
     },
+    "2072020755": {
+      "address": "B 13, 923 Folsom St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "b13923folsomstsanfranciscoca94107|2|984",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7362,
+      "reason": "price $7,362 over $6,500 cap",
+      "seen_at": "2026-08-30T01:10:35.020319+00:00"
+    },
     "2072648749": {
       "address": "The Golden Gate, 1475 Fillmore St, San Francisco, CA 94115",
       "den_conf": null,
@@ -576,7 +586,7 @@
       "notified": false,
       "price": 6520,
       "reason": "price $6,520 over $6,500 cap",
-      "seen_at": "2026-08-29T20:52:46.303531+00:00"
+      "seen_at": "2026-08-30T00:40:02.574400+00:00"
     },
     "2073566333": {
       "address": "B12, 1222 Harrison St, San Francisco, CA 94103",
@@ -587,6 +597,16 @@
       "price": 6839,
       "reason": "price $6,839 over $6,500 cap",
       "seen_at": "2026-08-26T00:33:33.187226+00:00"
+    },
+    "2075572588": {
+      "address": "A 12, 923 Folsom St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a12923folsomstsanfranciscoca94107|1|810",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4798,
+      "reason": "810 sqft below 850 floor",
+      "seen_at": "2026-08-30T01:10:35.020252+00:00"
     },
     "2076775718": {
       "address": "2 Bedroom 1 Bath Apartment, 900 Broderick St, San Francisco, CA 94115",
@@ -636,7 +656,7 @@
       "notified": false,
       "price": 4499,
       "reason": "705 sqft below 850 floor",
-      "seen_at": "2026-08-29T20:52:38.034651+00:00"
+      "seen_at": "2026-08-30T00:40:02.574304+00:00"
     },
     "2077638528": {
       "den_conf": 0.1,
@@ -1370,7 +1390,7 @@
       "notified": false,
       "price": 4019,
       "reason": "785 sqft below 850 floor",
-      "seen_at": "2026-08-29T20:52:38.034622+00:00"
+      "seen_at": "2026-08-30T00:40:02.574277+00:00"
     },
     "2091370361": {
       "den_conf": null,
@@ -1417,6 +1437,16 @@
       "price": 4798,
       "reason": "565 sqft below 850 floor",
       "seen_at": "2026-08-24T19:31:46.512140+00:00"
+    },
+    "2092209324": {
+      "address": "B 01, 923 Folsom St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "b01923folsomstsanfranciscoca94107|2|836",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6463,
+      "reason": "836 sqft below 850 floor",
+      "seen_at": "2026-08-30T01:10:35.020291+00:00"
     },
     "2092911271": {
       "den_conf": null,
@@ -1700,7 +1730,7 @@
       "notified": false,
       "price": 7855,
       "reason": "price $7,855 over $6,500 cap",
-      "seen_at": "2026-08-29T20:52:46.303554+00:00"
+      "seen_at": "2026-08-30T00:40:02.574439+00:00"
     },
     "348289124": {
       "den_conf": 0.05,
@@ -2506,7 +2536,7 @@
       "notified": false,
       "price": 3558,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-29T20:52:38.034573+00:00"
+      "seen_at": "2026-08-30T00:40:02.574233+00:00"
     },
     "464324522": {
       "address": "1X1 C, 460 Davis Ct, San Francisco, CA 94111",
@@ -2938,7 +2968,7 @@
       "ladder_version": 2
     },
     "5XjVzy": {
-      "at": "2026-08-29T20:52:37.257618+00:00",
+      "at": "2026-08-30T00:40:02.573123+00:00",
       "ladder_version": 2
     },
     "5XjtJz": {
@@ -2967,6 +2997,10 @@
     },
     "5Yy6Lv": {
       "at": "2026-08-20T19:52:54.247005+00:00",
+      "ladder_version": 2
+    },
+    "5Yy6Np": {
+      "at": "2026-08-30T01:10:35.019053+00:00",
       "ladder_version": 2
     },
     "5ZGkXx": {
