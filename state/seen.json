@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-30T03:52:48.371127+00:00",
+  "last_alert_seen": "2026-08-30T20:25:49.883033+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 253608,
+  "last_uid": 253626,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -1429,6 +1429,16 @@
       "price": 5374,
       "reason": "880 sqft with den confidence 0.03 clears no ladder rung",
       "seen_at": "2026-08-24T19:32:05.888766+00:00"
+    },
+    "2091919258": {
+      "address": "1160 Pine St APT 11",
+      "den_conf": null,
+      "fingerprint": "1160pinestapt11|1|773",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4500,
+      "reason": "773 sqft below 850 floor",
+      "seen_at": "2026-08-30T20:26:32.186587+00:00"
     },
     "2091971662": {
       "den_conf": null,
@@ -2887,6 +2897,10 @@
     },
     "2089696406": {
       "at": "2026-08-28T02:40:21.989495+00:00",
+      "ladder_version": 2
+    },
+    "2091919258": {
+      "at": "2026-08-30T20:26:31.528453+00:00",
       "ladder_version": 2
     },
     "2115405121": {
