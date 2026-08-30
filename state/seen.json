@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-30T20:42:49.657573+00:00",
+  "last_alert_seen": "2026-08-30T23:15:46.216501+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 253735,
+  "last_uid": 253736,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -899,6 +899,16 @@
       "price": 6344,
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:24:21.860517+00:00"
+    },
+    "2079958792": {
+      "address": "2835 Van Ness Ave #5",
+      "den_conf": 0.05,
+      "fingerprint": "2835vannessave5|1|?",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4495,
+      "reason": "sqft unlisted and den confidence 0.05 below 0.6",
+      "seen_at": "2026-08-30T23:16:00.928721+00:00"
     },
     "2079983297": {
       "den_conf": null,
@@ -2881,6 +2891,10 @@
     },
     "2065796546": {
       "at": "2026-08-27T06:12:18.072114+00:00",
+      "ladder_version": 2
+    },
+    "2079958792": {
+      "at": "2026-08-30T23:15:56.937652+00:00",
       "ladder_version": 2
     },
     "2080018704": {
