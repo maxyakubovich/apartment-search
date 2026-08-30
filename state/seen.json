@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-30T01:10:27.532001+00:00",
+  "last_alert_seen": "2026-08-30T03:52:48.371127+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 253550,
+  "last_uid": 253553,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -12,6 +12,16 @@
       "price": 6464,
       "reason": "753 sqft below 850 floor",
       "seen_at": "2026-08-21T02:41:58.910839+00:00"
+    },
+    "15147769": {
+      "address": "300 3rd St APT 714",
+      "den_conf": null,
+      "fingerprint": "3003rdstapt714|1|807",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4100,
+      "reason": "807 sqft below 850 floor",
+      "seen_at": "2026-08-30T03:53:02.495666+00:00"
     },
     "2053865789": {
       "address": "2 Bed/2 Bath-B2.0, 1 Brady St, San Francisco, CA 94103",
@@ -2841,6 +2851,10 @@
     },
     "123597906": {
       "at": "2026-08-20T19:52:54.247044+00:00",
+      "ladder_version": 2
+    },
+    "15147769": {
+      "at": "2026-08-30T03:53:02.494440+00:00",
       "ladder_version": 2
     },
     "2060673040": {
