@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-31T03:38:37.170225+00:00",
+  "last_alert_seen": "2026-08-31T05:24:32.624534+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 253774,
+  "last_uid": 253778,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -577,6 +577,16 @@
       "price": 4646,
       "reason": "583 sqft below 850 floor",
       "seen_at": "2026-08-24T13:07:48.072490+00:00"
+    },
+    "2071174742": {
+      "address": "250 King St",
+      "den_conf": null,
+      "fingerprint": "250kingst|1|587",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5790,
+      "reason": "587 sqft below 850 floor",
+      "seen_at": "2026-08-31T05:24:46.918828+00:00"
     },
     "2071565561": {
       "address": "A4, 1222 Harrison St, San Francisco, CA 94103",
@@ -2915,6 +2925,10 @@
     },
     "2065796546": {
       "at": "2026-08-27T06:12:18.072114+00:00",
+      "ladder_version": 2
+    },
+    "2071174742": {
+      "at": "2026-08-31T05:24:46.100515+00:00",
       "ladder_version": 2
     },
     "2079958792": {
