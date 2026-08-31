@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-31T12:43:33.110515+00:00",
+  "last_alert_seen": "2026-08-31T17:54:15.300674+00:00",
   "last_parser_warning": "2026-08-31T12:02:23.621578+00:00",
-  "last_uid": 253798,
+  "last_uid": 253854,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -2449,6 +2449,16 @@
       "reason": "844 sqft below 850 floor",
       "seen_at": "2026-08-24T13:07:48.072740+00:00"
     },
+    "458140382": {
+      "address": "B, 2 Townsend St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "b2townsendstsanfranciscoca94107|1|634",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5000,
+      "reason": "634 sqft below 850 floor",
+      "seen_at": "2026-08-31T17:54:20.782076+00:00"
+    },
     "458707719": {
       "address": "4927 California St #A",
       "den_conf": null,
@@ -2695,6 +2705,16 @@
       "price": 5963,
       "reason": "844 sqft below 850 floor",
       "seen_at": "2026-08-22T19:20:53.747233+00:00"
+    },
+    "464635110": {
+      "address": "V, 2 Townsend St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "v2townsendstsanfranciscoca94107|2|986",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6650,
+      "reason": "price $6,650 over $6,500 cap",
+      "seen_at": "2026-08-31T17:54:20.782141+00:00"
     },
     "464706524": {
       "den_conf": 0.05,
@@ -3073,6 +3093,10 @@
     },
     "5XjQ4f": {
       "at": "2026-08-20T19:52:54.247027+00:00",
+      "ladder_version": 2
+    },
+    "5XjQyv": {
+      "at": "2026-08-31T17:54:19.972779+00:00",
       "ladder_version": 2
     },
     "5XjRrp": {
