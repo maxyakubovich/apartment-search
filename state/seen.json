@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-31T01:35:07.773161+00:00",
+  "last_alert_seen": "2026-08-31T02:40:56.320584+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 253762,
+  "last_uid": 253769,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -112,6 +112,16 @@
       "price": 5564,
       "reason": "761 sqft below 850 floor",
       "seen_at": "2026-08-26T00:01:39.542565+00:00"
+    },
+    "2057974528": {
+      "address": "211 Cornwall St #7",
+      "den_conf": null,
+      "fingerprint": "211cornwallst7|1|750",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 3995,
+      "reason": "750 sqft below 850 floor",
+      "seen_at": "2026-08-31T02:41:13.425407+00:00"
     },
     "2058409620": {
       "address": "A11, 1222 Harrison St, San Francisco, CA 94103",
@@ -2885,6 +2895,10 @@
     },
     "15147769": {
       "at": "2026-08-30T03:53:02.494440+00:00",
+      "ladder_version": 2
+    },
+    "2057974528": {
+      "at": "2026-08-31T02:41:13.424469+00:00",
       "ladder_version": 2
     },
     "2060673040": {
