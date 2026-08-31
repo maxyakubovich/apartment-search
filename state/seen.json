@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-31T19:24:42.474674+00:00",
+  "last_alert_seen": "2026-08-31T19:33:18.711837+00:00",
   "last_parser_warning": "2026-08-31T12:02:23.621578+00:00",
-  "last_uid": 253885,
+  "last_uid": 253927,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -1492,6 +1492,16 @@
       "reason": "785 sqft below 850 floor",
       "seen_at": "2026-08-30T23:52:46.920384+00:00"
     },
+    "2090604229": {
+      "address": "Alta Plaza A1C, 355 Berry St, San Francisco, CA 94158",
+      "den_conf": 0.03,
+      "fingerprint": "altaplazaa1c355berrystsanfranciscoca94158|1|860",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5438,
+      "reason": "860 sqft with den confidence 0.03 clears no ladder rung",
+      "seen_at": "2026-08-31T19:33:30.827581+00:00"
+    },
     "2091370361": {
       "den_conf": null,
       "ladder_version": 2,
@@ -1506,9 +1516,9 @@
       "fingerprint": "yerbabuenae1b355berrystsanfranciscoca94158|0|600",
       "ladder_version": 2,
       "notified": false,
-      "price": 5170,
+      "price": 5295,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-24T19:31:46.512096+00:00"
+      "seen_at": "2026-08-31T19:33:22.546220+00:00"
     },
     "2091730315": {
       "address": "Alta Plaza A1C, 355 Berry St, San Francisco, CA 94158",
@@ -1546,7 +1556,7 @@
       "notified": false,
       "price": 4798,
       "reason": "565 sqft below 850 floor",
-      "seen_at": "2026-08-24T19:31:46.512140+00:00"
+      "seen_at": "2026-08-31T19:33:22.546266+00:00"
     },
     "2092209324": {
       "address": "B 01, 923 Folsom St, San Francisco, CA 94107",
@@ -1601,6 +1611,16 @@
       "price": 6496,
       "reason": "790 sqft below 850 floor",
       "seen_at": "2026-08-20T19:53:04.295407+00:00"
+    },
+    "2093414521": {
+      "address": "Yerba Buena E1A, 355 Berry St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "yerbabuenae1a355berrystsanfranciscoca94158|0|545",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4912,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-31T19:33:22.546172+00:00"
     },
     "2093563191": {
       "address": "A4, 788 Harrison St, San Francisco, CA 94107",
@@ -1672,9 +1692,9 @@
       "fingerprint": "balboaa1b355berrystsanfranciscoca94158|1|740",
       "ladder_version": 2,
       "notified": false,
-      "price": 5031,
+      "price": 5106,
       "reason": "740 sqft below 850 floor",
-      "seen_at": "2026-08-24T19:31:46.512178+00:00"
+      "seen_at": "2026-08-31T19:33:22.546305+00:00"
     },
     "2094946166": {
       "den_conf": null,
@@ -2884,6 +2904,16 @@
       "reason": "800 sqft below 850 floor",
       "seen_at": "2026-08-27T21:09:16.420472+00:00"
     },
+    "464906136": {
+      "address": "1401 Waller St APT 5",
+      "den_conf": null,
+      "fingerprint": "1401wallerstapt5|1|650",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4050,
+      "reason": "650 sqft below 850 floor",
+      "seen_at": "2026-08-31T19:27:15.222293+00:00"
+    },
     "464921686": {
       "address": "2217 Scott St APT 402",
       "den_conf": 0.75,
@@ -3135,6 +3165,10 @@
       "at": "2026-08-28T02:40:21.989490+00:00",
       "ladder_version": 2
     },
+    "464906136": {
+      "at": "2026-08-31T19:27:15.221267+00:00",
+      "ladder_version": 2
+    },
     "464921686": {
       "at": "2026-08-29T15:11:40.946443+00:00",
       "ladder_version": 2
@@ -3180,7 +3214,7 @@
       "ladder_version": 2
     },
     "5XjVQc": {
-      "at": "2026-08-24T19:31:46.511100+00:00",
+      "at": "2026-08-31T19:33:22.545091+00:00",
       "ladder_version": 2
     },
     "5XjVzy": {
