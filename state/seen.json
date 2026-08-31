@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-31T17:54:15.300674+00:00",
+  "last_alert_seen": "2026-08-31T18:16:51.801854+00:00",
   "last_parser_warning": "2026-08-31T12:02:23.621578+00:00",
-  "last_uid": 253854,
+  "last_uid": 253858,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -741,7 +741,7 @@
       "notified": false,
       "price": 6993,
       "reason": "price $6,993 over $6,500 cap",
-      "seen_at": "2026-08-25T20:57:47.515666+00:00"
+      "seen_at": "2026-08-31T18:00:38.002011+00:00"
     },
     "2078513998": {
       "address": "A12, 1222 Harrison St, San Francisco, CA 94103",
@@ -1168,7 +1168,7 @@
       "notified": false,
       "price": 5436,
       "reason": "774 sqft below 850 floor",
-      "seen_at": "2026-08-25T20:57:47.515567+00:00"
+      "seen_at": "2026-08-31T18:00:38.001888+00:00"
     },
     "2084205138": {
       "address": "Y, 8 10th St, San Francisco, CA 94103",
@@ -1271,6 +1271,16 @@
       "price": 7190,
       "reason": "price $7,190 over $6,500 cap",
       "seen_at": "2026-08-29T04:51:35.463276+00:00"
+    },
+    "2086250084": {
+      "address": "Madison, 1155 4th St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "madison11554thstsanfranciscoca94158|1|772",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5686,
+      "reason": "772 sqft below 850 floor",
+      "seen_at": "2026-08-31T18:00:38.001934+00:00"
     },
     "2086806232": {
       "address": "Y, 8 10th St, San Francisco, CA 94103",
@@ -1662,6 +1672,16 @@
       "reason": "903 sqft with den confidence 0.03 clears no ladder rung",
       "seen_at": "2026-08-20T19:53:04.295371+00:00"
     },
+    "2097468338": {
+      "address": "Washington, 1155 4th St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "washington11554thstsanfranciscoca94158|1|790",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5696,
+      "reason": "790 sqft below 850 floor",
+      "seen_at": "2026-08-31T18:00:38.001971+00:00"
+    },
     "2100062525": {
       "address": "C2, 200 Buchanan St, San Francisco, CA 94102",
       "den_conf": null,
@@ -1821,6 +1841,16 @@
       "price": 7855,
       "reason": "price $7,855 over $6,500 cap",
       "seen_at": "2026-08-30T23:52:46.920508+00:00"
+    },
+    "2128070192": {
+      "address": "2 Bedroom 1 Bath, 1472 Filbert St, San Francisco, CA 94109",
+      "den_conf": null,
+      "fingerprint": "2bedroom1bath1472filbertstsanfranciscoca94109|2|941",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6945,
+      "reason": "price $6,945 over $6,500 cap",
+      "seen_at": "2026-08-31T18:16:58.392575+00:00"
     },
     "348289124": {
       "den_conf": 0.05,
@@ -2804,6 +2834,16 @@
       "reason": "800 sqft below 850 floor",
       "seen_at": "2026-08-24T17:49:59.230414+00:00"
     },
+    "464829563": {
+      "address": "1 Bedroom 1 Bath, 1472 Filbert St, San Francisco, CA 94109",
+      "den_conf": null,
+      "fingerprint": "1bedroom1bath1472filbertstsanfranciscoca94109|1|516",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5825,
+      "reason": "516 sqft below 850 floor",
+      "seen_at": "2026-08-31T18:16:58.392541+00:00"
+    },
     "464872731": {
       "address": "2 Bedroom 1 Bath, 411 15th Ave, San Francisco, CA 94118",
       "den_conf": 0.6,
@@ -3080,7 +3120,7 @@
       "ladder_version": 2
     },
     "5XjKYs": {
-      "at": "2026-08-25T20:57:46.535118+00:00",
+      "at": "2026-08-31T18:00:38.000604+00:00",
       "ladder_version": 2
     },
     "5XjPcB": {
@@ -3101,6 +3141,10 @@
     },
     "5XjRrp": {
       "at": "2026-08-21T21:36:15.885041+00:00",
+      "ladder_version": 2
+    },
+    "5XjSdt": {
+      "at": "2026-08-31T18:16:58.391421+00:00",
       "ladder_version": 2
     },
     "5XjSnF": {
