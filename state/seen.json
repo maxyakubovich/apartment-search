@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-31T18:51:46.464838+00:00",
+  "last_alert_seen": "2026-08-31T19:24:42.474674+00:00",
   "last_parser_warning": "2026-08-31T12:02:23.621578+00:00",
-  "last_uid": 253863,
+  "last_uid": 253885,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -1471,6 +1471,16 @@
       "price": 4979,
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-26T13:45:58.868969+00:00"
+    },
+    "2089220778": {
+      "address": "01, 1434 Jones St, San Francisco, CA 94109",
+      "den_conf": 0.05,
+      "fingerprint": "011434jonesstsanfranciscoca94109|1|?",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4100,
+      "reason": "sqft unlisted and den confidence 0.05 below 0.6",
+      "seen_at": "2026-08-31T19:25:01.874250+00:00"
     },
     "2090034320": {
       "address": "The Telegraph, 1475 Fillmore St, San Francisco, CA 94115",
@@ -3247,6 +3257,10 @@
     },
     "83154263": {
       "at": "2026-08-20T19:52:54.247060+00:00",
+      "ladder_version": 2
+    },
+    "9NKDn9": {
+      "at": "2026-08-31T19:24:48.196007+00:00",
       "ladder_version": 2
     },
     "9NKvZK": {
