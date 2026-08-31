@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-31T18:16:51.801854+00:00",
+  "last_alert_seen": "2026-08-31T18:51:46.464838+00:00",
   "last_parser_warning": "2026-08-31T12:02:23.621578+00:00",
-  "last_uid": 253858,
+  "last_uid": 253863,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -647,6 +647,16 @@
       "price": 6295,
       "reason": "800 sqft below 850 floor",
       "seen_at": "2026-08-26T19:30:27.436161+00:00"
+    },
+    "2076776508": {
+      "address": "2177 3rd St",
+      "den_conf": 0.75,
+      "fingerprint": "21773rdst|1|872",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 4800,
+      "reason": "confident_den",
+      "seen_at": "2026-08-31T18:52:09.213032+00:00"
     },
     "2077073654": {
       "address": "A4, 1222 Harrison St, San Francisco, CA 94103",
@@ -3029,6 +3039,10 @@
     },
     "2071174742": {
       "at": "2026-08-31T05:24:46.100515+00:00",
+      "ladder_version": 2
+    },
+    "2076776508": {
+      "at": "2026-08-31T18:51:57.475871+00:00",
       "ladder_version": 2
     },
     "2079958792": {
