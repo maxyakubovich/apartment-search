@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-31T05:24:32.624534+00:00",
+  "last_alert_seen": "2026-08-31T12:43:33.110515+00:00",
   "last_parser_warning": "2026-08-31T12:02:23.621578+00:00",
-  "last_uid": 253793,
+  "last_uid": 253798,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -763,6 +763,16 @@
       "reason": "two_bedroom",
       "seen_at": "2026-08-22T19:24:37.982121+00:00"
     },
+    "2078679470": {
+      "address": "Studio, 33 8th St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "studio338thstsanfranciscoca94103|0|382",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4713,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-08-31T12:43:42.179881+00:00"
+    },
     "2078976419": {
       "den_conf": null,
       "ladder_version": 2,
@@ -1298,6 +1308,16 @@
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-26T00:01:39.542288+00:00"
     },
+    "2087155716": {
+      "address": "2 Bed, 1 Bath Penthouse, 33 8th St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "2bed1bathpenthouse338thstsanfranciscoca94103|2|670",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5662,
+      "reason": "670 sqft below 850 floor",
+      "seen_at": "2026-08-31T12:43:42.179942+00:00"
+    },
     "2087329389": {
       "address": "A18, 1222 Harrison St, San Francisco, CA 94103",
       "den_conf": 0.1,
@@ -1404,6 +1424,16 @@
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-20T19:55:15.188336+00:00"
     },
+    "2088175453": {
+      "address": "2 Bed, 1 Bath, 33 8th St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "2bed1bath338thstsanfranciscoca94103|2|685",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6058,
+      "reason": "685 sqft below 850 floor",
+      "seen_at": "2026-08-31T12:43:42.179957+00:00"
+    },
     "2088840089": {
       "den_conf": null,
       "ladder_version": 2,
@@ -1497,6 +1527,16 @@
       "price": 6463,
       "reason": "836 sqft below 850 floor",
       "seen_at": "2026-08-31T01:35:27.937151+00:00"
+    },
+    "2092707317": {
+      "address": "1 Bed, 1 Bath, 33 8th St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "1bed1bath338thstsanfranciscoca94103|1|620",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4025,
+      "reason": "620 sqft below 850 floor",
+      "seen_at": "2026-08-31T12:43:42.179923+00:00"
     },
     "2092911271": {
       "den_conf": null,
@@ -3129,6 +3169,10 @@
     },
     "9NKvZK": {
       "at": "2026-08-26T19:30:26.654632+00:00",
+      "ladder_version": 2
+    },
+    "CgrBS6": {
+      "at": "2026-08-31T12:43:40.942178+00:00",
       "ladder_version": 2
     },
     "ChGdPx": {
