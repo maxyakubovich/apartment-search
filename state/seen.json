@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-31T00:17:13.769759+00:00",
+  "last_alert_seen": "2026-08-31T01:35:07.773161+00:00",
   "last_parser_warning": "2026-08-21T03:02:21.380071+00:00",
-  "last_uid": 253741,
+  "last_uid": 253762,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -586,7 +586,7 @@
       "notified": false,
       "price": 7362,
       "reason": "price $7,362 over $6,500 cap",
-      "seen_at": "2026-08-30T01:10:35.020319+00:00"
+      "seen_at": "2026-08-31T01:35:27.937200+00:00"
     },
     "2072648749": {
       "address": "The Golden Gate, 1475 Fillmore St, San Francisco, CA 94115",
@@ -616,7 +616,7 @@
       "notified": false,
       "price": 4798,
       "reason": "810 sqft below 850 floor",
-      "seen_at": "2026-08-30T01:10:35.020252+00:00"
+      "seen_at": "2026-08-31T01:35:27.937123+00:00"
     },
     "2076775718": {
       "address": "2 Bedroom 1 Bath Apartment, 900 Broderick St, San Francisco, CA 94115",
@@ -1476,7 +1476,7 @@
       "notified": false,
       "price": 6463,
       "reason": "836 sqft below 850 floor",
-      "seen_at": "2026-08-30T01:10:35.020291+00:00"
+      "seen_at": "2026-08-31T01:35:27.937151+00:00"
     },
     "2092911271": {
       "den_conf": null,
@@ -3056,7 +3056,7 @@
       "ladder_version": 2
     },
     "5Yy6Np": {
-      "at": "2026-08-30T01:10:35.019053+00:00",
+      "at": "2026-08-31T01:35:27.936124+00:00",
       "ladder_version": 2
     },
     "5ZGkXx": {
