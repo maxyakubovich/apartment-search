@@ -1,8 +1,18 @@
 {
-  "last_alert_seen": "2026-09-01T16:42:08.913318+00:00",
+  "last_alert_seen": "2026-09-01T18:07:35.685756+00:00",
   "last_parser_warning": "2026-08-31T12:02:23.621578+00:00",
-  "last_uid": 254142,
+  "last_uid": 254159,
   "listings": {
+    "116156710": {
+      "address": "435 China Basin St Unit 119",
+      "den_conf": 0.3,
+      "fingerprint": "435chinabasinstunit119|1|973",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 4695,
+      "reason": "plausible_den",
+      "seen_at": "2026-09-01T18:07:57.331808+00:00"
+    },
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
       "den_conf": null,
@@ -3177,6 +3187,10 @@
     },
     "116089856": {
       "at": "2026-08-27T02:42:23.491533+00:00",
+      "ladder_version": 2
+    },
+    "116156710": {
+      "at": "2026-09-01T18:07:44.425032+00:00",
       "ladder_version": 2
     },
     "123597906": {
