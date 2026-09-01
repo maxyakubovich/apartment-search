@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-09-01T14:23:16.412028+00:00",
+  "last_alert_seen": "2026-09-01T14:45:27.597281+00:00",
   "last_parser_warning": "2026-08-31T12:02:23.621578+00:00",
-  "last_uid": 254102,
+  "last_uid": 254105,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -11,7 +11,7 @@
       "notified": false,
       "price": 6464,
       "reason": "753 sqft below 850 floor",
-      "seen_at": "2026-08-21T02:41:58.910839+00:00"
+      "seen_at": "2026-09-01T14:45:31.837890+00:00"
     },
     "15147769": {
       "address": "300 3rd St APT 714",
@@ -1541,6 +1541,16 @@
       "price": 5438,
       "reason": "860 sqft with den confidence 0.03 clears no ladder rung",
       "seen_at": "2026-08-31T19:33:30.827581+00:00"
+    },
+    "2091061009": {
+      "address": "1 Bed, 1 Bath, 2133 Stockton St, San Francisco, CA 94133",
+      "den_conf": 0.03,
+      "fingerprint": "1bed1bath2133stocktonstsanfranciscoca94133|1|?",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4289,
+      "reason": "sqft unlisted and den confidence 0.03 below 0.6",
+      "seen_at": "2026-09-01T14:25:46.091633+00:00"
     },
     "2091370361": {
       "den_conf": null,
@@ -3315,6 +3325,10 @@
       "at": "2026-09-01T00:54:10.103366+00:00",
       "ladder_version": 2
     },
+    "5Xhzkj": {
+      "at": "2026-09-01T14:25:29.766111+00:00",
+      "ladder_version": 2
+    },
     "5XjKYs": {
       "at": "2026-08-31T18:00:38.000604+00:00",
       "ladder_version": 2
@@ -3452,7 +3466,7 @@
       "ladder_version": 2
     },
     "CjjXmJ": {
-      "at": "2026-08-21T02:41:57.928971+00:00",
+      "at": "2026-09-01T14:45:31.837018+00:00",
       "ladder_version": 2
     },
     "CjpwdL": {
