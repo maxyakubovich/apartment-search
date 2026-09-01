@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-08-31T19:33:18.711837+00:00",
+  "last_alert_seen": "2026-09-01T00:54:05.584468+00:00",
   "last_parser_warning": "2026-08-31T12:02:23.621578+00:00",
-  "last_uid": 253927,
+  "last_uid": 254017,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -2505,9 +2505,9 @@
       "fingerprint": "0x1a460davisctsanfranciscoca94111|0|494",
       "ladder_version": 2,
       "notified": false,
-      "price": 4478,
+      "price": 4473,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-26T21:11:12.858649+00:00"
+      "seen_at": "2026-09-01T00:54:10.876947+00:00"
     },
     "457742099": {
       "address": "1 + DEN - D, 30 Otis St, San Francisco, CA 94103",
@@ -2648,6 +2648,16 @@
       "reason": "716 sqft below 850 floor",
       "seen_at": "2026-08-20T19:54:49.448429+00:00"
     },
+    "463561030": {
+      "address": "2X1, 460 Davis Ct, San Francisco, CA 94111",
+      "den_conf": null,
+      "fingerprint": "2x1460davisctsanfranciscoca94111|2|945",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7000,
+      "reason": "price $7,000 over $6,500 cap",
+      "seen_at": "2026-09-01T00:54:10.877086+00:00"
+    },
     "463682602": {
       "address": "G22, 22 Terra Vista Ave, San Francisco, CA 94115",
       "den_conf": null,
@@ -2676,7 +2686,7 @@
       "notified": false,
       "price": 10245,
       "reason": "price $10,245 over $6,500 cap",
-      "seen_at": "2026-08-26T21:11:12.858785+00:00"
+      "seen_at": "2026-09-01T00:54:10.877118+00:00"
     },
     "463909928": {
       "address": "2J Renovation 2, 900 Folsom St, San Francisco, CA 94107",
@@ -2934,6 +2944,36 @@
       "reason": "layout_unknown",
       "seen_at": "2026-08-31T00:17:31.774388+00:00"
     },
+    "464953547": {
+      "address": "1X1 C, 460 Davis Ct, San Francisco, CA 94111",
+      "den_conf": null,
+      "fingerprint": "1x1c460davisctsanfranciscoca94111|1|729",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5683,
+      "reason": "729 sqft below 850 floor",
+      "seen_at": "2026-09-01T00:54:10.877050+00:00"
+    },
+    "464953549": {
+      "address": "1X1 A, 460 Davis Ct, San Francisco, CA 94111",
+      "den_conf": null,
+      "fingerprint": "1x1a460davisctsanfranciscoca94111|1|768",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5051,
+      "reason": "768 sqft below 850 floor",
+      "seen_at": "2026-09-01T00:54:10.877009+00:00"
+    },
+    "464954458": {
+      "address": "E, 1059 Union St, San Francisco, CA 94133",
+      "den_conf": 0.75,
+      "fingerprint": "e1059unionstsanfranciscoca94133|2|?",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 6249,
+      "reason": "confident_den (sqft unlisted)",
+      "seen_at": "2026-09-01T00:54:29.319577+00:00"
+    },
     "63196294": {
       "address": "1083 Clay St APT 203",
       "den_conf": 0.15,
@@ -3045,6 +3085,14 @@
     }
   },
   "sources": {
+    "111710769": {
+      "at": "2026-09-01T00:54:10.103370+00:00",
+      "ladder_version": 2
+    },
+    "111928005": {
+      "at": "2026-09-01T00:54:10.103381+00:00",
+      "ladder_version": 2
+    },
     "116089856": {
       "at": "2026-08-27T02:42:23.491533+00:00",
       "ladder_version": 2
@@ -3067,6 +3115,10 @@
     },
     "2061022322": {
       "at": "2026-08-20T19:52:54.247032+00:00",
+      "ladder_version": 2
+    },
+    "2061840225": {
+      "at": "2026-09-01T00:54:10.103349+00:00",
       "ladder_version": 2
     },
     "2062614424": {
@@ -3107,6 +3159,10 @@
     },
     "2091919258": {
       "at": "2026-08-30T20:26:31.528453+00:00",
+      "ladder_version": 2
+    },
+    "2098880226": {
+      "at": "2026-09-01T00:54:10.103377+00:00",
       "ladder_version": 2
     },
     "2115405121": {
@@ -3177,6 +3233,18 @@
       "at": "2026-08-31T00:17:27.438460+00:00",
       "ladder_version": 2
     },
+    "464950675": {
+      "at": "2026-09-01T00:54:10.103383+00:00",
+      "ladder_version": 2
+    },
+    "464955234": {
+      "at": "2026-09-01T00:54:10.103373+00:00",
+      "ladder_version": 2
+    },
+    "464955639": {
+      "at": "2026-09-01T00:54:10.103366+00:00",
+      "ladder_version": 2
+    },
     "5XjKYs": {
       "at": "2026-08-31T18:00:38.000604+00:00",
       "ladder_version": 2
@@ -3242,7 +3310,7 @@
       "ladder_version": 2
     },
     "5XsPmm": {
-      "at": "2026-08-26T21:11:12.857441+00:00",
+      "at": "2026-09-01T00:54:10.103379+00:00",
       "ladder_version": 2
     },
     "5Yy6Lv": {
@@ -3331,6 +3399,10 @@
     },
     "CkHnq4": {
       "at": "2026-08-26T00:33:33.185734+00:00",
+      "ladder_version": 2
+    },
+    "CmPcnV": {
+      "at": "2026-09-01T00:54:10.103375+00:00",
       "ladder_version": 2
     },
     "CmPfVR": {
