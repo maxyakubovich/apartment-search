@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-09-01T14:45:27.597281+00:00",
+  "last_alert_seen": "2026-09-01T16:42:08.913318+00:00",
   "last_parser_warning": "2026-08-31T12:02:23.621578+00:00",
-  "last_uid": 254105,
+  "last_uid": 254142,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -160,6 +160,16 @@
       "price": 5807,
       "reason": "683 sqft below 850 floor",
       "seen_at": "2026-08-24T13:07:48.072709+00:00"
+    },
+    "2060620373": {
+      "address": "5450 California St APT 1",
+      "den_conf": 0.05,
+      "fingerprint": "5450californiastapt1|1|1000",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 4750,
+      "reason": "layout_unknown",
+      "seen_at": "2026-09-01T16:42:24.885472+00:00"
     },
     "2060673040": {
       "address": "1645 Page St APT 2",
@@ -3179,6 +3189,10 @@
     },
     "2057974528": {
       "at": "2026-08-31T02:41:13.424469+00:00",
+      "ladder_version": 2
+    },
+    "2060620373": {
+      "at": "2026-09-01T16:42:18.515936+00:00",
       "ladder_version": 2
     },
     "2060673040": {
