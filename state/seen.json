@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-09-01T07:26:45.615233+00:00",
+  "last_alert_seen": "2026-09-01T12:53:53.993428+00:00",
   "last_parser_warning": "2026-08-31T12:02:23.621578+00:00",
-  "last_uid": 254070,
+  "last_uid": 254091,
   "listings": {
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
@@ -59,9 +59,9 @@
       "fingerprint": "e810thstsanfranciscoca94103|1|789",
       "ladder_version": 2,
       "notified": false,
-      "price": 4846,
+      "price": 4136,
       "reason": "789 sqft below 850 floor",
-      "seen_at": "2026-08-29T04:51:35.462994+00:00"
+      "seen_at": "2026-09-01T12:54:08.773757+00:00"
     },
     "2056589788": {
       "address": "2B, 8 10th St, San Francisco, CA 94103",
@@ -79,9 +79,9 @@
       "fingerprint": "sa3810thstsanfranciscoca94103|0|471",
       "ladder_version": 2,
       "notified": false,
-      "price": 3568,
+      "price": 3413,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-29T04:51:35.462781+00:00"
+      "seen_at": "2026-09-01T12:54:08.773579+00:00"
     },
     "2057094827": {
       "address": "Halo, 1200 4th St, San Francisco, CA 94158",
@@ -99,9 +99,9 @@
       "fingerprint": "sa7810thstsanfranciscoca94103|0|469",
       "ladder_version": 2,
       "notified": false,
-      "price": 3794,
+      "price": 3619,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-29T04:51:35.462917+00:00"
+      "seen_at": "2026-09-01T12:54:08.773671+00:00"
     },
     "2057898771": {
       "address": "C, 8 10th St, San Francisco, CA 94103",
@@ -139,7 +139,7 @@
       "fingerprint": "b1810thstsanfranciscoca94103|1|879",
       "ladder_version": 2,
       "notified": false,
-      "price": 5755,
+      "price": 4345,
       "reason": "879 sqft with den confidence 0.03 clears no ladder rung",
       "seen_at": "2026-08-29T00:14:14.452941+00:00"
     },
@@ -984,9 +984,9 @@
       "fingerprint": "sb1810thstsanfranciscoca94103|0|604",
       "ladder_version": 2,
       "notified": false,
-      "price": 4337,
+      "price": 4182,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-29T04:51:35.462943+00:00"
+      "seen_at": "2026-09-01T12:54:08.773681+00:00"
     },
     "2080323751": {
       "den_conf": 0.03,
@@ -1002,9 +1002,9 @@
       "fingerprint": "c810thstsanfranciscoca94103|1|761",
       "ladder_version": 2,
       "notified": false,
-      "price": 5519,
+      "price": 4609,
       "reason": "761 sqft below 850 floor",
-      "seen_at": "2026-08-29T04:51:35.463196+00:00"
+      "seen_at": "2026-09-01T12:54:08.773809+00:00"
     },
     "2080382162": {
       "address": "2A, 8 10th St, San Francisco, CA 94103",
@@ -1030,9 +1030,9 @@
       "fingerprint": "sa8810thstsanfranciscoca94103|0|470",
       "ladder_version": 2,
       "notified": false,
-      "price": 3570,
+      "price": 3415,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-29T04:51:35.462813+00:00"
+      "seen_at": "2026-09-01T12:54:08.773617+00:00"
     },
     "2080971635": {
       "address": "F1, 8 10th St, San Francisco, CA 94103",
@@ -1040,9 +1040,9 @@
       "fingerprint": "f1810thstsanfranciscoca94103|1|752",
       "ladder_version": 2,
       "notified": false,
-      "price": 5043,
+      "price": 4133,
       "reason": "752 sqft below 850 floor",
-      "seen_at": "2026-08-29T04:51:35.463096+00:00"
+      "seen_at": "2026-09-01T12:54:08.773747+00:00"
     },
     "2081121511": {
       "den_conf": null,
@@ -1148,9 +1148,9 @@
       "fingerprint": "h810thstsanfranciscoca94103|1|835",
       "ladder_version": 2,
       "notified": false,
-      "price": 4655,
+      "price": 3745,
       "reason": "835 sqft below 850 floor",
-      "seen_at": "2026-08-29T04:51:35.462968+00:00"
+      "seen_at": "2026-09-01T12:54:08.773692+00:00"
     },
     "2083868941": {
       "address": "C4, 200 Buchanan St, San Francisco, CA 94102",
@@ -1230,9 +1230,9 @@
       "fingerprint": "sa2810thstsanfranciscoca94103|0|486",
       "ladder_version": 2,
       "notified": false,
-      "price": 3651,
+      "price": 3496,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-29T04:51:35.462841+00:00"
+      "seen_at": "2026-09-01T12:54:08.773635+00:00"
     },
     "2084685037": {
       "address": "S1, 1222 Harrison St, San Francisco, CA 94103",
@@ -1288,9 +1288,9 @@
       "fingerprint": "2d2810thstsanfranciscoca94103|2|1239",
       "ladder_version": 2,
       "notified": false,
-      "price": 7190,
-      "reason": "price $7,190 over $6,500 cap",
-      "seen_at": "2026-08-29T04:51:35.463276+00:00"
+      "price": 6725,
+      "reason": "price $6,725 over $6,500 cap",
+      "seen_at": "2026-09-01T12:54:08.773833+00:00"
     },
     "2086250084": {
       "address": "Madison, 1155 4th St, San Francisco, CA 94158",
@@ -1302,15 +1302,25 @@
       "reason": "772 sqft below 850 floor",
       "seen_at": "2026-08-31T18:00:38.001934+00:00"
     },
+    "2086489091": {
+      "address": "2A, 8 10th St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "2a810thstsanfranciscoca94103|2|1442",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7830,
+      "reason": "price $7,830 over $6,500 cap",
+      "seen_at": "2026-09-01T12:54:08.773868+00:00"
+    },
     "2086806232": {
       "address": "Y, 8 10th St, San Francisco, CA 94103",
       "den_conf": null,
       "fingerprint": "y810thstsanfranciscoca94103|1|810",
       "ladder_version": 2,
       "notified": false,
-      "price": 5342,
+      "price": 4432,
       "reason": "810 sqft below 850 floor",
-      "seen_at": "2026-08-29T04:51:35.463123+00:00"
+      "seen_at": "2026-09-01T12:54:08.773784+00:00"
     },
     "2086861828": {
       "den_conf": null,
@@ -1374,9 +1384,9 @@
       "fingerprint": "a2810thstsanfranciscoca94103|1|814",
       "ladder_version": 2,
       "notified": false,
-      "price": 5485,
+      "price": 4560,
       "reason": "814 sqft below 850 floor",
-      "seen_at": "2026-08-29T04:51:35.463160+00:00"
+      "seen_at": "2026-09-01T12:54:08.773793+00:00"
     },
     "2087670123": {
       "address": "2E, 8 10th St, San Francisco, CA 94103",
@@ -1384,9 +1394,9 @@
       "fingerprint": "2e810thstsanfranciscoca94103|2|1301",
       "ladder_version": 2,
       "notified": false,
-      "price": 9095,
-      "reason": "price $9,095 over $6,500 cap",
-      "seen_at": "2026-08-29T04:51:35.463414+00:00"
+      "price": 7830,
+      "reason": "price $7,830 over $6,500 cap",
+      "seen_at": "2026-09-01T12:54:08.773881+00:00"
     },
     "2087833216": {
       "den_conf": 0.03,
@@ -1402,9 +1412,9 @@
       "fingerprint": "2d1810thstsanfranciscoca94103|2|1239",
       "ladder_version": 2,
       "notified": false,
-      "price": 7395,
-      "reason": "price $7,395 over $6,500 cap",
-      "seen_at": "2026-08-29T04:51:35.463348+00:00"
+      "price": 6930,
+      "reason": "price $6,930 over $6,500 cap",
+      "seen_at": "2026-09-01T12:54:08.773845+00:00"
     },
     "2087834324": {
       "address": "SA1, 8 10th St, San Francisco, CA 94103",
@@ -1422,7 +1432,7 @@
       "fingerprint": "b2810thstsanfranciscoca94103|1|879",
       "ladder_version": 2,
       "notified": false,
-      "price": 5665,
+      "price": 4855,
       "reason": "879 sqft with den confidence 0.02 clears no ladder rung",
       "seen_at": "2026-08-29T00:14:07.745261+00:00"
     },
@@ -1432,9 +1442,9 @@
       "fingerprint": "f2810thstsanfranciscoca94103|1|771",
       "ladder_version": 2,
       "notified": false,
-      "price": 4929,
+      "price": 4254,
       "reason": "771 sqft below 850 floor",
-      "seen_at": "2026-08-29T04:51:35.463042+00:00"
+      "seen_at": "2026-09-01T12:54:08.773766+00:00"
     },
     "2087912293": {
       "address": "SC, 8 10th St, San Francisco, CA 94103",
@@ -1931,12 +1941,14 @@
       "seen_at": "2026-08-28T22:58:01.969908+00:00"
     },
     "349565562": {
-      "den_conf": 0.15,
+      "address": "A1, 8 10th St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "a1810thstsanfranciscoca94103|1|851",
       "ladder_version": 2,
-      "notified": true,
-      "price": 4973,
-      "reason": "labeled_den",
-      "seen_at": "2026-08-20T19:53:58.744771+00:00"
+      "notified": false,
+      "price": 3988,
+      "reason": "duplicate of 2082723577",
+      "seen_at": "2026-09-01T12:54:08.773738+00:00"
     },
     "401681537": {
       "den_conf": 0.85,
@@ -2051,9 +2063,9 @@
       "fingerprint": "sa6810thstsanfranciscoca94103|0|463",
       "ladder_version": 2,
       "notified": false,
-      "price": 3766,
+      "price": 3591,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-29T04:51:35.462891+00:00"
+      "seen_at": "2026-09-01T12:54:08.773661+00:00"
     },
     "402668043": {
       "address": "B5, 255 King St, San Francisco, CA 94107",
@@ -2097,9 +2109,9 @@
       "fingerprint": "sa1810thstsanfranciscoca94103|0|476",
       "ladder_version": 2,
       "notified": false,
-      "price": 3745,
+      "price": 3590,
       "reason": "0BR outside [1, 2]",
-      "seen_at": "2026-08-29T04:51:35.462866+00:00"
+      "seen_at": "2026-09-01T12:54:08.773650+00:00"
     },
     "418049649": {
       "address": "A3, 55 9th St, San Francisco, CA 94103",
@@ -2294,6 +2306,16 @@
       "price": 5650,
       "reason": "775 sqft below 850 floor",
       "seen_at": "2026-08-30T00:05:36.652470+00:00"
+    },
+    "446852918": {
+      "address": "2B, 8 10th St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "2b810thstsanfranciscoca94103|2|1376",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7130,
+      "reason": "price $7,130 over $6,500 cap",
+      "seen_at": "2026-09-01T12:54:08.773857+00:00"
     },
     "448059940": {
       "address": "1A, 3 Bayside Village Pl, San Francisco, CA 94107",
@@ -3414,7 +3436,7 @@
       "ladder_version": 2
     },
     "CjpwdL": {
-      "at": "2026-08-29T04:51:34.426255+00:00",
+      "at": "2026-09-01T12:54:06.917240+00:00",
       "ladder_version": 2
     },
     "CkBCpy": {
