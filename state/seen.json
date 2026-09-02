@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-09-01T18:14:07.111385+00:00",
+  "last_alert_seen": "2026-09-02T02:31:00.781641+00:00",
   "last_parser_warning": "2026-08-31T12:02:23.621578+00:00",
-  "last_uid": 254220,
+  "last_uid": 254221,
   "listings": {
     "116156710": {
       "address": "435 China Basin St Unit 119",
@@ -22,6 +22,56 @@
       "price": 6464,
       "reason": "753 sqft below 850 floor",
       "seen_at": "2026-09-01T14:45:31.837890+00:00"
+    },
+    "15075793": {
+      "address": "Pierce (A1A), 2000 Post St, San Francisco, CA 94115",
+      "den_conf": null,
+      "fingerprint": "piercea1a2000poststsanfranciscoca94115|1|625",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4868,
+      "reason": "625 sqft below 850 floor",
+      "seen_at": "2026-09-02T02:31:17.782636+00:00"
+    },
+    "15075796": {
+      "address": "Pierce (A1A) - Short Term, 2000 Post St, San Francisco, CA 94115",
+      "den_conf": null,
+      "fingerprint": "piercea1ashortterm2000poststsanfranciscoca94115|1|625",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4918,
+      "reason": "625 sqft below 850 floor",
+      "seen_at": "2026-09-02T02:31:17.782664+00:00"
+    },
+    "15075921": {
+      "address": "Ellis (E1A), 2000 Post St, San Francisco, CA 94115",
+      "den_conf": null,
+      "fingerprint": "ellise1a2000poststsanfranciscoca94115|0|475",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4178,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T02:31:17.782557+00:00"
+    },
+    "15075951": {
+      "address": "Sutter (A1B) - Short Term, 2000 Post St, San Francisco, CA 94115",
+      "den_conf": null,
+      "fingerprint": "suttera1bshortterm2000poststsanfranciscoca94115|1|625",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4793,
+      "reason": "625 sqft below 850 floor",
+      "seen_at": "2026-09-02T02:31:17.782614+00:00"
+    },
+    "15076079": {
+      "address": "Sutter (A1B), 2000 Post St, San Francisco, CA 94115",
+      "den_conf": null,
+      "fingerprint": "suttera1b2000poststsanfranciscoca94115|1|625",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5029,
+      "reason": "625 sqft below 850 floor",
+      "seen_at": "2026-09-02T02:31:17.782684+00:00"
     },
     "15147769": {
       "address": "300 3rd St APT 714",
@@ -190,6 +240,16 @@
       "price": 5500,
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T23:37:12.495979+00:00"
+    },
+    "2060998722": {
+      "address": "Studio E1A22, 2000 Post St, San Francisco, CA 94115",
+      "den_conf": null,
+      "fingerprint": "studioe1a222000poststsanfranciscoca94115|0|370",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4271,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T02:31:17.782580+00:00"
     },
     "2061240027": {
       "address": "2 Bedroom 1 Bath Apartment, 2927 Sacramento St, San Francisco, CA 94115",
@@ -458,6 +518,16 @@
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-26T13:45:58.868905+00:00"
     },
+    "2070236466": {
+      "address": "Plan Twain, 500 Folsom St, San Francisco, CA 94105",
+      "den_conf": null,
+      "fingerprint": "plantwain500folsomstsanfranciscoca94105|0|467",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4947,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T02:31:17.782729+00:00"
+    },
     "2070494925": {
       "address": "1-P, 30 Otis St, San Francisco, CA 94103",
       "den_conf": null,
@@ -628,6 +698,16 @@
       "reason": "price $7,362 over $6,500 cap",
       "seen_at": "2026-08-31T01:35:27.937200+00:00"
     },
+    "2072188306": {
+      "address": "Tower A1 + A1 Alt 1, 690 Long Bridge St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "towera1a1alt1690longbridgestsanfranciscoca94158|1|707",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6030,
+      "reason": "707 sqft below 850 floor",
+      "seen_at": "2026-09-02T02:31:17.782450+00:00"
+    },
     "2072648749": {
       "address": "The Golden Gate, 1475 Fillmore St, San Francisco, CA 94115",
       "den_conf": null,
@@ -647,6 +727,16 @@
       "price": 6839,
       "reason": "price $6,839 over $6,500 cap",
       "seen_at": "2026-08-26T00:33:33.187226+00:00"
+    },
+    "2075230258": {
+      "address": "Podium A1, 690 Long Bridge St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "podiuma1690longbridgestsanfranciscoca94158|1|720",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5128,
+      "reason": "720 sqft below 850 floor",
+      "seen_at": "2026-09-02T02:31:17.782413+00:00"
     },
     "2075572588": {
       "address": "A 12, 923 Folsom St, San Francisco, CA 94107",
@@ -773,6 +863,16 @@
       "reason": "price $6,929 over $6,500 cap",
       "seen_at": "2026-08-25T13:34:21.458019+00:00"
     },
+    "2077985900": {
+      "address": "Plan Polk, 500 Folsom St, San Francisco, CA 94105",
+      "den_conf": null,
+      "fingerprint": "planpolk500folsomstsanfranciscoca94105|0|530",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4627,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T02:31:17.782708+00:00"
+    },
     "2078236218": {
       "address": "Kennedy, 1155 4th St, San Francisco, CA 94158",
       "den_conf": null,
@@ -782,6 +882,16 @@
       "price": 6993,
       "reason": "price $6,993 over $6,500 cap",
       "seen_at": "2026-08-31T18:00:38.002011+00:00"
+    },
+    "2078475306": {
+      "address": "Tower B1, 690 Long Bridge St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "towerb1690longbridgestsanfranciscoca94158|2|1038",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6716,
+      "reason": "price $6,716 over $6,500 cap",
+      "seen_at": "2026-09-02T02:31:17.782487+00:00"
     },
     "2078513998": {
       "address": "A12, 1222 Harrison St, San Francisco, CA 94103",
@@ -812,6 +922,16 @@
       "price": 4713,
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-09-01T14:23:21.895473+00:00"
+    },
+    "2078845125": {
+      "address": "Tower B1 Alt 2, 690 Long Bridge St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "towerb1alt2690longbridgestsanfranciscoca94158|2|1113",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7071,
+      "reason": "price $7,071 over $6,500 cap",
+      "seen_at": "2026-09-02T02:31:17.782520+00:00"
     },
     "2078976419": {
       "den_conf": null,
@@ -920,6 +1040,16 @@
       "price": 7071,
       "reason": "price $7,071 over $6,500 cap",
       "seen_at": "2026-08-28T02:40:22.734791+00:00"
+    },
+    "2079151779": {
+      "address": "Plan Pacific, 500 Folsom St, San Francisco, CA 94105",
+      "den_conf": null,
+      "fingerprint": "planpacific500folsomstsanfranciscoca94105|1|714",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5539,
+      "reason": "714 sqft below 850 floor",
+      "seen_at": "2026-09-02T02:31:17.782768+00:00"
     },
     "2079389086": {
       "den_conf": null,
@@ -1099,6 +1229,26 @@
       "price": 5730,
       "reason": "739 sqft below 850 floor",
       "seen_at": "2026-08-20T19:52:55.036279+00:00"
+    },
+    "2081343777": {
+      "address": "Plan Ashbury, 500 Folsom St, San Francisco, CA 94105",
+      "den_conf": null,
+      "fingerprint": "planashbury500folsomstsanfranciscoca94105|1|839",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6527,
+      "reason": "price $6,527 over $6,500 cap",
+      "seen_at": "2026-09-02T02:31:17.782809+00:00"
+    },
+    "2081343778": {
+      "address": "Plan Presidio, 500 Folsom St, San Francisco, CA 94105",
+      "den_conf": null,
+      "fingerprint": "planpresidio500folsomstsanfranciscoca94105|1|769",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6487,
+      "reason": "769 sqft below 850 floor",
+      "seen_at": "2026-09-02T02:31:17.782786+00:00"
     },
     "2081449407": {
       "address": "S2, 1222 Harrison St, San Francisco, CA 94103",
@@ -2491,6 +2641,16 @@
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:25:42.378889+00:00"
     },
+    "453650079": {
+      "address": "Podium A4, 690 Long Bridge St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "podiuma4690longbridgestsanfranciscoca94158|1|734",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4985,
+      "reason": "734 sqft below 850 floor",
+      "seen_at": "2026-09-02T02:31:17.782355+00:00"
+    },
     "453794229": {
       "address": "1D, 3 Bayside Village Pl, San Francisco, CA 94107",
       "den_conf": null,
@@ -2638,6 +2798,16 @@
       "price": 5391,
       "reason": "809 sqft below 850 floor",
       "seen_at": "2026-08-20T19:55:15.188384+00:00"
+    },
+    "461464288": {
+      "address": "Plan Sunset, 500 Folsom St, San Francisco, CA 94105",
+      "den_conf": null,
+      "fingerprint": "plansunset500folsomstsanfranciscoca94105|1|615",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5289,
+      "reason": "615 sqft below 850 floor",
+      "seen_at": "2026-09-02T02:31:17.782749+00:00"
     },
     "461647232": {
       "address": "A22, 1222 Harrison St, San Francisco, CA 94103",
@@ -3211,6 +3381,10 @@
       "at": "2026-08-30T03:53:02.494440+00:00",
       "ladder_version": 2
     },
+    "2056230440": {
+      "at": "2026-09-02T02:31:17.063098+00:00",
+      "ladder_version": 2
+    },
     "2057974528": {
       "at": "2026-08-31T02:41:13.424469+00:00",
       "ladder_version": 2
@@ -3247,6 +3421,10 @@
       "at": "2026-08-31T18:51:57.475871+00:00",
       "ladder_version": 2
     },
+    "2077374469": {
+      "at": "2026-09-02T02:31:17.063091+00:00",
+      "ladder_version": 2
+    },
     "2077850016": {
       "at": "2026-09-01T07:22:41.049981+00:00",
       "ladder_version": 2
@@ -3271,6 +3449,10 @@
       "at": "2026-08-28T02:40:21.989495+00:00",
       "ladder_version": 2
     },
+    "2090538863": {
+      "at": "2026-09-02T02:31:17.063103+00:00",
+      "ladder_version": 2
+    },
     "2091919258": {
       "at": "2026-08-30T20:26:31.528453+00:00",
       "ladder_version": 2
@@ -3283,8 +3465,16 @@
       "at": "2026-08-24T15:08:21.746731+00:00",
       "ladder_version": 2
     },
+    "2124655867": {
+      "at": "2026-09-02T02:31:17.063096+00:00",
+      "ladder_version": 2
+    },
     "303806562": {
       "at": "2026-09-01T07:26:54.127300+00:00",
+      "ladder_version": 2
+    },
+    "337887965": {
+      "at": "2026-09-02T02:31:17.063094+00:00",
       "ladder_version": 2
     },
     "401755982": {
@@ -3297,6 +3487,10 @@
     },
     "458707719": {
       "at": "2026-08-21T00:38:56.724092+00:00",
+      "ladder_version": 2
+    },
+    "460577881": {
+      "at": "2026-09-02T02:31:17.063088+00:00",
       "ladder_version": 2
     },
     "463399580": {
@@ -3391,6 +3585,10 @@
       "at": "2026-08-31T17:54:19.972779+00:00",
       "ladder_version": 2
     },
+    "5XjRNn": {
+      "at": "2026-09-02T02:31:17.063101+00:00",
+      "ladder_version": 2
+    },
     "5XjRrp": {
       "at": "2026-08-21T21:36:15.885041+00:00",
       "ladder_version": 2
@@ -3459,6 +3657,10 @@
       "at": "2026-08-26T03:40:37.334795+00:00",
       "ladder_version": 2
     },
+    "65Xp8V": {
+      "at": "2026-09-02T02:31:17.063084+00:00",
+      "ladder_version": 2
+    },
     "65fB7S": {
       "at": "2026-08-20T19:52:54.247055+00:00",
       "ladder_version": 2
@@ -3469,6 +3671,10 @@
     },
     "65g7KK": {
       "at": "2026-08-20T19:52:54.247064+00:00",
+      "ladder_version": 2
+    },
+    "80743941": {
+      "at": "2026-09-02T02:31:17.063062+00:00",
       "ladder_version": 2
     },
     "80749797": {
@@ -3493,6 +3699,10 @@
     },
     "9NKvZK": {
       "at": "2026-08-26T19:30:26.654632+00:00",
+      "ladder_version": 2
+    },
+    "Cgq3xQ": {
+      "at": "2026-09-02T02:31:17.063100+00:00",
       "ladder_version": 2
     },
     "CgrBS6": {
