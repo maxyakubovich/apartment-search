@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-09-02T11:14:32.453216+00:00",
-  "last_parser_warning": "2026-08-31T12:02:23.621578+00:00",
-  "last_uid": 254278,
+  "last_alert_seen": "2026-09-02T11:30:27.793068+00:00",
+  "last_parser_warning": "2026-09-02T11:59:12.409800+00:00",
+  "last_uid": 254286,
   "listings": {
     "116156710": {
       "address": "435 China Basin St Unit 119",
@@ -300,6 +300,16 @@
       "price": 5500,
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T23:37:12.495979+00:00"
+    },
+    "2060880997": {
+      "address": "Studio E1H, 185 Channel St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "studioe1h185channelstsanfranciscoca94158|0|607",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4967,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:30:32.721182+00:00"
     },
     "2060998722": {
       "address": "Studio E1A22, 2000 Post St, San Francisco, CA 94115",
@@ -1063,6 +1073,16 @@
       "reason": "price $6,993 over $6,500 cap",
       "seen_at": "2026-08-31T18:00:38.002011+00:00"
     },
+    "2078297745": {
+      "address": "Two Bedroom B2X, 185 Channel St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "twobedroomb2x185channelstsanfranciscoca94158|2|1310",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 8117,
+      "reason": "price $8,117 over $6,500 cap",
+      "seen_at": "2026-09-02T11:30:32.721537+00:00"
+    },
     "2078475306": {
       "address": "Tower B1, 690 Long Bridge St, San Francisco, CA 94158",
       "den_conf": null,
@@ -1682,6 +1702,16 @@
       "reason": "price $7,830 over $6,500 cap",
       "seen_at": "2026-09-01T12:54:08.773868+00:00"
     },
+    "2086503118": {
+      "address": "Two Bedroom B2B, 185 Channel St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "twobedroomb2b185channelstsanfranciscoca94158|2|963",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7088,
+      "reason": "price $7,088 over $6,500 cap",
+      "seen_at": "2026-09-02T11:30:32.721354+00:00"
+    },
     "2086806232": {
       "address": "Y, 8 10th St, San Francisco, CA 94103",
       "den_conf": null,
@@ -1872,6 +1902,16 @@
       "reason": "price $8,263 over $6,500 cap",
       "seen_at": "2026-08-20T19:53:04.295565+00:00"
     },
+    "2088989029": {
+      "address": "Two Bedroom B2N, 185 Channel St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "twobedroomb2n185channelstsanfranciscoca94158|2|1102",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7400,
+      "reason": "price $7,400 over $6,500 cap",
+      "seen_at": "2026-09-02T11:30:32.721480+00:00"
+    },
     "2089106181": {
       "address": "Rev, 1200 4th St, San Francisco, CA 94158",
       "den_conf": null,
@@ -1912,6 +1952,16 @@
       "reason": "860 sqft with den confidence 0.03 clears no ladder rung",
       "seen_at": "2026-08-31T19:33:30.827581+00:00"
     },
+    "2091051744": {
+      "address": "Two Bedroom B2J, 185 Channel St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "twobedroomb2j185channelstsanfranciscoca94158|2|1047",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7278,
+      "reason": "price $7,278 over $6,500 cap",
+      "seen_at": "2026-09-02T11:30:32.721449+00:00"
+    },
     "2091061009": {
       "address": "1 Bed, 1 Bath, 2133 Stockton St, San Francisco, CA 94133",
       "den_conf": 0.03,
@@ -1940,6 +1990,16 @@
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-31T19:33:22.546220+00:00"
     },
+    "2091552817": {
+      "address": "Two Bedroom B2S, 185 Channel St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "twobedroomb2s185channelstsanfranciscoca94158|2|1131",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7862,
+      "reason": "price $7,862 over $6,500 cap",
+      "seen_at": "2026-09-02T11:30:32.721506+00:00"
+    },
     "2091730315": {
       "address": "Alta Plaza A1C, 355 Berry St, San Francisco, CA 94158",
       "den_conf": 0.03,
@@ -1959,6 +2019,16 @@
       "price": 4500,
       "reason": "773 sqft below 850 floor",
       "seen_at": "2026-08-30T20:26:32.186587+00:00"
+    },
+    "2091940962": {
+      "address": "Two Bedroom B2U, 185 Channel St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "twobedroomb2u185channelstsanfranciscoca94158|2|1157",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7141,
+      "reason": "price $7,141 over $6,500 cap",
+      "seen_at": "2026-09-02T11:30:32.721387+00:00"
     },
     "2091971662": {
       "den_conf": null,
@@ -2014,6 +2084,16 @@
       "reason": "price $7,821 over $6,500 cap",
       "seen_at": "2026-08-20T19:53:04.295544+00:00"
     },
+    "2092924589": {
+      "address": "One Bedroom A1L, 185 Channel St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "onebedrooma1l185channelstsanfranciscoca94158|1|748",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5601,
+      "reason": "748 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:30:32.721288+00:00"
+    },
     "2093227080": {
       "address": "A1, 788 Harrison St, San Francisco, CA 94107",
       "den_conf": null,
@@ -2060,6 +2140,16 @@
       "reason": "price $7,293 over $6,500 cap",
       "seen_at": "2026-08-20T19:53:04.295455+00:00"
     },
+    "2093603781": {
+      "address": "Studio E1A, 185 Channel St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "studioe1a185channelstsanfranciscoca94158|0|456",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4675,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:30:32.721155+00:00"
+    },
     "2093608541": {
       "den_conf": null,
       "ladder_version": 2,
@@ -2077,6 +2167,16 @@
       "price": 7686,
       "reason": "price $7,686 over $6,500 cap",
       "seen_at": "2026-08-25T20:57:47.515700+00:00"
+    },
+    "2094012468": {
+      "address": "Two Bedroom B2M, 185 Channel St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "twobedroomb2m185channelstsanfranciscoca94158|2|1091",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7146,
+      "reason": "price $7,146 over $6,500 cap",
+      "seen_at": "2026-09-02T11:30:32.721418+00:00"
     },
     "2094027338": {
       "address": "B2, 788 Harrison St, San Francisco, CA 94107",
@@ -2097,6 +2197,16 @@
       "price": 4845,
       "reason": "layout_unknown",
       "seen_at": "2026-08-20T22:08:05.469472+00:00"
+    },
+    "2094681427": {
+      "address": "One Bedroom A1K, 185 Channel St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "onebedrooma1k185channelstsanfranciscoca94158|1|745",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5435,
+      "reason": "745 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:30:32.721255+00:00"
     },
     "2094770974": {
       "den_conf": null,
@@ -2131,6 +2241,16 @@
       "price": 6154,
       "reason": "903 sqft with den confidence 0.03 clears no ladder rung",
       "seen_at": "2026-08-20T19:53:04.295371+00:00"
+    },
+    "2094946494": {
+      "address": "One Bedroom A1J, 185 Channel St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "onebedrooma1j185channelstsanfranciscoca94158|1|744",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5951,
+      "reason": "744 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:30:32.721318+00:00"
     },
     "2097468338": {
       "address": "Washington, 1155 4th St, San Francisco, CA 94158",
@@ -3880,6 +4000,16 @@
       "reason": "price $10,245 over $6,500 cap",
       "seen_at": "2026-09-01T00:54:10.877118+00:00"
     },
+    "463885275": {
+      "address": "One Bedroom A1B, 185 Channel St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "onebedrooma1b185channelstsanfranciscoca94158|1|611",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4978,
+      "reason": "611 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:30:32.721219+00:00"
+    },
     "463909928": {
       "address": "2J Renovation 2, 900 Folsom St, San Francisco, CA 94107",
       "den_conf": 0.85,
@@ -4505,6 +4635,10 @@
     },
     "5XjKYs": {
       "at": "2026-08-31T18:00:38.000604+00:00",
+      "ladder_version": 2
+    },
+    "5XjKrx": {
+      "at": "2026-09-02T11:30:32.720142+00:00",
       "ladder_version": 2
     },
     "5XjPcB": {
