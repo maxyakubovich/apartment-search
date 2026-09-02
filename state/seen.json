@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-09-02T06:27:26.097291+00:00",
+  "last_alert_seen": "2026-09-02T08:22:03.816701+00:00",
   "last_parser_warning": "2026-08-31T12:02:23.621578+00:00",
-  "last_uid": 254267,
+  "last_uid": 254271,
   "listings": {
     "116156710": {
       "address": "435 China Basin St Unit 119",
@@ -133,6 +133,26 @@
       "reason": "789 sqft below 850 floor",
       "seen_at": "2026-09-01T12:54:08.773757+00:00"
     },
+    "2056116981": {
+      "address": "1 Bedroom H, 1 Henry Adams St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "1bedroomh1henryadamsstsanfranciscoca94103|1|654",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4541,
+      "reason": "654 sqft below 850 floor",
+      "seen_at": "2026-09-02T08:22:09.221153+00:00"
+    },
+    "2056531594": {
+      "address": "2 Bedroom I, 1 Henry Adams St, San Francisco, CA 94103",
+      "den_conf": 0.9,
+      "fingerprint": "2bedroomi1henryadamsstsanfranciscoca94103|2|1041",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 6148,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T08:22:30.719249+00:00"
+    },
     "2056589788": {
       "address": "2B, 8 10th St, San Francisco, CA 94103",
       "den_conf": null,
@@ -142,6 +162,16 @@
       "price": 7395,
       "reason": "price $7,395 over $6,500 cap",
       "seen_at": "2026-08-29T04:51:35.463312+00:00"
+    },
+    "2056933245": {
+      "address": "1 Bedroom IT, 1 Henry Adams St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "1bedroomit1henryadamsstsanfranciscoca94103|1|653",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4867,
+      "reason": "653 sqft below 850 floor",
+      "seen_at": "2026-09-02T08:22:09.221209+00:00"
     },
     "2057088165": {
       "address": "SA3, 8 10th St, San Francisco, CA 94103",
@@ -162,6 +192,16 @@
       "price": 5207,
       "reason": "739 sqft below 850 floor",
       "seen_at": "2026-08-26T13:45:58.869007+00:00"
+    },
+    "2057131258": {
+      "address": "2 Bedroom CT, 1 Henry Adams St, San Francisco, CA 94103",
+      "den_conf": 0.9,
+      "fingerprint": "2bedroomct1henryadamsstsanfranciscoca94103|2|1025",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 6170,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T08:22:40.547212+00:00"
     },
     "2057579790": {
       "address": "SA7, 8 10th St, San Francisco, CA 94103",
@@ -698,6 +738,16 @@
       "reason": "587 sqft below 850 floor",
       "seen_at": "2026-08-31T05:24:46.918828+00:00"
     },
+    "2071257461": {
+      "address": "2 Bedroom BT, 1 Henry Adams St, San Francisco, CA 94103",
+      "den_conf": 0.85,
+      "fingerprint": "2bedroombt1henryadamsstsanfranciscoca94103|2|979",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 6118,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T08:22:19.159282+00:00"
+    },
     "2071565561": {
       "address": "A4, 1222 Harrison St, San Francisco, CA 94103",
       "den_conf": null,
@@ -724,9 +774,9 @@
       "fingerprint": "towera1a1alt1690longbridgestsanfranciscoca94158|1|707",
       "ladder_version": 2,
       "notified": false,
-      "price": 6030,
+      "price": 5243,
       "reason": "707 sqft below 850 floor",
-      "seen_at": "2026-09-02T02:31:17.782450+00:00"
+      "seen_at": "2026-09-02T08:22:48.975770+00:00"
     },
     "2072648749": {
       "address": "The Golden Gate, 1475 Fillmore St, San Francisco, CA 94115",
@@ -756,7 +806,7 @@
       "notified": false,
       "price": 5128,
       "reason": "720 sqft below 850 floor",
-      "seen_at": "2026-09-02T02:31:17.782413+00:00"
+      "seen_at": "2026-09-02T08:22:48.975750+00:00"
     },
     "2075572588": {
       "address": "A 12, 923 Folsom St, San Francisco, CA 94107",
@@ -767,6 +817,26 @@
       "price": 4798,
       "reason": "810 sqft below 850 floor",
       "seen_at": "2026-08-31T01:35:27.937123+00:00"
+    },
+    "2075613070": {
+      "address": "Podium A4, 690 Long Bridge St, San Francisco, CA 94158",
+      "den_conf": null,
+      "fingerprint": "podiuma4690longbridgestsanfranciscoca94158|1|734",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4985,
+      "reason": "734 sqft below 850 floor",
+      "seen_at": "2026-09-02T08:22:48.975731+00:00"
+    },
+    "2075906167": {
+      "address": "2 Bedroom LJJ, 1 Henry Adams St, San Francisco, CA 94103",
+      "den_conf": 0.9,
+      "fingerprint": "2bedroomljj1henryadamsstsanfranciscoca94103|2|1059",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 6457,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T08:22:48.975621+00:00"
     },
     "2076775718": {
       "address": "2 Bedroom 1 Bath Apartment, 900 Broderick St, San Francisco, CA 94115",
@@ -911,7 +981,7 @@
       "notified": false,
       "price": 6716,
       "reason": "price $6,716 over $6,500 cap",
-      "seen_at": "2026-09-02T02:31:17.782487+00:00"
+      "seen_at": "2026-09-02T08:22:48.975789+00:00"
     },
     "2078513998": {
       "address": "A12, 1222 Harrison St, San Francisco, CA 94103",
@@ -951,7 +1021,7 @@
       "notified": false,
       "price": 7071,
       "reason": "price $7,071 over $6,500 cap",
-      "seen_at": "2026-09-02T02:31:17.782520+00:00"
+      "seen_at": "2026-09-02T08:22:48.975806+00:00"
     },
     "2078976419": {
       "den_conf": null,
@@ -1223,6 +1293,16 @@
       "price": 4133,
       "reason": "752 sqft below 850 floor",
       "seen_at": "2026-09-01T12:54:08.773747+00:00"
+    },
+    "2081101991": {
+      "address": "1 Bedroom GJ, 1 Henry Adams St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "1bedroomgj1henryadamsstsanfranciscoca94103|1|701",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5029,
+      "reason": "701 sqft below 850 floor",
+      "seen_at": "2026-09-02T08:22:09.221243+00:00"
     },
     "2081121511": {
       "den_conf": null,
@@ -1577,6 +1657,16 @@
       "price": 4427,
       "reason": "757 sqft below 850 floor",
       "seen_at": "2026-08-24T00:49:56.224719+00:00"
+    },
+    "2087658119": {
+      "address": "2 Bedroom CB, 1 Henry Adams St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "2bedroomcb1henryadamsstsanfranciscoca94103|2|1014",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6603,
+      "reason": "price $6,603 over $6,500 cap",
+      "seen_at": "2026-09-02T08:22:48.975704+00:00"
     },
     "2087664738": {
       "address": "A2, 8 10th St, San Francisco, CA 94103",
@@ -2671,6 +2761,16 @@
       "reason": "734 sqft below 850 floor",
       "seen_at": "2026-09-02T02:31:17.782355+00:00"
     },
+    "453651892": {
+      "address": "1 Bedroom M, 1 Henry Adams St, San Francisco, CA 94103",
+      "den_conf": null,
+      "fingerprint": "1bedroomm1henryadamsstsanfranciscoca94103|1|761",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5078,
+      "reason": "761 sqft below 850 floor",
+      "seen_at": "2026-09-02T08:22:09.221271+00:00"
+    },
     "453794229": {
       "address": "1D, 3 Bayside Village Pl, San Francisco, CA 94107",
       "den_conf": null,
@@ -3686,7 +3786,7 @@
       "ladder_version": 2
     },
     "65Xp8V": {
-      "at": "2026-09-02T02:31:17.063084+00:00",
+      "at": "2026-09-02T08:22:08.443190+00:00",
       "ladder_version": 2
     },
     "65fB7S": {
@@ -3755,6 +3855,10 @@
     },
     "CkBCpy": {
       "at": "2026-08-25T01:37:26.633663+00:00",
+      "ladder_version": 2
+    },
+    "CkBVH9": {
+      "at": "2026-09-02T08:22:08.443174+00:00",
       "ladder_version": 2
     },
     "CkCkYW": {
