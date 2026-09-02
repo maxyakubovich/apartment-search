@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-09-02T11:30:27.793068+00:00",
+  "last_alert_seen": "2026-09-02T12:42:18.070323+00:00",
   "last_parser_warning": "2026-09-02T11:59:12.409800+00:00",
-  "last_uid": 254286,
+  "last_uid": 254295,
   "listings": {
     "116156710": {
       "address": "435 China Basin St Unit 119",
@@ -26,12 +26,12 @@
     "15074888": {
       "address": "1 Bedroom, 1700 California St, San Francisco, CA 94109",
       "den_conf": null,
-      "fingerprint": "1bedroom1700californiastsanfranciscoca94109|1|753",
+      "fingerprint": "1bedroom1700californiastsanfranciscoca94109|1|639",
       "ladder_version": 2,
       "notified": false,
-      "price": 6464,
-      "reason": "753 sqft below 850 floor",
-      "seen_at": "2026-09-01T14:45:31.837890+00:00"
+      "price": 6039,
+      "reason": "639 sqft below 850 floor",
+      "seen_at": "2026-09-02T12:42:25.353545+00:00"
     },
     "15075793": {
       "address": "Pierce (A1A), 2000 Post St, San Francisco, CA 94115",
@@ -4794,7 +4794,7 @@
       "ladder_version": 2
     },
     "CjjXmJ": {
-      "at": "2026-09-01T14:45:31.837018+00:00",
+      "at": "2026-09-02T12:42:25.352390+00:00",
       "ladder_version": 2
     },
     "CjpwdL": {
