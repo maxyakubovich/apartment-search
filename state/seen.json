@@ -1,7 +1,7 @@
 {
-  "last_alert_seen": "2026-09-02T08:22:03.816701+00:00",
+  "last_alert_seen": "2026-09-02T11:14:32.453216+00:00",
   "last_parser_warning": "2026-08-31T12:02:23.621578+00:00",
-  "last_uid": 254271,
+  "last_uid": 254278,
   "listings": {
     "116156710": {
       "address": "435 China Basin St Unit 119",
@@ -399,6 +399,16 @@
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-24T13:07:48.072415+00:00"
     },
+    "2062417639": {
+      "address": "A8S-735SF-A2-2, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a8s735sfa22800indianastsanfranciscoca94107|1|735",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "735 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361552+00:00"
+    },
     "2062926383": {
       "address": "Studio-S3.0, 1 Brady St, San Francisco, CA 94103",
       "den_conf": null,
@@ -483,12 +493,42 @@
       "reason": "price $6,720 over $6,500 cap",
       "seen_at": "2026-08-28T11:16:01.735987+00:00"
     },
+    "2065471087": {
+      "address": "S6-524SF-MIR, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "s6524sfmir800indianastsanfranciscoca94107|0|521",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:14:38.360929+00:00"
+    },
+    "2065557524": {
+      "address": "A6-678SF-MIR, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a6678sfmir800indianastsanfranciscoca94107|1|678",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "678 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361431+00:00"
+    },
     "2065571544": {
       "den_conf": 0.85,
       "notified": true,
       "price": 6420,
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:23:23.556613+00:00"
+    },
+    "2065680295": {
+      "address": "A3-648SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a3648sf800indianastsanfranciscoca94107|1|648",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4631,
+      "reason": "648 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361676+00:00"
     },
     "2065796546": {
       "address": "700 Central Ave #A",
@@ -509,6 +549,26 @@
       "price": 4445,
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-28T11:15:56.658944+00:00"
+    },
+    "2066605335": {
+      "address": "B11-1040SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "b111040sf800indianastsanfranciscoca94107|2|1040",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:15:10.500210+00:00"
+    },
+    "2066610223": {
+      "address": "B7-1006SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "b71006sf800indianastsanfranciscoca94107|2|1006",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:19:09.815752+00:00"
     },
     "2066662138": {
       "den_conf": 0.85,
@@ -567,6 +627,36 @@
       "price": 5715,
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:25:50.674564+00:00"
+    },
+    "2066714970": {
+      "address": "B8-1020SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "b81020sf800indianastsanfranciscoca94107|2|1020",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7006,
+      "reason": "price $7,006 over $6,500 cap",
+      "seen_at": "2026-09-02T11:20:15.192930+00:00"
+    },
+    "2066714972": {
+      "address": "B16V-1094SF-MIR, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.9,
+      "fingerprint": "b16v1094sfmir800indianastsanfranciscoca94107|2|1094",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:16:26.384856+00:00"
+    },
+    "2066714980": {
+      "address": "A2-597-MIR, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a2597mir800indianastsanfranciscoca94107|1|1186",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 8336,
+      "reason": "price $8,336 over $6,500 cap",
+      "seen_at": "2026-09-02T11:14:38.361833+00:00"
     },
     "2067820755": {
       "address": "Orb, 1200 4th St, San Francisco, CA 94158",
@@ -2232,6 +2322,16 @@
       "reason": "700 sqft below 850 floor",
       "seen_at": "2026-09-01T07:26:54.128433+00:00"
     },
+    "343267779": {
+      "address": "B5-978SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "b5978sf800indianastsanfranciscoca94107|2|978",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:18:50.900261+00:00"
+    },
     "348289124": {
       "den_conf": 0.05,
       "ladder_version": 2,
@@ -2260,6 +2360,26 @@
       "reason": "duplicate of 2082723577",
       "seen_at": "2026-09-01T12:54:08.773738+00:00"
     },
+    "353706788": {
+      "address": "B18S-1115, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.9,
+      "fingerprint": "b18s1115800indianastsanfranciscoca94107|2|1115",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:17:11.299677+00:00"
+    },
+    "389868465": {
+      "address": "B15-1077SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "b151077sf800indianastsanfranciscoca94107|2|1077",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7271,
+      "reason": "price $7,271 over $6,500 cap",
+      "seen_at": "2026-09-02T11:20:15.192996+00:00"
+    },
     "401681537": {
       "den_conf": 0.85,
       "notified": true,
@@ -2287,6 +2407,36 @@
       "reason": "738 sqft below 850 floor",
       "seen_at": "2026-08-28T11:15:56.659049+00:00"
     },
+    "401771114": {
+      "address": "S13-585SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "s13585sf800indianastsanfranciscoca94107|0|585",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:14:38.360782+00:00"
+    },
+    "401771116": {
+      "address": "A5V-667SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a5v667sf800indianastsanfranciscoca94107|1|667",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 5316,
+      "reason": "667 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361801+00:00"
+    },
+    "401771121": {
+      "address": "S8-540SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "s8540sf800indianastsanfranciscoca94107|0|540",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:14:38.361032+00:00"
+    },
     "401877560": {
       "den_conf": 0.9,
       "notified": true,
@@ -2313,6 +2463,26 @@
       "price": 7961,
       "reason": "price $7,961 over $6,500 cap",
       "seen_at": "2026-08-28T11:16:01.736224+00:00"
+    },
+    "402147125": {
+      "address": "B16V, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "b16v800indianastsanfranciscoca94107|2|1094",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:16:16.229073+00:00"
+    },
+    "402147127": {
+      "address": "B7-1006-MIR, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "b71006mir800indianastsanfranciscoca94107|2|1006",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:19:21.782226+00:00"
     },
     "402147141": {
       "address": "A5, 55 9th St, San Francisco, CA 94103",
@@ -2351,6 +2521,26 @@
       "price": 5090,
       "reason": "layout_unknown",
       "seen_at": "2026-08-28T11:16:01.735692+00:00"
+    },
+    "402442219": {
+      "address": "S11-560SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "s11560sf800indianastsanfranciscoca94107|0|560",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:14:38.360742+00:00"
+    },
+    "402442221": {
+      "address": "A8-735SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a8735sf800indianastsanfranciscoca94107|1|735",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "735 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361503+00:00"
     },
     "402564293": {
       "den_conf": 0.1,
@@ -2402,6 +2592,26 @@
       "price": 3563,
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-20T19:53:43.198035+00:00"
+    },
+    "402803029": {
+      "address": "B2LS-952SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.25,
+      "fingerprint": "b2ls952sf800indianastsanfranciscoca94107|2|952",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:18:30.642829+00:00"
+    },
+    "404650527": {
+      "address": "S5-518SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "s5518sf800indianastsanfranciscoca94107|0|518",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:14:38.360876+00:00"
     },
     "407499040": {
       "address": "A1-L, 255 King St, San Francisco, CA 94107",
@@ -2459,6 +2669,56 @@
       "reason": "718 sqft below 850 floor",
       "seen_at": "2026-08-28T11:15:56.659221+00:00"
     },
+    "438040095": {
+      "address": "S7-538SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "s7538sf800indianastsanfranciscoca94107|0|538",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:14:38.360999+00:00"
+    },
+    "439172843": {
+      "address": "B4-978SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.9,
+      "fingerprint": "b4978sf800indianastsanfranciscoca94107|2|978",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:18:40.477179+00:00"
+    },
+    "439172844": {
+      "address": "B2-932SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "b2932sf800indianastsanfranciscoca94107|2|932",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:17:41.229154+00:00"
+    },
+    "439263711": {
+      "address": "B20TS, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "b20ts800indianastsanfranciscoca94107|2|1186",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 8336,
+      "reason": "price $8,336 over $6,500 cap",
+      "seen_at": "2026-09-02T11:20:15.193041+00:00"
+    },
+    "439299179": {
+      "address": "B10-1040SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "b101040sf800indianastsanfranciscoca94107|2|1040",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:14:59.628885+00:00"
+    },
     "439531759": {
       "address": "A20, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
@@ -2478,6 +2738,26 @@
       "price": 7591,
       "reason": "price $7,591 over $6,500 cap",
       "seen_at": "2026-08-28T11:16:01.736195+00:00"
+    },
+    "439708937": {
+      "address": "A6-678SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a6678sf800indianastsanfranciscoca94107|1|678",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4731,
+      "reason": "678 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361702+00:00"
+    },
+    "439708938": {
+      "address": "B23S-1302, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.9,
+      "fingerprint": "b23s1302800indianastsanfranciscoca94107|2|1302",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:18:10.861534+00:00"
     },
     "439763227": {
       "address": "B1-M, 255 King St, San Francisco, CA 94107",
@@ -2499,6 +2779,86 @@
       "reason": "822 sqft below 850 floor",
       "seen_at": "2026-08-28T11:16:01.735772+00:00"
     },
+    "440212627": {
+      "address": "S9-545SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "s9545sf800indianastsanfranciscoca94107|0|545",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4326,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:14:38.361154+00:00"
+    },
+    "440258678": {
+      "address": "S10-558SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "s10558sf800indianastsanfranciscoca94107|0|558",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:14:38.360708+00:00"
+    },
+    "440258680": {
+      "address": "B21-1262SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.9,
+      "fingerprint": "b211262sf800indianastsanfranciscoca94107|2|1262",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:17:51.512480+00:00"
+    },
+    "440867362": {
+      "address": "S6S-524SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "s6s524sf800indianastsanfranciscoca94107|0|524",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:14:38.360965+00:00"
+    },
+    "440922438": {
+      "address": "B8-1020SF-NoBalc, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "b81020sfnobalc800indianastsanfranciscoca94107|2|1020",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:19:31.704181+00:00"
+    },
+    "440922439": {
+      "address": "C3S-1445SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "c3s1445sf800indianastsanfranciscoca94107|3|1445",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "3BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:20:15.193180+00:00"
+    },
+    "441196886": {
+      "address": "C2TS-1405SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "c2ts1405sf800indianastsanfranciscoca94107|3|1405",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "3BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:20:15.193135+00:00"
+    },
+    "441692188": {
+      "address": "S1-415SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "s1415sf800indianastsanfranciscoca94107|0|415",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4131,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:14:38.361128+00:00"
+    },
     "441842409": {
       "den_conf": null,
       "ladder_version": 2,
@@ -2517,6 +2877,36 @@
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-08-28T11:15:56.659016+00:00"
     },
+    "442313228": {
+      "address": "B22S-1284SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "b22s1284sf800indianastsanfranciscoca94107|2|1284",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:18:00.925409+00:00"
+    },
+    "442389592": {
+      "address": "S2-436SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "s2436sf800indianastsanfranciscoca94107|0|436",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4066,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:14:38.361099+00:00"
+    },
+    "442389593": {
+      "address": "A10-784SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a10784sf800indianastsanfranciscoca94107|1|784",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "784 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361286+00:00"
+    },
     "442422049": {
       "address": "BH5, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
@@ -2526,6 +2916,16 @@
       "price": 6970,
       "reason": "price $6,970 over $6,500 cap",
       "seen_at": "2026-08-28T11:16:01.736109+00:00"
+    },
+    "442674136": {
+      "address": "B19-1140SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.75,
+      "fingerprint": "b191140sf800indianastsanfranciscoca94107|2|1140",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:20:15.192812+00:00"
     },
     "442726562": {
       "address": "SP Renovation 2, 900 Folsom St, San Francisco, CA 94107",
@@ -2547,6 +2947,36 @@
       "reason": "546 sqft below 850 floor",
       "seen_at": "2026-08-22T19:20:43.800215+00:00"
     },
+    "442755991": {
+      "address": "B12-1046SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.9,
+      "fingerprint": "b121046sf800indianastsanfranciscoca94107|2|1046",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:20:02.677499+00:00"
+    },
+    "442755993": {
+      "address": "B1LS-915SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "b1ls915sf800indianastsanfranciscoca94107|2|915",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:17:31.753031+00:00"
+    },
+    "442980890": {
+      "address": "B6-1001, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "b61001800indianastsanfranciscoca94107|2|1001",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:19:00.699917+00:00"
+    },
     "443122495": {
       "address": "2AQ Renovation 2, 900 Folsom St, San Francisco, CA 94107",
       "den_conf": null,
@@ -2556,6 +2986,16 @@
       "price": 6501,
       "reason": "price $6,501 over $6,500 cap",
       "seen_at": "2026-08-22T19:22:06.375951+00:00"
+    },
+    "443404945": {
+      "address": "S4S-485SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "s4s485sf800indianastsanfranciscoca94107|0|485",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:14:38.360849+00:00"
     },
     "443688308": {
       "address": "S3, 255 King St, San Francisco, CA 94107",
@@ -2617,6 +3057,16 @@
       "reason": "775 sqft below 850 floor",
       "seen_at": "2026-08-30T00:05:36.652470+00:00"
     },
+    "446200333": {
+      "address": "A1-566SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a1566sf800indianastsanfranciscoca94107|1|566",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "566 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361261+00:00"
+    },
     "446852918": {
       "address": "2B, 8 10th St, San Francisco, CA 94103",
       "den_conf": null,
@@ -2626,6 +3076,16 @@
       "price": 7130,
       "reason": "price $7,130 over $6,500 cap",
       "seen_at": "2026-09-01T12:54:08.773857+00:00"
+    },
+    "447580920": {
+      "address": "A8S-735SF_MIR, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a8s735sfmir800indianastsanfranciscoca94107|1|735",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "735 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361576+00:00"
     },
     "448059940": {
       "address": "1A, 3 Bayside Village Pl, San Francisco, CA 94107",
@@ -2637,6 +3097,56 @@
       "reason": "617 sqft below 850 floor",
       "seen_at": "2026-08-22T19:20:43.799871+00:00"
     },
+    "448207227": {
+      "address": "B17S-1097SF-MIR, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.9,
+      "fingerprint": "b17s1097sfmir800indianastsanfranciscoca94107|2|1097",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:17:01.536016+00:00"
+    },
+    "448633136": {
+      "address": "B1-871SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "b1871sf800indianastsanfranciscoca94107|2|871",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "confident_den",
+      "seen_at": "2026-09-02T11:14:48.727288+00:00"
+    },
+    "448784058": {
+      "address": "S12-565SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "s12565sf800indianastsanfranciscoca94107|0|565",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4391,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:14:38.361180+00:00"
+    },
+    "448823366": {
+      "address": "S13-585-MIR, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "s13585mir800indianastsanfranciscoca94107|0|585",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4601,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:14:38.361210+00:00"
+    },
+    "449626001": {
+      "address": "B17-1097, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "b171097800indianastsanfranciscoca94107|2|1097",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 7217,
+      "reason": "price $7,217 over $6,500 cap",
+      "seen_at": "2026-09-02T11:20:15.192961+00:00"
+    },
     "450081822": {
       "address": "A2CH, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
@@ -2647,6 +3157,16 @@
       "reason": "837 sqft below 850 floor",
       "seen_at": "2026-08-28T11:16:01.735826+00:00"
     },
+    "450081823": {
+      "address": "S4-483SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "s4483sf800indianastsanfranciscoca94107|0|483",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:14:38.360815+00:00"
+    },
     "450823050": {
       "address": "1AL Renovation 2, 900 Folsom St, San Francisco, CA 94107",
       "den_conf": null,
@@ -2656,6 +3176,46 @@
       "price": 4745,
       "reason": "687 sqft below 850 floor",
       "seen_at": "2026-08-22T19:20:43.800333+00:00"
+    },
+    "450853244": {
+      "address": "S6-524SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "s6524sf800indianastsanfranciscoca94107|0|521",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:14:38.360904+00:00"
+    },
+    "451089304": {
+      "address": "A4-667SF-A1-2MIR2, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a4667sfa12mir2800indianastsanfranciscoca94107|1|667",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "667 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361383+00:00"
+    },
+    "452149244": {
+      "address": "B3-966SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "b3966sf800indianastsanfranciscoca94107|2|966",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 6846,
+      "reason": "price $6,846 over $6,500 cap",
+      "seen_at": "2026-09-02T11:20:15.192892+00:00"
+    },
+    "452268684": {
+      "address": "A4-667SF-NoBalc, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a4667sfnobalc800indianastsanfranciscoca94107|1|667",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "667 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361407+00:00"
     },
     "452433247": {
       "den_conf": 0.85,
@@ -2734,6 +3294,16 @@
       "reason": "677 sqft below 850 floor",
       "seen_at": "2026-08-22T19:20:43.800279+00:00"
     },
+    "453536809": {
+      "address": "A8S-735SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a8s735sf800indianastsanfranciscoca94107|1|735",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "735 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361527+00:00"
+    },
     "453646337": {
       "address": "B17, 255 King St, San Francisco, CA 94107",
       "den_conf": null,
@@ -2750,6 +3320,206 @@
       "price": 5529,
       "reason": "two_bedroom",
       "seen_at": "2026-08-20T19:25:42.378889+00:00"
+    },
+    "453647073": {
+      "address": "B15S-1077, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.9,
+      "fingerprint": "b15s1077800indianastsanfranciscoca94107|2|1077",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:15:52.793117+00:00"
+    },
+    "453647095": {
+      "address": "B23S-1302SF-B12-2, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "b23s1302sfb122800indianastsanfranciscoca94107|2|1230",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:18:21.414911+00:00"
+    },
+    "453647170": {
+      "address": "B15S-1077SF-B2-2, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "b15s1077sfb22800indianastsanfranciscoca94107|2|1077",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:16:02.928094+00:00"
+    },
+    "453647188": {
+      "address": "A4-667SF-A1-2, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a4667sfa12800indianastsanfranciscoca94107|1|667",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4861,
+      "reason": "667 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361776+00:00"
+    },
+    "453647204": {
+      "address": "B17S-1097SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "b17s1097sf800indianastsanfranciscoca94107|2|1097",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:16:51.633559+00:00"
+    },
+    "453647205": {
+      "address": "A4-667, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a4667800indianastsanfranciscoca94107|1|667",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "667 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361359+00:00"
+    },
+    "453647241": {
+      "address": "C4TS-1489SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "c4ts1489sf800indianastsanfranciscoca94107|3|1489",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "3BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:20:15.193223+00:00"
+    },
+    "453647295": {
+      "address": "A7S-715SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a7s715sf800indianastsanfranciscoca94107|1|715",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "715 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361479+00:00"
+    },
+    "453647305": {
+      "address": "A7-715SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a7715sf800indianastsanfranciscoca94107|1|715",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "715 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361455+00:00"
+    },
+    "453647313": {
+      "address": "A4-667SF-MIR, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a4667sfmir800indianastsanfranciscoca94107|1|667",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4806,
+      "reason": "667 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361752+00:00"
+    },
+    "453647404": {
+      "address": "S3-482SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "s3482sf800indianastsanfranciscoca94107|0|482",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4041,
+      "reason": "0BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:14:38.361065+00:00"
+    },
+    "453647461": {
+      "address": "C1TS-1367SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "c1ts1367sf800indianastsanfranciscoca94107|3|1367",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "3BR outside [1, 2]",
+      "seen_at": "2026-09-02T11:20:15.193090+00:00"
+    },
+    "453647468": {
+      "address": "A2S-597SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a2s597sf800indianastsanfranciscoca94107|1|597",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 4756,
+      "reason": "597 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361727+00:00"
+    },
+    "453647509": {
+      "address": "B19S-1140SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "b19s1140sf800indianastsanfranciscoca94107|2|1140",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:17:21.906685+00:00"
+    },
+    "453647517": {
+      "address": "A10-479, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a10479800indianastsanfranciscoca94107|1|784",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "784 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361235+00:00"
+    },
+    "453647552": {
+      "address": "B15-1077SF-B2-2, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.9,
+      "fingerprint": "b151077sfb22800indianastsanfranciscoca94107|2|1077",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:15:43.229306+00:00"
+    },
+    "453647578": {
+      "address": "A2-597SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a2597sf800indianastsanfranciscoca94107|1|597",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "597 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361309+00:00"
+    },
+    "453647581": {
+      "address": "B9-1037SF-MIR, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "b91037sfmir800indianastsanfranciscoca94107|2|1037",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:19:52.634084+00:00"
+    },
+    "453647637": {
+      "address": "B9-1037SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.9,
+      "fingerprint": "b91037sf800indianastsanfranciscoca94107|2|1037",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:19:42.216698+00:00"
+    },
+    "453647640": {
+      "address": "A9-752SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a9752sf800indianastsanfranciscoca94107|1|752",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "752 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361640+00:00"
     },
     "453650079": {
       "address": "Podium A4, 690 Long Bridge St, San Francisco, CA 94158",
@@ -2881,6 +3651,16 @@
       "reason": "0BR outside [1, 2]",
       "seen_at": "2026-09-01T00:54:10.876947+00:00"
     },
+    "457740394": {
+      "address": "B17-1097SF-MIR, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "b171097sfmir800indianastsanfranciscoca94107|2|1097",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:16:41.214740+00:00"
+    },
     "457742099": {
       "address": "1 + DEN - D, 30 Otis St, San Francisco, CA 94103",
       "den_conf": null,
@@ -2939,6 +3719,26 @@
       "reason": "duplicate of 2084047774",
       "seen_at": "2026-08-24T00:49:56.224648+00:00"
     },
+    "461826125": {
+      "address": "A3-648SF-MIR, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": null,
+      "fingerprint": "a3648sfmir800indianastsanfranciscoca94107|1|648",
+      "ladder_version": 2,
+      "notified": false,
+      "price": 86,
+      "reason": "648 sqft below 850 floor",
+      "seen_at": "2026-09-02T11:14:38.361334+00:00"
+    },
+    "461987092": {
+      "address": "B14S-1066SF, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.8,
+      "fingerprint": "b14s1066sf800indianastsanfranciscoca94107|2|1066",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:15:32.427527+00:00"
+    },
     "462168228": {
       "address": "The Skyline, 1475 Fillmore St, San Francisco, CA 94115",
       "den_conf": 0.9,
@@ -2948,6 +3748,16 @@
       "price": 6304,
       "reason": "two_bedroom",
       "seen_at": "2026-08-29T20:52:46.303454+00:00"
+    },
+    "462205330": {
+      "address": "B13, 800 Indiana St, San Francisco, CA 94107",
+      "den_conf": 0.85,
+      "fingerprint": "b13800indianastsanfranciscoca94107|2|1050",
+      "ladder_version": 2,
+      "notified": true,
+      "price": 86,
+      "reason": "two_bedroom",
+      "seen_at": "2026-09-02T11:15:21.425980+00:00"
     },
     "462853863": {
       "address": "2P Townhouse Renovation 2, 900 Folsom St, San Francisco, CA 94107",
@@ -3763,6 +4573,10 @@
     },
     "5XsPmm": {
       "at": "2026-09-01T00:54:10.103379+00:00",
+      "ladder_version": 2
+    },
+    "5Yy5Rr": {
+      "at": "2026-09-02T11:14:38.359499+00:00",
       "ladder_version": 2
     },
     "5Yy6Lv": {
